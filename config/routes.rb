@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get  'users/:id', to: 'users#show', as: :user
 
   # itin routes
-  get  '/itineraries', to: 'itineraries#index', as: :itineraries
+  # get  '/itineraries', to: 'itineraries#index', as: :itineraries
   get  '/itineraries/new', to: 'itineraries#new', as: :new_itinerary
   post '/itineraries', to: 'itineraries#create'
   get  '/itineraries/:id/edit', to: 'itineraries#edit', as: :edit_itinerary
