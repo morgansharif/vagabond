@@ -18,5 +18,9 @@ Rails.application.routes.draw do
   #METHOD   #PATH                 #TO     #CONTROLLER#ACTION    #ALIAS
   get       'site/index'          =>      'site#index',         as: :index
 
+  get       'users/new'           =>       'users#new',         as: :new_user
+  post      'users'               =>       'users#create'
 
+  get       'users/:id/edit'      =>       'users#edit',        as: :edit_user
+  patch     'users/:id'           =>       'users#update'
 end
