@@ -1,2 +1,8 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+PROFILE SHOW PAGE
+
+<%= @user.first_name %>
+<%= @user.last_name %>
+<%= @user.img %>
+<%= @user.current_city %>
+
+<%= link_to "Edit", edit_user_path(@user) %>
