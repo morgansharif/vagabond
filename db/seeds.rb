@@ -8,6 +8,6 @@
 
 
 User.create(first_name: 'John', last_name: 'Doe', email: 'john@doe.com', current_city: 'Oakland', img: '#')
-Itinerary.new(name: 'Wine tasting', desc: 'Weekend in Napa', duration: '2 days')
+Itinerary.create(name: 'Wine tasting', desc: 'Weekend in Napa', duration: '2 days')
 City.create(name: 'San Francisco', country: 'United States', img: '#')
-Activity.new(name: 'Winerary-1', desc: 'Has the best Pinot', location: 'Napa', duration: '1-hour', img: '#')
+Activity.create(name: 'Winerary-1', desc: 'Has the best Pinot', location: 'Napa', duration: '1-hour', img: '#')
