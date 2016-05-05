@@ -1,18 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'users/show'
-
-  get 'users/create'
-
-  get 'users/update'
-
-  get 'users/delete'
-
-  get 'users/new'
-
-  get 'users/edit'
-
   root 'site#index'
+
+  get  'users/new', to: 'users#new', as: :new_user
+  post 'users', to: 'users#create'
+  get  'users/:id/edit', to: 'users#edit', as: :edit_user
+  patch'users/:id', to: 'users#update'
+  get  'users/:id', to: 'users#show', as: :user
 
   # city routes
   get '/cities', to: 'cities#index', as: :cities
@@ -49,25 +43,17 @@ get "/login", to: "sessions#new", as: :login
 post "/sessions", to: "sessions#create"
 get  "/logout", to: "sessions#destroy"
 
-
-
-  resources :users do
-    resources :itineraries do
-      resources :activities
-  end
- end
-
-
-resources :cities do
-  resources :itineraries do
-end
 end
 
-  get       'users/new'           =>       'users#new',         as: :new_user
-  post      'users'               =>       'users#create'
-
-  get       'users/:id/edit'      =>       'users#edit',        as: :edit_user
-  patch     'users/:id'           =>       'users#update'
-
-  get       'users/:id'           =>       'users#show',        as: :user
-end
+#
+#   resources :users do
+#     resources :itineraries do
+#       resources :activities
+#   end
+#  end
+#
+#
+# resources :cities do
+#   resources :itineraries do
+# end
+# end
