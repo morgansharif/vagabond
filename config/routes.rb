@@ -10,13 +10,14 @@ Rails.application.routes.draw do
   patch'users/:id', to: 'users#update'
   get  'users/:id', to: 'users#show', as: :user
 
-  # user routes
+  # itin routes
   get  '/itineraries', to: 'itineraries#index', as: :itineraries
   get  '/itineraries/new', to: 'itineraries#new', as: :new_itinerary
   post '/itineraries', to: 'itineraries#create'
   get  '/itineraries/:id/edit', to: 'itineraries#edit', as: :edit_itinerary
   patch'/itineraries/:id', to: 'itineraries#update'
   get  '/itineraries/:id', to: 'itineraries#show', as: :itinerary
+  delete '/itineraries/:id', to: 'itineraries#destroy'
 
   get    '/users/:user_id/itineraries/:itinerary_id/activities', to: 'activities#index', as: :user_itinerary_activities
   post   '/users/:user_id/itineraries/:itinerary_id/activities', to: 'activities#create'
