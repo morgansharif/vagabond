@@ -12,7 +12,7 @@ class ItinerariesController < ApplicationController
   def create
     @itinerary = Itinerary.new(itinerary_params)
     @itinerary.user_id = current_user.id
-    if @itinerary.create
+    if @itinerary.save
     redirect_to user_path
     else
       redirect_to new_itinerary_path

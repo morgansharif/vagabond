@@ -1,2 +1,14 @@
-<h1>Itineraries#new</h1>
-<p>Find me in app/views/itineraries/new.html.erb</p>
+Create a New Itinerary
+
+<%= form_for @itinerary do |f| %>
+  <div>
+    <%= f.text_field :name, placeholder: "Name" %>
+  </div>
+  <div>
+    <%= f.text_field :desc, placeholder: "Description" %>
+  </div>
+  <div>
+    <%= f.text_field :duration, placeholder: "Duration" %>
+  </div>
+  <%= f.submit "Submit"%>
+<% end %>
