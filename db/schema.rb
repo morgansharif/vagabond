@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505015428) do
+ActiveRecord::Schema.define(version: 20160505201343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,12 @@ ActiveRecord::Schema.define(version: 20160505015428) do
     t.string   "img"
     t.string   "desc"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "itinerary_id"
   end
+
+  add_index "activities", ["itinerary_id"], name: "index_activities_on_itinerary_id", using: :btree
 
   create_table "cities", force: :cascade do |t|
     t.string   "name"
@@ -37,11 +40,15 @@ ActiveRecord::Schema.define(version: 20160505015428) do
   create_table "itineraries", force: :cascade do |t|
     t.string   "name"
     t.string   "desc"
-    t.string   "start_date"
-    t.string   "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "city_id"
+    t.integer  "user_id"
+    t.integer  "duration"
   end
+
+  add_index "itineraries", ["city_id"], name: "index_itineraries_on_city_id", using: :btree
+  add_index "itineraries", ["user_id"], name: "index_itineraries_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -54,4 +61,7 @@ ActiveRecord::Schema.define(version: 20160505015428) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "activities", "itineraries"
+  add_foreign_key "itineraries", "cities"
+  add_foreign_key "itineraries", "users"
 end
