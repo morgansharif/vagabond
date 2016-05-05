@@ -42,9 +42,15 @@
                 Account
               <span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><%= link_to "Log In", "/REPLACE_WITH_login_path" %></li>
+              <%if current_user%>
+              <li><%= link_to "Profile", user_path(current_user) %></li>
               <li role="separator" class="divider"></li>
-                <li><%= link_to "Create Account", "/REPLACE_WITH_new_user_path" %></li>
+              <li><%= link_to "Logout", logout_path %></li>
+              <%else%>
+                <li><%= link_to "Log In", login_path %></li>
+                <li role="separator" class="divider"></li>
+                <li><%= link_to "Create Account", new_user_path %></li>
+              <% end %>
             </ul>
           </li>
         </ul>
