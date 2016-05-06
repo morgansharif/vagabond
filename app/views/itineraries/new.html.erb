@@ -1,0 +1,21 @@
+Create a New Itinerary
+
+<form>
+  <%= form_for @itinerary do |f| %>
+    <div class="form-control">
+      <%= f.text_field :name, placeholder: "Name" %>
+    </div>
+    <div>
+      <%= f.text_field :desc, placeholder: "Description" %>
+    </div>
+    <div>
+      <%= f.text_field :duration, placeholder: "Duration" %>
+    </div>
+    <div>
+      <select name="itinerary[city_id]">
+      <%= options_from_collection_for_select(City.all, :id, :name) %>
+    </select>
+    </div>
+    <%= f.submit "Submit"%>
+  <% end %>
+</form>
