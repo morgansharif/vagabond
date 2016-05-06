@@ -12,6 +12,14 @@
   .jumbotron .container {
     height: 450px;
   }
+
+  img {
+    margin-bottom: 30px;
+  }
+
+  section {
+    margin-top: 50px;
+  }
 }
 
 #user_show {
@@ -42,5 +50,16 @@
     max-height:70px;
     // max-width: 70px;
   }
+}
 
+#city_show {
+  .jumbotron {
+    // background-image: url(/images/background1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+  }
+  .jumbotron .container {
+    height: 450px;
+  }
 }
