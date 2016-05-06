@@ -2,7 +2,7 @@
   <!--User Header-->
   <div class="jumbotron">
     <div class="container">
-      <h1>Welcome, [User]</h1>
+      <h1>Welcome, <%= @user.first_name %></h1>
     </div>
   </div>
   <!--end User Header-->
@@ -25,16 +25,18 @@
     </div>
     <div class="col-md-8">
       <!--********LOOP THROUGH USER ITINS****************-->
-      <div id="itin_name" class="row">
-        <h2>[USER ITIN NAME] (duration)<h2>
-      </div>
-      <div id="itin_desc" class="row limit">
-        <h4>
-          [USER ITIN DESC]
-          This is a description of the itinerary.  is simply dummy text of the
-          printing and typesetting ...
-        </h4>
-      </div>
+      <% @user.itineraries.each do |itinerary| %>
+        <div id="itin_name" class="row">
+          <h2><%= itinerary.name %>, </h2><p>(<%= itinerary.duration %> days)</p>
+        </div>
+        <div id="itin_desc" class="row limit">
+          <h4>
+            <%= itinerary.desc %>
+            This is a description of the itinerary.  is simply dummy text of the
+            printing and typesetting ...
+          </h4>
+        </div>
+      <% end %>
       <!--*******LOOP THROUGH ACTIVITIES IN INTIN*******-->
       <div id="itin_act" class="row">
         <!-- <div class="col-md-12"> -->
