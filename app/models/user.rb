@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_secure_password
   before_destroy :delete_itineraries
 
-
+  #sexyAF -jc
   def delete_itineraries
     self.itineraries.delete_all
   end
