@@ -11,14 +11,8 @@ Create a New Itinerary
     <%= f.text_field :duration, placeholder: "Duration" %>
   </div>
   <div>
-    <select>
+    <select name="itinerary[city_id]">
     <%= options_from_collection_for_select(City.all, :id, :name) %>
-    <!-- <select name="city_id" id="city_id">
-      <option value="1">San Francisco</option>
-      <option value=2>Paris</option>
-      <option value=3>Miami</option>
-      <option value=4>Toronto</option>
-    </select> -->
   </select>
   </div>
   <%= f.submit "Submit"%>
