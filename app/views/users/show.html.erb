@@ -22,6 +22,7 @@
         Joined: <%= @user.created_at %>
       </p>
       <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
+      <%= link_to "Add Itinerary", new_itinerary_path, class: "btn btn-primary" %>
     </div>
     <div class="col-md-8">
       <!--********LOOP THROUGH USER ITINS****************-->
@@ -32,34 +33,19 @@
         <div id="itin_desc" class="row limit">
           <h4>
             <%= itinerary.desc %>
-            This is a description of the itinerary.  is simply dummy text of the
-            printing and typesetting ...
           </h4>
         </div>
+        <!--*******LOOP THROUGH ACTIVITIES IN INTIN*******-->
+        <div id="itin_act" class="row">
+          <% literary.activities.each do |activities| %>
+            <div class="col-md-3">
+              <%= image_tag activities.img, :class => "act_image" %>
+            </div>
+          <% end %>
+        </div>
       <% end %>
-      <!--*******LOOP THROUGH ACTIVITIES IN INTIN*******-->
-      <div id="itin_act" class="row">
-        <!-- <div class="col-md-12"> -->
-          <div class="col-md-2">
-            <!-- <%= image_tag @user.img, :class => "act_image" %> -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Golden_Gate_Bridge_0002.jpg">
-          </div>
-          <div class="col-md-2">
-            <!-- <%= image_tag @user.img, :class => "act_image" %> -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Golden_Gate_Bridge_0002.jpg">
-          </div>
-          <div class="col-md-2">
-            <!-- <%= image_tag @user.img, :class => "act_image" %> -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Golden_Gate_Bridge_0002.jpg">
-          </div>
-          <div class="col-md-2">
-            <!-- <%= image_tag @user.img, :class => "act_image" %> -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Golden_Gate_Bridge_0002.jpg">
-          </div>
-        <!-- </div> -->
-      </div>
-      <!--*******LOOP THROUGH ACTIVITIES IN INTIN*******-->
-      <!--********LOOP THROUGH USER ITINS****************-->
+      <!--*******CLOSE ACTIVITIES LOOP*******-->
+      <!--********CLOSE ITINERARY LOOP****************-->
     </div> <!--closes col-md-8-->
   </div> <!--closes container-->
 </div> <!--closes user_show-->
