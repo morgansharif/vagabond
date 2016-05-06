@@ -20,17 +20,6 @@
   section {
     margin-top: 50px;
   }
-  // .thumbnail {
-  //   position: relative;
-  //   // max-height: 250px;
-  //   // max-width: 100%;
-  //   overflow: hidden;
-  //
-  //   img {
-  //     width:500px;
-  //     height: 250px;
-  //   }
-  // }
 }
 
 #user_show {
@@ -69,5 +58,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     color: black;
+  }
+  .jumbotron .container {
+    height: 450px;
   }
 }
