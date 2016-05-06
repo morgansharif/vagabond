@@ -5,10 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-City.destroy_all
-User.destroy_all
-Itinerary.destroy_all
 Activity.destroy_all
+Itinerary.destroy_all
+User.destroy_all
+City.destroy_all
 
 
 City.create(name: 'San Francisco', country: 'United States', img: 'http://falafel.com/Content/falafel-con-2014/images/banner.jpg')
