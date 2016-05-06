@@ -2,8 +2,8 @@ class ItineraryActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
-    @user = current_user
-    redirect_to itinerary_path(@user)
+    @itinerary = Itinerary.find_by_id(params[:itinerary_id])
+    render :new
   end
 
   def create
@@ -32,7 +32,7 @@ class ItineraryActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name :desc :location :duration :img :itinerary_id)
+    params.require(:activity).permit(:name, :desc, :location, :duration, :img, :itinerary_id)
   end
 
 end
