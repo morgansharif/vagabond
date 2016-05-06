@@ -29,8 +29,18 @@
     // border: 1px solid red;
   }
 
-  #itin_desc.row.limit{
+  #itin_desc {
     max-height:75px;
     overflow: hidden;
   }
+
+  .act_image {
+    max-height:70px;
+  }
+
+  img {
+    max-height:70px;
+    // max-width: 70px;
+  }
+
 }

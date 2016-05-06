@@ -21,7 +21,7 @@
         <br>
         Joined: <%= @user.created_at %>
       </p>
-      <%= link_to "Edit", edit_user_path(@user) %>
+      <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
     </div>
     <div class="col-md-8">
       <!--********LOOP THROUGH USER ITINS****************-->
@@ -32,12 +32,31 @@
         <h4>
           [USER ITIN DESC]
           This is a description of the itinerary.  is simply dummy text of the
-          printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took a
-          galley of type and scrambled it to make a type specimen book. It has survived
-          not only five centuries.
+          printing and typesetting ...
         </h4>
       </div>
+      <!--*******LOOP THROUGH ACTIVITIES IN INTIN*******-->
+      <div id="itin_act" class="row">
+        <!-- <div class="col-md-12"> -->
+          <div class="col-md-2">
+            <!-- <%= image_tag @user.img, :class => "act_image" %> -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Golden_Gate_Bridge_0002.jpg">
+          </div>
+          <div class="col-md-2">
+            <!-- <%= image_tag @user.img, :class => "act_image" %> -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Golden_Gate_Bridge_0002.jpg">
+          </div>
+          <div class="col-md-2">
+            <!-- <%= image_tag @user.img, :class => "act_image" %> -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Golden_Gate_Bridge_0002.jpg">
+          </div>
+          <div class="col-md-2">
+            <!-- <%= image_tag @user.img, :class => "act_image" %> -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Golden_Gate_Bridge_0002.jpg">
+          </div>
+        <!-- </div> -->
+      </div>
+      <!--*******LOOP THROUGH ACTIVITIES IN INTIN*******-->
       <!--********LOOP THROUGH USER ITINS****************-->
     </div> <!--closes col-md-8-->
   </div> <!--closes container-->
