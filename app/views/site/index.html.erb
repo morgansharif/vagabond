@@ -1,8 +1,13 @@
 <div id="site_index">
   <div class="jumbotron">
     <div class="container">
-      <h1>Splash Hero Page</h1>
-      <p>Plan your trip with us!</p>
+      <% if current_user %>
+        <h1>Welcome, <%= "#{current_user.first_name}" %></h1>
+        <p>Where would you like to go?</p>
+      <% else %>
+        <h1>Splash Hero Page</h1>
+        <p>Plan your trip with us!</p>
+      <% end %>
     </div>
   </div>
 </div>

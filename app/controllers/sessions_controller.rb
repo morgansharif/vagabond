@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
      if @user
        login(@user)
        flash[:message] = "Welcome " + @user.first_name
-       redirect_to @user
+       redirect_to index_path
      else
        flash[:error] = "Wrong Password"
        redirect_to login_path
