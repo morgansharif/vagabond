@@ -21,7 +21,9 @@ class UsersController < ApplicationController
     redirect_to user_path
   end
 
-  def delete
+  def destroy
+    user = User.find(current_user.id)
+    user.destroy
   end
 
   def new
