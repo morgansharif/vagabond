@@ -1,56 +1,78 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  # root route
+  root 'site#index', as: :index
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  # user routes
+  get  'users/new', to: 'users#new', as: :new_user
+  post 'users', to: 'users#create'
+  get  'users/:id/edit', to: 'users#edit', as: :edit_user
+  patch'users/:id', to: 'users#update'
+  get  'users/:id', to: 'users#show', as: :user
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  # itin routes
+  # get  '/itineraries', to: 'itineraries#index', as: :itineraries
+  get  '/itineraries/new', to: 'itineraries#new', as: :new_itinerary
+  post '/itineraries', to: 'itineraries#create'
+  get  '/itineraries/:id/edit', to: 'itineraries#edit', as: :edit_itinerary
+  patch'/itineraries/:id', to: 'itineraries#update'
+  get  '/itineraries/:id', to: 'itineraries#show', as: :itinerary
+  delete '/itineraries/:id', to: 'itineraries#destroy'
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  get    '/users/:user_id/itineraries/:itinerary_id/activities', to: 'activities#index', as: :user_itinerary_activities
+  post   '/users/:user_id/itineraries/:itinerary_id/activities', to: 'activities#create'
+  get    '/users/:user_id/itineraries/:itinerary_id/activities/new', to: 'activities#new', as: :new_user_itinerary_activity
+  get    '/users/:user_id/itineraries/:itinerary_id/activities/:id/edit', to: 'activities#edit', as: :edit_user_itinerary_activity
+  get    '/users/:user_id/itineraries/:itinerary_id/activities/:id', to: 'activities#show', as: :user_itinerary_activity
+  patch  '/users/:user_id/itineraries/:itinerary_id/activities/:id', to: 'activities#update'
+  put    '/users/:user_id/itineraries/:itinerary_id/activities/:id', to: 'activities#update'
+  delete '/users/:user_id/itineraries/:itinerary_id/activities/:id', to: 'activities#destroy'
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  # # user_itinerary routes
+  # get    '/users/:id/itineraries', to: 'itineraries#index'  , as:   :user_itineraries
+  # post   '/users/:id/itineraries', to:  'itineraries#create'
+  # get    '/users/:id/itineraries/new', to: 'itineraries#new', as: :new_user_itinerary
+  # get    '/users/:id/itineraries/:id/edit', to: 'itineraries#edit', as: :edit_user_itinerary
+  # get    '/users/:id/itineraries/:id', to:'itineraries#show', as: :user_itinerary
+  # patch  '/users/:id/itineraries/:id', to: 'itineraries#update'
+  # put    '/users/:id/itineraries/:id', to:  'itineraries#update'
+  # delete '/users/:id/itineraries/:id',  to: 'itineraries#destroy'
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+  # city routes
+  get '/cities', to: 'cities#index', as: :cities
+  post '/cities', to: 'cities#create'
+  get '/cities/new', to: 'cities#new', as: :new_city
+  get '/cities/:id/edit', to: 'cities#edit', as: :edit_city
+  get '/cities/:id', to: 'cities#show', as: :city
+  patch '/cities/:id', to: 'cities#update'
+  put '/cities/:id', to: 'cities#update'
+  delete '/cities/:id', to: 'cities#destroy'
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
+ # # city_itinerary routes
+ # get    '/cities/:id/itineraries', to: 'itineraries#index'  , as: :city_itineraries
+ # post   '/cities/:id/itineraries', to:  'itineraries#create'
+ # get    '/cities/:id/itineraries/new', to: 'itineraries#new', as: :new_city_itinerary
+ # get    '/cities/:id/itineraries/:id/edit', to: 'itineraries#edit', as: :edit_city_itinerary
+ # get    '/cities/:id/itineraries/:id', to:'itineraries#show', as: :city_itinerary
+ # patch  '/cities/:id/itineraries/:id', to: 'itineraries#update'
+ # put    '/cities/:id/itineraries/:id', to:  'itineraries#update'
+ # delete '/cities/:id/itineraries/:id',  to: 'itineraries#destroy'
 
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
+# sessions routes
+get "/login", to: "sessions#new", as: :login
+post "/sessions", to: "sessions#create"
+get  "/logout", to: "sessions#destroy", as: :logout
 
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end
+
+# resources :users do
+#   resources :itineraries do
+#     resources :activities
+# end
+# end
+#
+#
+# resources :cities do
+# resources :itineraries do
+# end
+# end
