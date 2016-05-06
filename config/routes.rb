@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   root 'site#index', as: :index
 
   # user routes
-  get  'users/new', to: 'users#new', as: :new_user
-  post 'users', to: 'users#create'
-  get  'users/:id/edit', to: 'users#edit', as: :edit_user
-  patch'users/:id', to: 'users#update'
-  get  'users/:id', to: 'users#show', as: :user
+  get     'users/new', to: 'users#new', as: :new_user
+  post    'users', to: 'users#create'
+  get     'users/:id/edit', to: 'users#edit', as: :edit_user
+  patch   'users/:id', to: 'users#update'
+  get     'users/:id', to: 'users#show', as: :user
+  delete  'users/:id', to: 'users#destroy'
 
   # itin routes
   # get  '/itineraries', to: 'itineraries#index', as: :itineraries
@@ -47,6 +48,10 @@ Rails.application.routes.draw do
   patch '/cities/:id', to: 'cities#update'
   put '/cities/:id', to: 'cities#update'
   delete '/cities/:id', to: 'cities#destroy'
+
+  # activity routes
+  get '/activities/new', to: 'activities#new', as: :new_activity
+  get '/activities/:id', to: 'activities#show', as: :activity
 
  # # city_itinerary routes
  # get    '/cities/:id/itineraries', to: 'itineraries#index'  , as: :city_itineraries
