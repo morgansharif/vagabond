@@ -1,25 +1,51 @@
-Edit Itinerary
-
-<%= form_for @itinerary do |f| %>
-  <div>
-    <%= f.text_field :name, placeholder: "Name" %>
+<div class="container">
+<h2>Edit Itinerary</h2>
+  <div class="row">
+    <div class="col-xs-10">
+      <%= form_for(@itinerary, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :name %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_field :name, class: "form-control", placeholder: "Name", autofocus: true %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :description %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_area :desc, rows: 5, class: "form-control", placeholder: "Description" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :duration %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_field :duration, class: "form-control", placeholder: "Duration" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :city %>
+          </div>
+          <div class="col-sm-8">
+            <select name="itinerary[city_id]">
+              <%= options_from_collection_for_select(City.all, :id, :name) %>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :submit %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.submit "Submit", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div>
-    <%= f.text_field :desc, placeholder: "Description" %>
-  </div>
-  <div>
-    <%= f.text_field :duration, placeholder: "Duration" %>
-  </div>
-  <div>
-    <select>
-    <%= options_from_collection_for_select(City.all, :id, :name) %>
-    <!-- <select name="city_id" id="city_id">
-      <option value="1">San Francisco</option>
-      <option value=2>Paris</option>
-      <option value=3>Miami</option>
-      <option value=4>Toronto</option>
-    </select> -->
-  </select>
-  </div>
-  <%= f.submit "Submit"%>
-<% end %>
+</div>
