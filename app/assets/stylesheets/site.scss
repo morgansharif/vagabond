@@ -12,6 +12,16 @@
   .jumbotron .container {
     height: 450px;
   }
+  .thumbnail {
+    position: relative;
+    max-height: 250px;
+    // max-width: 100%;
+    overflow: hidden;
+
+    img {
+      height: 250px;
+    }
+  }
 }
 
 #user_show {
