@@ -44,6 +44,8 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
+    bootswatch-rails (3.3.5)
+      railties (>= 3.1)
     builder (3.2.2)
     byebug (8.2.5)
     coffee-rails (4.1.1)
@@ -152,6 +154,7 @@ DEPENDENCIES
   autoprefixer-rails
   bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.2.0)
+  bootswatch-rails
   byebug
   coffee-rails (~> 4.1.0)
   hirb

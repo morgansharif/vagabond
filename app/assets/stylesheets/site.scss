@@ -28,4 +28,9 @@
     height: 100px;
     // border: 1px solid red;
   }
+
+  #itin_desc.row.limit{
+    max-height:75px;
+    overflow: hidden;
+  }
 }

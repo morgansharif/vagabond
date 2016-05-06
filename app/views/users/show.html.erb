@@ -18,19 +18,27 @@
         Last Name: <%= @user.last_name %>
         <br>
         Current City: <%= @user.current_city %>
+        <br>
+        Joined: <%= @user.created_at %>
       </p>
       <%= link_to "Edit", edit_user_path(@user) %>
     </div>
     <div class="col-md-8">
-      <div class="row">
-        <h2>Intin.name (duration)<h2>
-          <h3>This is a description of the itinerary.  is simply dummy text of the
-            printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s, when an unknown printer took a
-            galley of type and scrambled it to make a type specimen book. It has survived
-            not only five centuries.
-          </h3>
+      <!--********LOOP THROUGH USER ITINS****************-->
+      <div id="itin_name" class="row">
+        <h2>[USER ITIN NAME] (duration)<h2>
       </div>
-    </div>
+      <div id="itin_desc" class="row limit">
+        <h4>
+          [USER ITIN DESC]
+          This is a description of the itinerary.  is simply dummy text of the
+          printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a
+          galley of type and scrambled it to make a type specimen book. It has survived
+          not only five centuries.
+        </h4>
+      </div>
+      <!--********LOOP THROUGH USER ITINS****************-->
+    </div> <!--closes col-md-8-->
   </div> <!--closes container-->
 </div> <!--closes user_show-->
