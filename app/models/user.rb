@@ -1,6 +1,12 @@
 class User < ActiveRecord::Base
-  has_many :itineraries, :dependent => :delete_all
+  has_many :itineraries
   has_secure_password
+  before_destroy :delete_itineraries
+
+
+  def delete_itineraries
+    self.itineraries.delete_all
+  end
 
   def self.confirm(params)
     @user = User.find_by({email: params[:email]})
