@@ -40,10 +40,16 @@
             <%= f.label :submit %>
           </div>
           <div class="col-sm-8">
-            <%= f.submit "Submit", class: "btn btn-primary" %>
+            <%= f.submit "Edit Account", class: "btn btn-primary" %>
           </div>
         </div>
       <% end %>
+      <hr />
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <%= link_to "Delete Account", user_path, class: "btn btn-danger", method: :delete %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
