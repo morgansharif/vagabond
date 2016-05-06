@@ -18,25 +18,31 @@
   <!--cities section-->
   <section id="cities_index">
     <div class="container">
+      <div class="row text-center">
+        <h1>Cities</h2>
+      </div>
       <div class="row">
         <div class="col-lg-6 col-sm-6 col-xs-12">
-          <a href="#" class="thumbnail">
+          <a href="#">
+              <%= link_to city_path(1) do %>
+                <%= image_tag ("http://healthpsychology.ucsf.edu/sites/healthpsychology.ucsf.edu/files/wysiwyg/GGBridge%20at%20dusk.jpg"), :class => "img-responsive" %>
+               <!-- <img src="http://healthpsychology.ucsf.edu/sites/healthpsychology.ucsf.edu/files/wysiwyg/GGBridge%20at%20dusk.jpg" class="img-responsive"> -->
+              <% end %>
+          </a>
+        </div>
+        <div class="col-lg-6 col-sm-6 col-xs-12">
+          <a href="#">
                <img src="http://healthpsychology.ucsf.edu/sites/healthpsychology.ucsf.edu/files/wysiwyg/GGBridge%20at%20dusk.jpg" class="img-responsive">
           </a>
         </div>
         <div class="col-lg-6 col-sm-6 col-xs-12">
-          <a href="#" class="thumbnail">
-               <img src="http://1010uk.a.cdnify.io/sites/default/files/eiffel-tower-cameron-wears-BY-NC-banner.jpg" class="img-responsive">
+          <a href="#">
+               <img src="http://healthpsychology.ucsf.edu/sites/healthpsychology.ucsf.edu/files/wysiwyg/GGBridge%20at%20dusk.jpg" class="img-responsive">
           </a>
         </div>
         <div class="col-lg-6 col-sm-6 col-xs-12">
-          <a href="#" class="thumbnail">
-               <img src="http://placehold.it/500x250" class="img-responsive">
-          </a>
-        </div>
-        <div class="col-lg-6 col-sm-6 col-xs-12">
-          <a href="#" class="thumbnail">
-               <img src="http://placehold.it/500x250" class="img-responsive">
+          <a href="#">
+               <img src="http://healthpsychology.ucsf.edu/sites/healthpsychology.ucsf.edu/files/wysiwyg/GGBridge%20at%20dusk.jpg" class="img-responsive">
           </a>
         </div>
       </div>

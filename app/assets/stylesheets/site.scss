@@ -12,16 +12,25 @@
   .jumbotron .container {
     height: 450px;
   }
-  .thumbnail {
-    position: relative;
-    max-height: 250px;
-    // max-width: 100%;
-    overflow: hidden;
 
-    img {
-      height: 250px;
-    }
+  img {
+    margin-bottom: 30px;
   }
+
+  section {
+    margin-top: 50px;
+  }
+  // .thumbnail {
+  //   position: relative;
+  //   // max-height: 250px;
+  //   // max-width: 100%;
+  //   overflow: hidden;
+  //
+  //   img {
+  //     width:500px;
+  //     height: 250px;
+  //   }
+  // }
 }
 
 #user_show {
@@ -52,5 +61,13 @@
     max-height:70px;
     // max-width: 70px;
   }
+}
 
+#city_show {
+  .jumbotron {
+    // background-image: url(/images/background1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+  }
 }
