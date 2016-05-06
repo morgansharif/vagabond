@@ -1,8 +1,36 @@
-PROFILE SHOW PAGE
+<div id="user_show">
+  <!--User Header-->
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome, [User]</h1>
+    </div>
+  </div>
+  <!--end User Header-->
 
-<%= @user.first_name %>
-<%= @user.last_name %>
-<%= @user.img %>
-<%= @user.current_city %>
-
-<%= link_to "Edit", edit_user_path(@user) %>
+  <div class="container">
+    <div class="col-md-4">
+      <h2>Profile</h2>
+      <p>
+        <%= image_tag @user.img, :class => "profile_image" %>
+        <br>
+        First Name: <%= @user.first_name %>
+        <br>
+        Last Name: <%= @user.last_name %>
+        <br>
+        Current City: <%= @user.current_city %>
+      </p>
+      <%= link_to "Edit", edit_user_path(@user) %>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <h2>Intin.name (duration)<h2>
+          <h3>This is a description of the itinerary.  is simply dummy text of the
+            printing and typesetting industry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s, when an unknown printer took a
+            galley of type and scrambled it to make a type specimen book. It has survived
+            not only five centuries.
+          </h3>
+      </div>
+    </div>
+  </div> <!--closes container-->
+</div> <!--closes user_show-->
