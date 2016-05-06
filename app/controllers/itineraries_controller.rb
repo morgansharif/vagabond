@@ -34,7 +34,7 @@ class ItinerariesController < ApplicationController
   end
 
   def show
-    @itinerary = Itinerary.find_by(params[:id])
+    @itinerary = Itinerary.find_by_id(params[:id])
     @itinerary.user_id = current_user.id
     render :show
   end
