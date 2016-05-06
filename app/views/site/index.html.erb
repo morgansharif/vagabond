@@ -1,13 +1,52 @@
 <div id="site_index">
-  <div class="jumbotron">
-    <div class="container">
-      <% if current_user %>
-        <h1>Welcome, <%= "#{current_user.first_name}" %></h1>
-        <p>Where would you like to go?</p>
-      <% else %>
-        <h1>Splash Hero Page</h1>
-        <p>Plan your trip with us!</p>
-      <% end %>
+  <!--header-->
+  <header>
+    <div class="jumbotron">
+      <div class="container">
+        <% if current_user %>
+          <h1>Welcome, <%= "#{current_user.first_name}" %></h1>
+          <p>Where would you like to go?</p>
+        <% else %>
+          <h1>Splash Hero Page</h1>
+          <p>Plan your trip with us!</p>
+        <% end %>
+      </div>
     </div>
-  </div>
-</div>
+  </header>
+  <!--end of header-->
+
+  <!--cities section-->
+  <section id="cities_index">
+    <div class="container">
+      <div class="row text-center">
+        <h1>Cities</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-sm-6 col-xs-12">
+          <a href="#">
+              <%= link_to city_path(1) do %>
+                <%= image_tag ("http://healthpsychology.ucsf.edu/sites/healthpsychology.ucsf.edu/files/wysiwyg/GGBridge%20at%20dusk.jpg"), :class => "img-responsive" %>
+               <!-- <img src="http://healthpsychology.ucsf.edu/sites/healthpsychology.ucsf.edu/files/wysiwyg/GGBridge%20at%20dusk.jpg" class="img-responsive"> -->
+              <% end %>
+          </a>
+        </div>
+        <div class="col-lg-6 col-sm-6 col-xs-12">
+          <a href="#">
+               <img src="http://healthpsychology.ucsf.edu/sites/healthpsychology.ucsf.edu/files/wysiwyg/GGBridge%20at%20dusk.jpg" class="img-responsive">
+          </a>
+        </div>
+        <div class="col-lg-6 col-sm-6 col-xs-12">
+          <a href="#">
+               <img src="http://healthpsychology.ucsf.edu/sites/healthpsychology.ucsf.edu/files/wysiwyg/GGBridge%20at%20dusk.jpg" class="img-responsive">
+          </a>
+        </div>
+        <div class="col-lg-6 col-sm-6 col-xs-12">
+          <a href="#">
+               <img src="http://healthpsychology.ucsf.edu/sites/healthpsychology.ucsf.edu/files/wysiwyg/GGBridge%20at%20dusk.jpg" class="img-responsive">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--end of cities section-->
+</div> <!--closes site_index-->
