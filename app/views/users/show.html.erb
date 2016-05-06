@@ -28,7 +28,7 @@
       <!--********LOOP THROUGH USER ITINS****************-->
       <% @user.itineraries.each do |itinerary| %>
         <div id="itin_name" class="row">
-          <h2><%= link_to "#{itinerary.name}", itinerary_path(@user) %>, </h2><p>(<%= itinerary.duration %> days)</p>
+          <h2><%= link_to "#{itinerary.name}", itinerary_path(itinerary.id) %>, </h2><p>(<%= itinerary.duration %> days)</p>
         </div>
         <div id="itin_desc" class="row limit">
           <h4>
