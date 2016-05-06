@@ -1,0 +1,46 @@
+// Place all the styles related to the site controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#site_index {
+  .jumbotron {
+    // background-image: url(/images/background1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: red;
+  }
+  .jumbotron .container {
+    height: 450px;
+  }
+}
+
+#user_show {
+  .jumbotron {
+    // background-image: url(/images/background1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+  }
+  .jumbotron .container {
+    height: 200px;
+  }
+  .profile_image {
+    height: 100px;
+    // border: 1px solid red;
+  }
+
+  #itin_desc {
+    max-height:75px;
+    overflow: hidden;
+  }
+
+  .act_image {
+    max-height:70px;
+  }
+
+  img {
+    max-height:70px;
+    // max-width: 70px;
+  }
+
+}
