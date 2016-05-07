@@ -59,11 +59,13 @@
   </nav>
 
   <!-- Error flash notice -->
-  <% flash.each do |name, msg| %>
-    <li>
-      <a><%= name.capitalize %>: <%= msg %></a>
-    </li>
-  <% end %>
+  <div id="flash_error">
+    <% flash.each do |name, msg| %>
+      <li>
+        <a><%= name.capitalize %>: <%= msg %></a>
+      </li>
+    <% end %>
+  </div>
 </div>
   <!-- END NAVBAR -->
 

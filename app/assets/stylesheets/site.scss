@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#flash_error {
+  position: absolute;
+  margin-top: -40px;
+  margin-left: 50px;
+}
+
 #mainNav {
   /*navbar a tag properties*/
   a {
@@ -22,6 +28,7 @@
       color: green;
       height: 50px;
   }
+
   /*navbar vagabond text changes color on hover*/
   .navbar-default .navbar-header .navbar-brand:hover,
   .navbar-default .navbar-header .navbar-brand:focus {
@@ -133,6 +140,10 @@ header .header-content .header-content-inner p {
     margin-top: 48px;
   }
 
+  .profile_image {
+    height: 100px;
+  }
+
   .container img {
     max-height:175px;
     margin-top: -100px;
@@ -142,11 +153,8 @@ header .header-content .header-content-inner p {
     max-height:75px;
     overflow: hidden;
   }
-
-  .act_image {
-    max-height:70px;
-  }
 } /*closes user_show*/
+
 
 #city_show {
   .jumbotron {
@@ -159,3 +167,9 @@ header .header-content .header-content-inner p {
     height: 450px;
   }
 }
+
+#forms {
+  .container {
+    margin-top: 150px;
+  }
+}/*closes forms*/
