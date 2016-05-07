@@ -11,24 +11,26 @@
   <section id="city_itineraries">
     <div class="container">
         <div id="profile" class="row text-center">
-          <h1>CITY</h1>
+          <h1>Itineraries</h1>
         </div>
-        <div id="itin">
+      <div class="row itin">
+        <% @city.itineraries.all.each do |itinerary| %>
           <div class="col-md-4">
             <h2>
-              insert profile image
+              <%= image_tag User.find_by_id(itinerary.user_id).img %>
             </h2>
             <p>
               maybe put itin date created_at?
             </p>
           </div>
-          <div class="col-md-8">
-            <!--**********LOOP THROUGH all the itineraries-->
-            <h2>itinerary Name</h2>,duration
-            <p>itin description</p>
+        <div class="col-md-8">
           <!--**********LOOP THROUGH all the itineraries-->
-          </div>
+          <h3><b><%= itinerary.name %></b> <em>(<%= pluralize(itinerary.duration, "day") %>)</em></h3>
+          <p>itin description</p>
+        <!--**********LOOP THROUGH all the itineraries-->
         </div>
+      </div>
+        <% end %>
     </div> <!--closes container-->
   </section> <!--closes section-->
 
