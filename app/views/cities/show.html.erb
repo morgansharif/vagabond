@@ -13,7 +13,7 @@
       <div id="profile" class="row text-center">
         <h1><%= @city.name %> Itineraries</h1>
       </div>
-      <%= link_to "Add Itinerary", new_itinerary_path, class: "btn btn-primary" %>
+      <%= link_to "Add Itinerary", new_itinerary_path(@itinerary), class: "btn btn-primary" %>
       <!--**********LOOP THROUGH all the itineraries-->
       <% @city.itineraries.all.each do |itinerary| %>
       <div class="row itin">
