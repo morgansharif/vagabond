@@ -132,20 +132,10 @@ header .header-content .header-content-inner p {
     height: 350px;
     margin-top: 48px;
   }
-  // .jumbotron {
 
-  //   background-size: cover;
-  //   background-repeat: no-repeat;
-  //   background-position: bottom;
-  // }
-  // .jumbotron .container h1 {
-  //   color: black;
-  // }
-
-
-  .profile_image {
-    height: 100px;
-    // border: 1px solid red;
+  .container img {
+    max-height:175px;
+    margin-top: -100px;
   }
 
   #itin_desc {
@@ -156,12 +146,7 @@ header .header-content .header-content-inner p {
   .act_image {
     max-height:70px;
   }
-
-  img {
-    max-height:70px;
-    // max-width: 70px;
-  }
-}
+} /*closes user_show*/
 
 #city_show {
   .jumbotron {
