@@ -1,9 +1,8 @@
 class ItineraryActivitiesController < ApplicationController
 
   def new
-    @itinerary = Itinerary.find_by_id(params[:itinerary_id])
     @activity = Activity.new
-    @activity.itinerary_id = @itinerary.id
+    @itinerary = Itinerary.find_by_id(params[:itinerary_id])
   end
 
   def create
@@ -18,16 +17,25 @@ class ItineraryActivitiesController < ApplicationController
   end
 
   def edit
-    @activity = Activity.find_by_id(params[:id])
-    render :edit
+    @activity = Activity.find_by_id(params[:activity_id])
+    @itinerary = Itinerary.find_by_id(params[:itinerary_id])
+    @activity.itinerary_id = @itinerary.id
   end
 
   def update
-    @activity = Activity.find_by_id(params[:id])
-
+    @activity = Activity.find_by_id(params[:activity_id])
+    if @activity.update(activity_params)
+      redirect_to itinerary_path(params[:itinerary_id])
+    else
+      redirect_to new_itinerary_activity(params[:itinerary_id])
+    end
   end
 
   def destroy
+    itinerary = Itinerary.find_by_id(params[:itinerary_id])
+    if  itinerary.activities.find_by_id(params[:activity_id]).destroy
+      redirect_to itinerary_path(params[:itinerary_id])
+    end
   end
 
   private
