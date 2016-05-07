@@ -23,12 +23,12 @@
           <p><%= User.find_by_id(itinerary.user_id).first_name %> <%= User.find_by_id(itinerary.user_id).last_name %></p>
         </div>
         <div class="col-md-8">
-          <h3><b><%= itinerary.name %></b> <em>(<%= pluralize(itinerary.duration, "day") %>)</em></h3>
+          <h3><b><%= link_to itinerary.name, itinerary_path(itinerary.id) %></b> <em>(<%= pluralize(itinerary.duration, "day") %>)</em></h3>
           <h5><b>Description:</b> <%= itinerary.desc %></h5>
           <h5><b>Activities:</b></h5>
           <% itinerary.activities.each do |activities| %>
           <ul>
-            <li> <%= activities.name %> </li>
+            <li><%= activities.name %> <em>(<%= pluralize(activities.duration, "hour") %>)</em></li>
           </ul>
           <% end %>
         </div>
