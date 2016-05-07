@@ -14,8 +14,6 @@ class User < ActiveRecord::Base
       message: "not a valide format"
     }, on: :create
 
-  validates :password, confirmation: true, on: :create
-  validates :password_confirmation, presence: true, on: :create
 
   #sexyAF -jc
   def delete_itineraries
