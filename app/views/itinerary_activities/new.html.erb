@@ -2,7 +2,8 @@
 <h2>Create a New Activity</h2>
   <div class="row">
     <div class="col-xs-10">
-      <%= form_for(@activity, url: '/itineraries/:itinerary_id/activities/new', method: :'get', :html => {class: "form-horizontal", role: "form"}) do |f| %>
+      <%= form_for(@activity, url: "/itineraries/#{params[:itinerary_id]}/activities", :html => {class: "form-horizontal", role: "form"}) do |f| %>
+        <%= f.hidden_field :itinerary_id, :value => :itinerary_id %>
         <div class="form-group">
           <div class="control-label col-sm-2">
             <%= f.label :name %>
