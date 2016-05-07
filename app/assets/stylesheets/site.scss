@@ -13,7 +13,7 @@
       color: green;
       height: 50px;
   }
-  
+
   /*when you click on Account, turns red*/
   .navbar-default .nav > li>a:hover,
   .navbar-default .nav>li>a:focus:hover {
@@ -153,3 +153,22 @@ header .header-content .header-content-inner p {
     height: 450px;
   }
 }
+
+#forms {
+  .container {
+    margin-top: 100px;
+  }
+  // .container h2 {
+  //   text-align: center;
+  // }
+  // .center {
+  //   text-align: center;
+  // }
+  // .center form {
+  //    display:inline-block;
+  // }
+
+
+  #session_login{
+  }
+}/*closes forms*/
