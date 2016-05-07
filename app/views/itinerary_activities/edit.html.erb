@@ -2,7 +2,7 @@
 <h2>Edit Activity</h2>
   <div class="row">
     <div class="col-xs-10">
-      <%= form_for(@activity, url: "/itineraries/#{params[:itinerary_id]}/activities", :html => {class: "form-horizontal", role: "form"}) do |f| %>
+      <%= form_for(@activity, url: "/itineraries/#{params[:itinerary_id]}/activities/#{params[:activity_id]}", method: :patch, :html => {class: "form-horizontal", role: "form"}) do |f| %>
         <%= f.hidden_field :itinerary_id, :value => :itinerary_id %>
         <div class="form-group">
           <div class="control-label col-sm-2">
