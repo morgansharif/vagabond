@@ -1,9 +1,8 @@
 class ItineraryActivitiesController < ApplicationController
 
   def new
-    @activity = Activity.new(activity_params)
+    @activity = Activity.new
     @itinerary = Itinerary.find_by_id(params[:itinerary_id])
-    @activity.itinerary_id = @itinerary.id
   end
 
   def create
