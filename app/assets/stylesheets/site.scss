@@ -3,9 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #mainNav {
+  /*navbar a tag properties*/
+  a {
+    color: orange;
+  }
 
+  /*navbar drop down*/
+  a:hover,
+  a:focus {
+    color: blue;
+  }
 
-  /*vagabond home page*/
+  /*navbar vagabond text properties*/
   .navbar-default .navbar-header .navbar-brand {
       text-transform: uppercase;
       font-family: 'Montserrat','Helvetica Neue',Helvetica, Arial, sans-serif;
@@ -13,15 +22,20 @@
       color: green;
       height: 50px;
   }
-  
-  /*when you click on Account, turns red*/
+  /*navbar vagabond text changes color on hover*/
+  .navbar-default .navbar-header .navbar-brand:hover,
+  .navbar-default .navbar-header .navbar-brand:focus {
+    color: yellow;
+  }
+
+  /*navbar li changes color on hover*/
   .navbar-default .nav > li>a:hover,
   .navbar-default .nav>li>a:focus:hover {
-      color: red;
+      color: blue;
   }
-}
+} /*closes navbar*/
 
-#site_index {
+/*global header*/
   section {
       padding-top: 25px;
   }
@@ -40,7 +54,7 @@
     background-position: center;
     background-size: cover;
     height: 575px;
-    margin-top: 50px;
+    margin-top: 48px;
   }
 
 header .header-content {
@@ -100,31 +114,28 @@ header .header-content .header-content-inner p {
         font-size: 45px;
         font-weight: 30;
     }
-}
+  }/*closes @media*/
+/*end of global*/
+
+#site_index {
   #city_gallery {
     margin-top: 20px;
   }
   img {
     margin-bottom: 50px;
   }
-
-
-
 }/*closes #site_index*/
 
 #user_show {
-  .jumbotron {
-    // background-image: url(/images/background1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: black;
+  header {
+    background-image: url(user_background.jpg);
+    height: 350px;
+    margin-top: 48px;
   }
-  .jumbotron .container {
-    height: 200px;
-  }
-  .profile_image {
-    height: 100px;
-    // border: 1px solid red;
+
+  .container img {
+    max-height:175px;
+    margin-top: -100px;
   }
 
   #itin_desc {
@@ -135,12 +146,7 @@ header .header-content .header-content-inner p {
   .act_image {
     max-height:70px;
   }
-
-  img {
-    max-height:70px;
-    // max-width: 70px;
-  }
-}
+} /*closes user_show*/
 
 #city_show {
   .jumbotron {
