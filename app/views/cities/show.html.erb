@@ -10,27 +10,31 @@
 
   <section id="city_itineraries">
     <div class="container">
-        <div id="profile" class="row text-center">
-          <h1>Itineraries</h1>
-        </div>
+      <div id="profile" class="row text-center">
+        <h1>Itineraries</h1>
+      </div>
+      <!--**********LOOP THROUGH all the itineraries-->
+      <% @city.itineraries.all.each do |itinerary| %>
       <div class="row itin">
-        <% @city.itineraries.all.each do |itinerary| %>
-          <div class="col-md-4">
-            <h2>
-              <%= image_tag User.find_by_id(itinerary.user_id).img %>
-            </h2>
-            <p>
-              maybe put itin date created_at?
-            </p>
-          </div>
+        <div class="col-md-4">
+          <h2><%= image_tag "/assets/userprofile.png", class: "userprofile" %></h2>
+            <!-- !!__Keep__!! below tag for dynamic profile images from seed -->
+            <!-- <%= image_tag User.find_by_id(itinerary.user_id).img %> -->
+          <p><%= User.find_by_id(itinerary.user_id).first_name %> <%= User.find_by_id(itinerary.user_id).last_name %></p>
+        </div>
         <div class="col-md-8">
-          <!--**********LOOP THROUGH all the itineraries-->
           <h3><b><%= itinerary.name %></b> <em>(<%= pluralize(itinerary.duration, "day") %>)</em></h3>
-          <p>itin description</p>
-        <!--**********LOOP THROUGH all the itineraries-->
+          <h5><b>Description:</b> <%= itinerary.desc %></h5>
+          <h5><b>Activities:</b></h5>
+          <% itinerary.activities.each do |activities| %>
+          <ul>
+            <li> <%= activities.name %> </li>
+          </ul>
+          <% end %>
         </div>
       </div>
-        <% end %>
+      <% end %>
+      <!--**********LOOP THROUGH all the itineraries-->
     </div> <!--closes container-->
   </section> <!--closes section-->
 
