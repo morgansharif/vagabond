@@ -11,7 +11,7 @@
   <section id="city_itineraries">
     <div class="container">
       <div id="profile" class="row text-center">
-        <h1>Itineraries</h1>
+        <h1><%= @city.name %> Itineraries</h1>
       </div>
       <!--**********LOOP THROUGH all the itineraries-->
       <% @city.itineraries.all.each do |itinerary| %>
