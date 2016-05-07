@@ -1,18 +1,19 @@
 class ItineraryActivitiesController < ApplicationController
 
   def new
-    @activity = Activity.new
     @itinerary = Itinerary.find_by_id(params[:itinerary_id])
-    render :new
+    @activity = Activity.new
+    @activity.itinerary_id = @itinerary.id
   end
 
   def create
-    @activity = Activity.new(activity_params)
-    @activity.itinerary_id = current_user.id
+    itinerary = Itinerary.find_by_id(params[:itinerary_id])
+    @activity = Activity.create(activity_params)
+    itinerary.activities << (@activity)
     if @activity.save
-    redirect_to itinerary_path(@activity.itinerary_id)
+      redirect_to itinerary_path(params[:itinerary_id])
     else
-      redirect_to new_activity_path
+      redirect_to new_itinerary_activity(params[:itinerary_id])
     end
   end
 
@@ -32,7 +33,7 @@ class ItineraryActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :desc, :location, :duration, :img, :itinerary_id)
+    params.require(:activity).permit(:name, :desc, :location, :duration, :img)
   end
 
 end
