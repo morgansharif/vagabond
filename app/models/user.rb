@@ -5,17 +5,17 @@ class User < ActiveRecord::Base
 
   validates :first_name, :last_name, :email,
   presence: true,
-  length: {maximum: 255}
+  length: {maximum: 255}, on: :create
 
   validates :email,
     uniqueness: true,
     format: {
       with: /(.+)@(.+)/,
       message: "not a valide format"
-    }
+    }, on: :create
 
-  validates :password, confirmation: true
-  validates :password_confirmation, presence: true
+  validates :password, confirmation: true, on: :create
+  validates :password_confirmation, presence: true, on: :create
 
   #sexyAF -jc
   def delete_itineraries

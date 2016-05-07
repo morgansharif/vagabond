@@ -4,7 +4,6 @@ class Itinerary < ActiveRecord::Base
   has_many :activities
   before_destroy :delete_activities
 
-
   validates :name, :desc, :duration,
     presence: true
 
