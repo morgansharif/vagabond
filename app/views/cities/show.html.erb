@@ -13,6 +13,7 @@
       <div id="profile" class="row text-center">
         <h1><%= @city.name %> Itineraries</h1>
       </div>
+      <%= link_to "Add Itinerary", new_itinerary_path, class: "btn btn-primary" %>
       <!--**********LOOP THROUGH all the itineraries-->
       <% @city.itineraries.all.each do |itinerary| %>
       <div class="row itin">
@@ -23,7 +24,16 @@
           <p><%= User.find_by_id(itinerary.user_id).first_name %> <%= User.find_by_id(itinerary.user_id).last_name %></p>
         </div>
         <div class="col-md-8">
-          <h3><b><%= link_to itinerary.name, itinerary_path(itinerary.id) %></b> <em>(<%= pluralize(itinerary.duration, "day") %>)</em></h3>
+          <h4>
+            <b><%= link_to itinerary.name, itinerary_path(itinerary.id) %></b>
+            <em>(<%= pluralize(itinerary.duration, "day") %>)</em>
+            <%= link_to edit_itinerary_path do %>
+              <span class="glyphicon glyphicon-edit"> </span>
+            <% end %>
+            <%= link_to destroy_itinerary_path, method: :delete do %>
+              <span class="glyphicon glyphicon-trash"> </span>
+            <% end %>
+          </h4>
           <h5><b>Description:</b> <%= itinerary.desc %></h5>
           <h5><b>Activities:</b></h5>
           <% itinerary.activities.each do |activities| %>
