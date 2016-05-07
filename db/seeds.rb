@@ -32,11 +32,11 @@ itinerary_list = [
 ]
 
 activities_list = [
-  {name: 'Gochujang Heirloom', desc: 'Viral messenger bag swag, mixtape pitchfork drinking vinegar disrupt tote bag ethical VHS.', location: 'Somewhere', duration: 3, img: '#'},
-  {name: 'Single-origin coffee', desc: 'Truffaut godard lo-fi, brooklyn hashtag gastropub neutra put a bird on it iPhone DIY tattooed pop-up tumblr semiotics.', location: 'VHS chillwave', duration: 1, img: '#'},
-  {name: 'Tousled mustache', desc: 'Pinterest marfa taxidermy direct trade, whatever neutra disrupt keytar freegan twee selfies.', location: 'Place', duration: 2, img: '#'},
-  {name: 'Aesthetic wolf ', desc: 'Aesthetic wolf kitsch twee photo booth, marfa VHS drinking vinegar sartorial.', location: 'Place', duration: 2, img: '#'},
-  {name: 'Vegan post-ironic vice', desc: 'Sartorial cardigan cronut, meh kinfolk retro 8-bit viral franzen 90\'s truffaut schlitz cold-pressed man bun forage.', location: 'Place', duration: 2, img: '#'}
+  {name: 'Gochujang Heirloom', desc: 'Viral messenger bag swag, mixtape pitchfork drinking vinegar disrupt tote bag ethical VHS.', location: 'Somewhere', duration: 3, img: 'http://www.blackcreekhunting.com/Images/deer200.jpg'},
+  {name: 'Single-origin coffee', desc: 'Truffaut godard lo-fi, brooklyn hashtag gastropub neutra put a bird on it iPhone DIY tattooed pop-up tumblr semiotics.', location: 'VHS chillwave', duration: 1, img: 'https://qph.is.quoracdn.net/main-thumb-t-1858-200-CZQybOyeYTTRiQIO09I14qGGIhExMqgO.jpeg'},
+  {name: 'Tousled mustache', desc: 'Pinterest marfa taxidermy direct trade, whatever neutra disrupt keytar freegan twee selfies.', location: 'Place', duration: 2, img: 'http://religionquestions.org/wp-content/uploads/2015/11/concert_crowd-wallpaper-1280x768-200x200.jpg'},
+  {name: 'Aesthetic wolf ', desc: 'Aesthetic wolf kitsch twee photo booth, marfa VHS drinking vinegar sartorial.', location: 'Place', duration: 2, img: 'http://sowefwf.com/wp-content/uploads/2014/02/wine.png'},
+  {name: 'Vegan post-ironic vice', desc: 'Sartorial cardigan cronut, meh kinfolk retro 8-bit viral franzen 90\'s truffaut schlitz cold-pressed man bun forage.', location: 'Place', duration: 2, img: 'http://www.central-flachau.com/typo3temp/pics/8158750a60.jpg'}
 ]
 
 #
