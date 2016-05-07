@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get  '/itineraries/:id/edit', to: 'itineraries#edit', as: :edit_itinerary
   patch'/itineraries/:id', to: 'itineraries#update'
   get  '/itineraries/:id', to: 'itineraries#show', as: :itinerary
-  delete '/itineraries/:id', to: 'itineraries#destroy'
+  delete '/itineraries/:id', to: 'itineraries#destroy', as: :destroy_itinerary
 
   get    '/users/:user_id/itineraries/:itinerary_id/activities', to: 'activities#index', as: :user_itinerary_activities
   post   '/users/:user_id/itineraries/:itinerary_id/activities', to: 'activities#create'
