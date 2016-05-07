@@ -27,7 +27,7 @@
           <h4>
             <b><%= link_to itinerary.name, itinerary_path(itinerary.id) %></b>
             <em>(<%= pluralize(itinerary.duration, "day") %>)</em>
-            <%= link_to edit_itinerary_path do %>
+            <%= link_to(edit_itinerary_path(itinerary.id)) do %>
               <span class="glyphicon glyphicon-edit"> </span>
             <% end %>
             <%= link_to destroy_itinerary_path, method: :delete do %>
