@@ -7,8 +7,9 @@
         <div class="col-sm-2"><%= image_tag activity.img %></div>
           <div class="col-sm-10">
             <b><%= activity.name %></b> <em>(<%= pluralize(activity.duration, "hour") %>)</em>
-              <span class="glyphicon glyphicon-edit"></span>
-              <span class="glyphicon glyphicon-remove"></span><br>
+              <%= link_to(edit_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id})) do %>
+                <span class="glyphicon glyphicon-edit"> </span>
+              <% end %>
             <%= activity.desc %><br>
             <%= activity.location %>
 
