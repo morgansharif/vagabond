@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   length: {maximum: 255}
 
   validates :email,
-    uniqueiness: true,
+    uniqueness: true,
     format: {
       with: /(.+)@(.+)/,
       message: "not a valide format"
