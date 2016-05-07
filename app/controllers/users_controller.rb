@@ -6,8 +6,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
+      flash[:notice] = "Account successfully created"
       redirect_to user_path(@user)
     else
       flash[:error] = @user.errors.full_messages.join(" , ")
@@ -16,14 +16,19 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find_by_id(params[:id])
-    user.update(profile_params)
-    redirect_to user_path
+    @user = User.find_by_id(params[:id])
+    if @user.update(profile_params)
+      flash[:notice] = "Account successfully updated"
+      redirect_to user_path
+    else
+      redirect_to user_path
+    end
   end
 
   def destroy
     user = User.find(current_user.id)
     user.destroy
+    flash[:notie] = "Sorry to see you go. Account successfully deleted"
     redirect_to index_path
   end
 
