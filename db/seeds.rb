@@ -16,12 +16,12 @@ City.create(name: 'Paris', country: 'France', img: 'http://1010uk.a.cdnify.io/si
 City.create(name: 'Toronto', country: 'Canada', img: 'http://www.tsmedicalcentre.com/wp-content/uploads/2013/02/cropped-banner-toronto-cityscape01-900x300.jpg')
 City.create(name: 'Miami', country: 'United States', img: 'http://www.lombardirealtor.com/wp-content/uploads/2013/08/miami_banner.jpg')
 
-User.create(first_name: 'John', last_name: 'Doe', email: 'johnd@hotmail.com', current_city: 'Oakland', img: '#', password: "123")
-User.create(first_name: 'Bob', last_name: 'Smith', email: 'bob@gmail.com', current_city: 'San Francisco', img: '#', password: "123")
-User.create(first_name: 'Jennifer', last_name: 'Sarkin', email: 'jsarkin@geocities.com', current_city: 'San Francisco', img: '#', password: "123")
-User.create(first_name: 'Sarah', last_name: 'Bayne', email: 'jbayne@gmail.com', current_city: 'Milbrae', img: '#', password: "123")
-User.create(first_name: 'Jason', last_name: 'Stroud', email: 'stroud.jason@gmail.com', current_city: 'San Jose', img: '#', password: "123")
-User.create(first_name: 'Cary', last_name: 'Webb', email: 'cary.d.webb.jason@gmail.com', current_city: 'Pleasanton', img: '#', password: "123")
+User.create(first_name: 'John', last_name: 'Doe', email: 'johnd@hotmail.com', current_city: 'Oakland', img: 'https://support.plymouth.edu/kb_images/Yammer/default.jpeg', password: "123")
+User.create(first_name: 'Bob', last_name: 'Smith', email: 'bob@gmail.com', current_city: 'San Francisco', img: 'https://support.plymouth.edu/kb_images/Yammer/default.jpeg', password: "123")
+User.create(first_name: 'Jennifer', last_name: 'Sarkin', email: 'jsarkin@geocities.com', current_city: 'San Francisco', img: 'https://support.plymouth.edu/kb_images/Yammer/default.jpeg', password: "123")
+User.create(first_name: 'Sarah', last_name: 'Bayne', email: 'jbayne@gmail.com', current_city: 'Milbrae', img: 'https://support.plymouth.edu/kb_images/Yammer/default.jpeg', password: "123")
+User.create(first_name: 'Jason', last_name: 'Stroud', email: 'stroud.jason@gmail.com', current_city: 'San Jose', img: 'https://support.plymouth.edu/kb_images/Yammer/default.jpeg', password: "123")
+User.create(first_name: 'Cary', last_name: 'Webb', email: 'cary.d.webb.jason@gmail.com', current_city: 'Pleasanton', img: 'https://support.plymouth.edu/kb_images/Yammer/default.jpeg', password: "123")
 
 itinerary_list = [
   {name: 'Wine Tasting Weekend', desc: 'Pitchfork organic whatever locavore blue bottle. Aesthetic flexitarian cornhole tattooed.', duration: 2},
