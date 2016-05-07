@@ -10,6 +10,10 @@
               <%= link_to(edit_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id})) do %>
                 <span class="glyphicon glyphicon-edit"> </span>
               <% end %>
+              <%= link_to destroy_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id}), method: :delete do %>
+                <span class="glyphicon glyphicon-trash"> </span>
+              <% end %>
+
             <%= activity.desc %><br>
             <%= activity.location %>
 
