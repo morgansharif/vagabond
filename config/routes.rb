@@ -51,7 +51,7 @@ Rails.application.routes.draw do
 
   # activity routes
   get '/itineraries/:itinerary_id/activities/new', to: 'itinerary_activities#new', as: :new_itinerary_activity
-  get '/itineraries/:itinerary_id/activities/:activity_id/edit', to: 'itinerary_activities#edit', as: :itinerary_activity
+  get '/itineraries/:itinerary_id/activities/:activity_id/edit', to: 'itinerary_activities#edit', as: :edit_itinerary_activity
   post '/itineraries/:itinerary_id/activities', to: 'itinerary_activities#create'
 
  # # city_itinerary routes

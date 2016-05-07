@@ -18,7 +18,7 @@ class ItineraryActivitiesController < ApplicationController
   end
 
   def edit
-    @activity = Activity.find_by_id(params[:id])
+    @activity = Activity.find_by_id(params[:itinerary_id])
     render :edit
   end
 
