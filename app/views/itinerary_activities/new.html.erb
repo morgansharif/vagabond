@@ -1,0 +1,58 @@
+<div class="container">
+<h2>Create a New Activity</h2>
+  <div class="row">
+    <div class="col-xs-10">
+      <%= form_for(@activity, url: "/itineraries/#{params[:itinerary_id]}/activities", :html => {class: "form-horizontal", role: "form"}) do |f| %>
+        <%= f.hidden_field :itinerary_id, :value => :itinerary_id %>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :name %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_field :name, class: "form-control", placeholder: "Name", autofocus: true %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :description %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_area :desc, rows: 5, class: "form-control", placeholder: "Description" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :duration %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_field :duration, class: "form-control", placeholder: "Duration" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :location %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_field :location, class: "form-control", placeholder: "Location" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :image %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.text_field :img, class: "form-control", placeholder: "Image" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :submit %>
+          </div>
+          <div class="col-sm-8">
+            <%= f.submit "Submit", class: "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

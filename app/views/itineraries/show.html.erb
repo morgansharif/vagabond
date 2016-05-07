@@ -1,11 +1,19 @@
 <div class="container">
   <div class="col-md-12">
     <h2 class="itin-title"><%= @itinerary.name %> (<%= @itinerary.duration %> days)</h2>
-    <p><%= @itinerary.desc %></p>
-    <p>insert activity cards here</p>
-    <p>insert activity cards here</p>
-    <p>insert activity cards here</p>
+      <p><%= @itinerary.desc %></p>
+      <% @itinerary.activities.all.each do |activity| %>
+      <div class="row">
+        <div class="col-sm-2"><%= image_tag activity.img %></div>
+          <div class="col-sm-10">
+            <b><%= activity.name %></b> <em>(<%= pluralize(activity.duration, "hour") %>)</em><br>
+            <%= activity.desc %><br>
+            <%= activity.location %>
+
+          </div>
+      </div>
+      <% end %>
     <%= link_to "Edit", edit_itinerary_path, class: "btn btn-primary" %>
-    <%= link_to "Add Activity", new_activity_path, class: "btn btn-primary" %>
+    <%= link_to "Add Activity", new_itinerary_activity_path(@itinerary), class: "btn btn-primary" %>
   </div>
 </div>
