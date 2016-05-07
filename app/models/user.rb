@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
     uniqueness: true,
     format: {
       with: /(.+)@(.+)/,
-      message: "not a valide format"
+      message: "not a valid format"
     }, on: :create
 
   #sexyAF -jc
