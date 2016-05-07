@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #mainNav {
-
   /*navbar a tag properties*/
   a {
     color: orange;
@@ -34,9 +33,9 @@
   .navbar-default .nav>li>a:focus:hover {
       color: blue;
   }
-}
+} /*closes navbar*/
 
-#site_index {
+/*global header*/
   section {
       padding-top: 25px;
   }
@@ -115,28 +114,35 @@ header .header-content .header-content-inner p {
         font-size: 45px;
         font-weight: 30;
     }
-}
+  }/*closes @media*/
+/*end of global*/
+
+#site_index {
   #city_gallery {
     margin-top: 20px;
   }
   img {
     margin-bottom: 50px;
   }
-
-
-
 }/*closes #site_index*/
 
 #user_show {
-  .jumbotron {
-    // background-image: url(/images/background1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: black;
+  header {
+    background-image: url(user_background.jpg);
+    height: 350px;
+    margin-top: 48px;
   }
-  .jumbotron .container {
-    height: 200px;
-  }
+  // .jumbotron {
+
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+  //   background-position: bottom;
+  // }
+  // .jumbotron .container h1 {
+  //   color: black;
+  // }
+
+
   .profile_image {
     height: 100px;
     // border: 1px solid red;

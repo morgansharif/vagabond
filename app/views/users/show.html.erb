@@ -1,51 +1,54 @@
 <div id="user_show">
   <!--User Header-->
-  <div class="jumbotron">
-    <div class="container">
-      <h1><%= @user.first_name %></h1>
+  <header>
+    <div class="header-content">
+      <div class="header-content-inner">
+      </div>
     </div>
-  </div>
+  </header>
   <!--end User Header-->
 
-  <div class="container">
-    <div class="col-md-4">
-      <h2>Profile</h2>
-      <p>
-        <%= image_tag @user.img, :class => "profile_image" %>
-        <br>
-        First Name: <%= @user.first_name %>
-        <br>
-        Last Name: <%= @user.last_name %>
-        <br>
-        Current City: <%= @user.current_city %>
-        <br>
-        Joined: <%= @user.created_at %>
-      </p>
-      <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
-      <%= link_to "Add Itinerary", new_itinerary_path, class: "btn btn-primary" %>
-    </div>
-    <div class="col-md-8">
-      <!--********LOOP THROUGH USER ITINS****************-->
-      <% @user.itineraries.each do |itinerary| %>
-        <div id="itin_name" class="row">
-          <h2><%= link_to "#{itinerary.name}", itinerary_path(itinerary.id) %>, </h2><p>(<%= itinerary.duration %> days)</p>
-        </div>
-        <div id="itin_desc" class="row limit">
-          <h4>
-            <%= itinerary.desc %>
-          </h4>
-        </div>
-        <!--*******LOOP THROUGH ACTIVITIES IN INTIN*******-->
-        <div id="itin_act" class="row">
-          <% itinerary.activities.each do |activities| %>
-            <div class="col-md-3">
-              <%= image_tag activities.img, :class => "act_image" %>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-      <!--*******CLOSE ACTIVITIES LOOP*******-->
-      <!--********CLOSE ITINERARY LOOP****************-->
-    </div> <!--closes col-md-8-->
-  </div> <!--closes container-->
+  <section id="user_itin">
+    <div class="container">
+      <div class="col-md-4">
+        <p>
+          <%= image_tag "/assets/userprofile.png", :class => "profile_image" %>
+          <h2><%= @user.first_name %></h2>
+          <br>
+          First Name: <%= @user.first_name %>
+          <br>
+          Last Name: <%= @user.last_name %>
+          <br>
+          Current City: <%= @user.current_city %>
+          <br>
+          Joined: <%= @user.created_at %>
+        </p>
+        <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
+        <%= link_to "Add Itinerary", new_itinerary_path, class: "btn btn-primary" %>
+      </div>
+      <div class="col-md-8">
+        <!--********LOOP THROUGH USER ITINS****************-->
+        <% @user.itineraries.each do |itinerary| %>
+          <div id="itin_name" class="row">
+            <h2><%= link_to "#{itinerary.name}", itinerary_path(itinerary.id) %>, </h2><p>(<%= itinerary.duration %> days)</p>
+          </div>
+          <div id="itin_desc" class="row limit">
+            <h4>
+              <%= itinerary.desc %>
+            </h4>
+          </div>
+          <!--*******LOOP THROUGH ACTIVITIES IN INTIN*******-->
+          <div id="itin_act" class="row">
+            <% itinerary.activities.each do |activities| %>
+              <div class="col-md-3">
+                <%= image_tag activities.img, :class => "act_image" %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+        <!--*******CLOSE ACTIVITIES LOOP*******-->
+        <!--********CLOSE ITINERARY LOOP****************-->
+        </div> <!--closes col-md-8-->
+      </div> <!--closes container-->
+    </div> <!--closes section-->
 </div> <!--closes user_show-->
