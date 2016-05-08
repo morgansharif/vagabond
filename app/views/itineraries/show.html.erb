@@ -1,9 +1,15 @@
 <div id="itinerary_page">
   <div class="container">
     <div class="col-md-12">
-      <h1 class="itin-title"><%= @itinerary.name %> (<%= @itinerary.duration %> days)</h2>
+      <h1 class="itin-title">
+      <%= @itinerary.name %> (<%= @itinerary.duration %> days)
+        <%= link_to(edit_itinerary_path) do %>
+          <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+      </h1>
         <h3><%= @itinerary.desc %></h3><br>
-        <h4>List of Activities:</h4>
+          <%= link_to "Add Activity", new_itinerary_activity_path(@itinerary), class: "btn btn-primary" %>
+        <h4>Activities:</h4>
           <% @itinerary.activities.all.each do |activity| %>
             <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-2"><%= image_tag activity.img %></div>
@@ -16,14 +22,12 @@
                       <span class="glyphicon glyphicon-trash"> </span>
                   </h5>
                     <% end %>
-                  Description: <%= activity.desc %><br>
-                  Location: <%= activity.location %>
+                  <b>Description:</b> <%= activity.desc %><br>
+                  <b>Location:</b> <%= activity.location %>
               </div>
             </div>
             <hr>
         <% end %>
-      <%= link_to "Edit", edit_itinerary_path, class: "btn btn-primary" %>
-      <%= link_to "Add Activity", new_itinerary_activity_path(@itinerary), class: "btn btn-primary" %>
     </div>
   </div>
 </div>
