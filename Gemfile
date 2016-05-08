@@ -39,6 +39,9 @@ gem 'bcrypt', '~> 3.1.7'
 #used to upload photos
 gem 'carrierwave', '~> 0.11.2'
 
+#image processing
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
