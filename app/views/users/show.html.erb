@@ -1,51 +1,66 @@
 <div id="user_show">
   <!--User Header-->
-  <div class="jumbotron">
-    <div class="container">
-      <h1><%= @user.first_name %></h1>
+  <header>
+    <div class="header-content">
+      <div class="header-content-inner">
+      </div>
     </div>
-  </div>
+  </header>
   <!--end User Header-->
 
-  <div class="container">
-    <div class="col-md-4">
-      <h2>Profile</h2>
-      <p>
-        <%= image_tag @user.img, :class => "profile_image" %>
-        <br>
-        First Name: <%= @user.first_name %>
-        <br>
-        Last Name: <%= @user.last_name %>
-        <br>
-        Current City: <%= @user.current_city %>
-        <br>
-        Joined: <%= @user.created_at %>
-      </p>
-      <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
-      <%= link_to "Add Itinerary", new_itinerary_path, class: "btn btn-primary" %>
-    </div>
-    <div class="col-md-8" style="overflow:scroll; height:400px;">
-      <!--********LOOP THROUGH USER ITINS****************-->
-      <% @user.itineraries.each do |itinerary| %>
-        <div id="itin_name" class="row">
-          <h2><%= link_to "#{itinerary.name}", itinerary_path(itinerary.id) %>, </h2><p>(<%= itinerary.duration %> days)</p>
+  <section id="user_itin">
+    <div class="container">
+      <!--beginning of profile section-->
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <%= image_tag "userprofile.png", :class => "img-circle center-block" %>
+          <p>
+            <br>
+            First Name: <%= @user.first_name %>
+            <br>
+            Last Name: <%= @user.last_name %>
+            <br>
+            Current City: <%= @user.current_city %>
+            <br>
+            Joined: <%= @user.created_at %>
+          </p>
+          <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
+          <%= link_to "Add Itinerary", new_itinerary_path, class: "btn btn-primary" %>
         </div>
-        <div id="itin_desc" class="row limit">
-          <h4>
-            <%= itinerary.desc %>
-          </h4>
+      <!--end of profile section-->
+
+      <!--beginning of itinerary posts-->
+      <div class="col-md-8">
+        <div class="row text-center">
+          <h2> <%= @user.first_name %>'s Itineraries </h2>
         </div>
-        <!--*******LOOP THROUGH ACTIVITIES IN INTIN*******-->
-        <div id="scroller-wrapper">
-        <div id="container">
-          <% itinerary.activities.each do |activities| %>
-            <div class="contents" id="pic"><%= image_tag activities.img, :class => "act_image" %><br><%=activities.name%></div>
+        <div class="row" style="overflow:scroll; height:550px;">
+          <!--********LOOP THROUGH USER ITINS****************-->
+          <% @user.itineraries.each do |itinerary| %>
+            <div id="itin_name" class="row">
+              <h4><%= link_to "#{itinerary.name}", itinerary_path(itinerary.id) %>,
+                  <span class="dur"><em>(<%= itinerary.duration %> days)</em></span></h4>
+            </div>
+            <div id="itin_desc" class="row limit">
+              <h5>
+                <%= itinerary.desc %>
+              </h5>
+            </div>
+            <!--*******LOOP THROUGH ACTIVITIES IN INTIN*******-->
+            <div id="scroller-wrapper">
+              <div id="act_container">
+                <% itinerary.activities.each do |activities| %>
+                  <div class="act_contents" id="pic"><%= image_tag activities.img, :class => "act_image" %>
+                    <br><%=activities.name%></div>
+                <% end %>
+              </div>
+            </div>
           <% end %>
-        </div>
-        </div>
-      <% end %>
-      <!--*******CLOSE ACTIVITIES LOOP*******-->
-      <!--********CLOSE ITINERARY LOOP****************-->
-    </div> <!--closes col-md-8-->
-  </div> <!--closes container-->
+          <!--*******CLOSE ACTIVITIES LOOP*******-->
+          <!--********CLOSE ITINERARY LOOP****************-->
+          </div>
+        </div> <!--closes col-md-8-->
+      </div><!--closes row-->
+    </div> <!--closes container-->
+  </section><!--closes section-->
 </div> <!--closes user_show-->

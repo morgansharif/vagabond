@@ -2,10 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 #flash_error {
   position: absolute;
-  margin-top: -40px;
+  margin-top:125px;
   margin-left: 50px;
+}
+
+#yield_start {
+  padding-top: 64px;
 }
 
 #mainNav {
@@ -26,7 +31,7 @@
       font-family: 'Montserrat','Helvetica Neue',Helvetica, Arial, sans-serif;
       font-weight: 700;
       color: green;
-      height: 50px;
+      // height: 50px;
   }
 
   /*navbar vagabond text changes color on hover*/
@@ -42,7 +47,7 @@
   }
 } /*closes navbar*/
 
-/*global header*/
+/*global variables*/
   section {
       padding-top: 25px;
   }
@@ -61,7 +66,6 @@
     background-position: center;
     background-size: cover;
     height: 575px;
-    margin-top: 48px;
   }
 
 header .header-content {
@@ -137,7 +141,6 @@ header .header-content .header-content-inner p {
   header {
     background-image: url(user_background.jpg);
     height: 350px;
-    margin-top: 48px;
   }
 
   .profile_image {
@@ -149,9 +152,32 @@ header .header-content .header-content-inner p {
     margin-top: -100px;
   }
 
+  #itin_name,
   #itin_desc {
-    max-height:75px;
-    overflow: hidden;
+    margin-left: 0;
+  }
+
+  .dur {
+    font-size: 20px;
+  }
+
+  #scroller-wrapper {
+      height: 100px;
+      width: 100%;
+      background-color:white;
+      position: relative;
+  }
+  #act_container {
+      position: absolute;
+      height: 100%;
+      width:100%;
+      white-space:nowrap;
+      overflow-x:auto;
+      overflow-y:hidden;
+  }
+  .act_contents {
+      height: 100px;
+      display: inline-block;
   }
 } /*closes user_show*/
 
@@ -170,6 +196,6 @@ header .header-content .header-content-inner p {
 
 #forms {
   .container {
-    margin-top: 150px;
+    margin-top: 10%;
   }
 }/*closes forms*/

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
      @user = User.confirm(user_params)
      if @user
        login(@user)
-       flash[:message] = "Welcome " + @user.first_name
+      #  flash[:message] = "Welcome " + @user.first_name
        redirect_to index_path
      else
        flash[:error] = "Wrong Password"
