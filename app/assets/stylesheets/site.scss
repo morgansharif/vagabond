@@ -2,10 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 #flash_error {
   position: absolute;
-  margin-top: -40px;
+  margin-top:125px;
   margin-left: 50px;
+}
+
+#yield_start {
+  padding-top: 64px;
 }
 
 #mainNav {
@@ -26,7 +31,7 @@
       font-family: 'Montserrat','Helvetica Neue',Helvetica, Arial, sans-serif;
       font-weight: 700;
       color: green;
-      height: 50px;
+      // height: 50px;
   }
 
   /*navbar vagabond text changes color on hover*/
@@ -61,7 +66,6 @@
     background-position: center;
     background-size: cover;
     height: 575px;
-    margin-top: 48px;
   }
 
 header .header-content {
@@ -137,7 +141,6 @@ header .header-content .header-content-inner p {
   header {
     background-image: url(user_background.jpg);
     height: 350px;
-    margin-top: 48px;
   }
 
   .profile_image {
@@ -170,6 +173,6 @@ header .header-content .header-content-inner p {
 
 #forms {
   .container {
-    margin-top: 150px;
+    margin-top: 10%;
   }
 }/*closes forms*/
