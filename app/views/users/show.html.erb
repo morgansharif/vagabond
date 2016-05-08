@@ -34,11 +34,12 @@
         <div class="row text-center">
           <h2> <%= @user.first_name %>'s Itineraries </h2>
         </div>
-        <div class="row" style="overflow:scroll; height:400px;">
+        <div class="row" style="overflow:scroll; height:550px;">
           <!--********LOOP THROUGH USER ITINS****************-->
           <% @user.itineraries.each do |itinerary| %>
             <div id="itin_name" class="row">
-              <h4><%= link_to "#{itinerary.name}", itinerary_path(itinerary.id) %>, <span class="dur"><em>(<%= itinerary.duration %> days)</em></span></h4>
+              <h4><%= link_to "#{itinerary.name}", itinerary_path(itinerary.id) %>,
+                  <span class="dur"><em>(<%= itinerary.duration %> days)</em></span></h4>
             </div>
             <div id="itin_desc" class="row limit">
               <h5>
@@ -49,7 +50,8 @@
             <div id="scroller-wrapper">
               <div id="act_container">
                 <% itinerary.activities.each do |activities| %>
-                  <div class="act_contents" id="pic"><%= image_tag activities.img, :class => "act_image" %><br><%=activities.name%></div>
+                  <div class="act_contents" id="pic"><%= image_tag activities.img, :class => "act_image" %>
+                    <br><%=activities.name%></div>
                 <% end %>
               </div>
             </div>
