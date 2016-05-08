@@ -13,7 +13,7 @@
       <!--beginning of profile section-->
       <div class="row">
         <div class="col-md-4 text-center">
-          <%= image_tag "userprofile.png", :class => "img-circle center-block" %>
+          <%= image_tag @user.avatar, :class => "img-circle center-block" %>
           <p>
             <br>
             First Name: <%= @user.first_name %>

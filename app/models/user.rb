@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  mount_uploader :img, AvatarUploader
+
   has_many :itineraries
   has_secure_password
   after_create :send_welcome_email
@@ -30,5 +32,10 @@ class User < ActiveRecord::Base
     @user = User.find_by({email: params[:email]})
     @user.try(:authenticate, params[:password])
   end
+
+  def avatar
+    img.present? ? img.url : "userprofile.png"
+  end
+
 
 end
