@@ -12,7 +12,8 @@ class ItineraryActivitiesController < ApplicationController
     if @activity.save
       redirect_to itinerary_path(params[:itinerary_id])
     else
-      redirect_to new_itinerary_activity(params[:itinerary_id])
+      flash.now[:error] = @activity.errors.full_messages.join(" , ")
+      render :new
     end
   end
 
