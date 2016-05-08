@@ -11,3 +11,8 @@
 /log/*
 !/log/.keep
 /tmp
+/public/uploads/
+.byebug_history
+
+#Ignore application configuration
+/config/application.yml
