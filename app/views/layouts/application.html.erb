@@ -7,11 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-
-
   <!-- BEGIN NAVBAR -->
-  <nav class="navbar navbar-default">
+<div id="mainNav">
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -21,26 +19,23 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-          <%= link_to "Vagabond", index_path, class: "navbar-brand" %>
+          <%= link_to "Vagabond", index_path, class: "navbar-brand page-scroll" %>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-
-          <% flash.each do |name, msg| %>
-            <li>
-              <a><%= name.capitalize %>: <%= msg %></a>
-            </li>
-          <% end %>
-        </ul>
-
         <ul class="nav navbar-nav navbar-right">
+          <li>
+              <% City.all.each do |city| %>
+                <li><%= link_to "#{city.name}", city %></li>
+              <% end %>
+          </li>
           <!-- links before dropdown go here in li tags -->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 Account
-              <span class="caret"></span></a>
+              <span class="caret"></span>
+            </a>
             <ul class="dropdown-menu">
               <%if current_user%>
               <li><%= link_to "Profile", user_path(current_user) %></li>
@@ -58,11 +53,19 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-
+  <!-- Error flash notice -->
+  <div id="flash_error">
+    <% flash.each do |name, msg| %>
+      <li>
+        <a><%= name.capitalize %>: <%= msg %></a>
+      </li>
+    <% end %>
+  </div>
+</div>
   <!-- END NAVBAR -->
 
-
-  <%= yield %>
-
+  <div id="yield_start">
+    <%= yield %>
+  </div>
 </body>
 </html>

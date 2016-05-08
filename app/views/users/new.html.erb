@@ -1,57 +1,63 @@
-<div class="container">
-<h2>User Sign Up Form</h2>
-  <div class="row">
-    <div class="col-xs-10">
-      <%= form_for(@user, :html => {class: "form-horizontal", role: "form"}) do |f| %>
-        <div class="form-group">
-          <div class="control-label col-sm-2">
-            <%= f.label :first_name %>
-          </div>
-          <div class="col-sm-8">
-            <%= f.text_field :first_name, class: "form-control", placeholder: "First Name" %>
-          </div>
+<div id="forms">
+  <div id="user_signup">
+    <div class="container">
+    <h4>Create an account</h4>
+      <div class="row">
+        <div class="col-xs-10">
+          <%= form_for(@user, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+            <div class="form-group">
+              <div class="control-label col-sm-2">
+                <%= f.label :first_name %>
+              </div>
+              <div class="col-sm-8">
+                <%= f.text_field :first_name, class: "form-control", placeholder: "First Name" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="control-label col-sm-2">
+                <%= f.label :last_name %>
+              </div>
+              <div class="col-sm-8">
+                <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="control-label col-sm-2">
+                <%= f.label :email %>
+              </div>
+              <div class="col-sm-8">
+                <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="control-label col-sm-2">
+                <%= f.label :password %>
+              </div>
+              <div class="col-sm-8">
+                <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="control-label col-sm-2">
+                <%= f.label :password %>
+              </div>
+              <div class="col-sm-8">
+                <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm password" %>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="control-label col-sm-2">
+                <%= f.label :submit %>
+              </div>
+              <div class="col-sm-8">
+                <%= f.submit "Submit", class: "btn btn-primary" %>
+                <%= link_to "Cancel", :back, class: "btn btn-default" %>
+              </div>
+            </div>
+            <p>Already have an account? Log in <%= link_to "here", login_path %>
+          <% end %>
         </div>
-        <div class="form-group">
-          <div class="control-label col-sm-2">
-            <%= f.label :last_name %>
-          </div>
-          <div class="col-sm-8">
-            <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="control-label col-sm-2">
-            <%= f.label :email %>
-          </div>
-          <div class="col-sm-8">
-            <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="control-label col-sm-2">
-            <%= f.label :password %>
-          </div>
-          <div class="col-sm-8">
-            <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="control-label col-sm-2">
-            <%= f.label :password %>
-          </div>
-          <div class="col-sm-8">
-            <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm password" %>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="control-label col-sm-2">
-            <%= f.label :submit %>
-          </div>
-          <div class="col-sm-8">
-            <%= f.submit "Submit", class: "btn btn-primary" %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
+      </div><!--closes row-->
+    </div><!--closes container-->
+  </div><!--closes user_signup-->
+</div><!--closes forms div-->

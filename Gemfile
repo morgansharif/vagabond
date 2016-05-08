@@ -30,8 +30,14 @@ gem 'autoprefixer-rails'
 
 gem 'bootswatch-rails'
 
+# Helper to convert time to relative time
+gem 'time_ago_in_words', '~> 0.1.1'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+#used to upload photos
+gem 'carrierwave', '~> 0.11.2'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
