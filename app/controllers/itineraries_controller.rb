@@ -28,7 +28,6 @@ class ItinerariesController < ApplicationController
   def update
     @itinerary = Itinerary.find_by_id(params[:id])
     if @itinerary.update(itinerary_params)
-      flash[:notice] = "Itinerary successfully updated"
       redirect_to itinerary_path
     else
       flash[:error] = @itinerary.errors.full_messages.join(" , ")
