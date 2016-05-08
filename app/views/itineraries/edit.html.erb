@@ -3,7 +3,7 @@
   <h4>Edit Itinerary</h4>
     <div class="row">
       <div class="col-xs-10">
-        <%= form_for(@itinerary, url: "/itineraries/#{params[:itinerary_id]}", method: :patch, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+        <%= form_for(@itinerary, :html => {class: "form-horizontal", role: "form"}) do |f| %>
           <div class="form-group">
             <div class="control-label col-sm-2">
               <%= f.label :name %>
