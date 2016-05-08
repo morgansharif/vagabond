@@ -25,16 +25,11 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <!--placeholder in case we want to put something-->
-          <!-- <li>
-              <a class="page-scroll" href="#about">Profile</a>
-          </li>
           <li>
-              <a class="page-scroll" href="#portfolio">Blah</a>
+              <% City.all.each do |city| %>
+                <li><%= link_to "#{city.name}", city %></li>
+              <% end %>
           </li>
-          <li>
-              <a class="page-scroll" href="#contact">Contact</a>
-          </li> -->
           <!-- links before dropdown go here in li tags -->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
