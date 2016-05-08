@@ -39,7 +39,7 @@
           <% @user.itineraries.each do |itinerary| %>
             <div id="itin_name" class="row">
               <h4>
-                <%= link_to "#{itinerary.name}", itinerary_path(itinerary.id) %>,
+                <%= link_to truncate("#{itinerary.name}", length: 35), itinerary_path(itinerary.id) %>
                 <span class="dur"><em>(<%= pluralize(itinerary.duration, "day") %>)</em></span>
               </h4>
             </div>
