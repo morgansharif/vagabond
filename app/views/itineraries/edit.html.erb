@@ -1,57 +1,60 @@
-<div class="container">
-<h2>Edit Itinerary</h2>
-  <div class="row">
-    <div class="col-xs-10">
-      <%= form_for(@itinerary, url: "/itineraries/#{params[:itinerary_id]}", method: :patch, :html => {class: "form-horizontal", role: "form"}) do |f| %>
-        <div class="form-group">
-          <div class="control-label col-sm-2">
-            <%= f.label :name %>
+<div id="forms">
+  <div class="container">
+  <h4>Edit Itinerary</h4>
+    <div class="row">
+      <div class="col-xs-10">
+        <%= form_for(@itinerary, url: "/itineraries/#{params[:itinerary_id]}", method: :patch, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+          <div class="form-group">
+            <div class="control-label col-sm-2">
+              <%= f.label :name %>
+            </div>
+            <div class="col-sm-8">
+              <%= f.text_field :name, class: "form-control", placeholder: "Name", autofocus: true %>
+            </div>
           </div>
-          <div class="col-sm-8">
-            <%= f.text_field :name, class: "form-control", placeholder: "Name", autofocus: true %>
+          <div class="form-group">
+            <div class="control-label col-sm-2">
+              <%= f.label :description %>
+            </div>
+            <div class="col-sm-8">
+              <%= f.text_area :desc, rows: 5, class: "form-control", placeholder: "Description" %>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="control-label col-sm-2">
-            <%= f.label :description %>
+          <div class="form-group">
+            <div class="control-label col-sm-2">
+              <%= f.label :duration %>
+            </div>
+            <div class="col-sm-8">
+              <%= f.text_field :duration, class: "form-control", placeholder: "Duration" %>
+            </div>
           </div>
-          <div class="col-sm-8">
-            <%= f.text_area :desc, rows: 5, class: "form-control", placeholder: "Description" %>
+          <div class="form-group">
+            <div class="control-label col-sm-2">
+              <%= f.label :city %>
+            </div>
+            <div class="col-sm-8">
+              <select name="itinerary[city_id]">
+                <%= options_from_collection_for_select(City.all, :id, :name) %>
+              </select>
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="control-label col-sm-2">
-            <%= f.label :duration %>
+          <div class="form-group">
+            <div class="control-label col-sm-2">
+              <%= f.label :submit %>
+            </div>
+            <div class="col-sm-8">
+              <%= f.submit "Submit", class: "btn btn-primary" %>
+              <%= link_to "Cancel", :back, class: "btn btn-default" %>
+            </div>
           </div>
-          <div class="col-sm-8">
-            <%= f.text_field :duration, class: "form-control", placeholder: "Duration" %>
+        <% end %>
+        <hr />
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+            <%= link_to "Delete Itinerary", destroy_itinerary_path, class: "btn btn-danger", method: :delete, data: {confirm: "Delete #{@itinerary.name}?"} %>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="control-label col-sm-2">
-            <%= f.label :city %>
-          </div>
-          <div class="col-sm-8">
-            <select name="itinerary[city_id]">
-              <%= options_from_collection_for_select(City.all, :id, :name) %>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="control-label col-sm-2">
-            <%= f.label :submit %>
-          </div>
-          <div class="col-sm-8">
-            <%= f.submit "Submit", class: "btn btn-primary" %>
-          </div>
-        </div>
-      <% end %>
-      <hr />
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <%= link_to "Delete Itinerary", destroy_itinerary_path, class: "btn btn-danger", method: :delete, data: {confirm: "Delete #{@itinerary.name}?"} %>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+    </div><!--closes row-->
+  </div><!--closes container-->
+</div><!--closes forms-->

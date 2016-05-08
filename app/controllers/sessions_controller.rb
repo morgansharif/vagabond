@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
    def destroy
         logout
-        flash[:notice] = "Peace Out"
+        # flash[:notice] = "Peace Out"
         redirect_to index_path
    end
 
