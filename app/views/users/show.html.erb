@@ -38,13 +38,13 @@
           <!--********LOOP THROUGH USER ITINS****************-->
           <% @user.itineraries.each do |itinerary| %>
             <div id="itin_name" class="row">
-              <h4><%= link_to "#{itinerary.name}", itinerary_path(itinerary.id) %>,
-                  <span class="dur"><em>(<%= itinerary.duration %> days)</em></span></h4>
+              <h4>
+                <%= link_to "#{itinerary.name}", itinerary_path(itinerary.id) %>,
+                <span class="dur"><em>(<%= itinerary.duration %> days)</em></span>
+              </h4>
             </div>
             <div id="itin_desc" class="row limit">
-              <h5>
-                <%= itinerary.desc %>
-              </h5>
+              <h5><%= itinerary.desc %></h5>
             </div>
             <!--*******LOOP THROUGH ACTIVITIES IN INTIN*******-->
             <div id="scroller-wrapper">
