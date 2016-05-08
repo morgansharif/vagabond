@@ -1,24 +1,25 @@
 <div class="container">
   <div class="col-md-12">
-    <h2 class="itin-title"><%= @itinerary.name %> (<%= @itinerary.duration %> days)</h2>
-      <p><%= @itinerary.desc %></p>
-      <% @itinerary.activities.all.each do |activity| %>
-      <div class="row">
-        <div class="col-sm-2"><%= image_tag activity.img %></div>
-          <div class="col-sm-10">
-            <b><%= activity.name %></b> <em>(<%= pluralize(activity.duration, "hour") %>)</em>
-              <%= link_to(edit_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id})) do %>
-                <span class="glyphicon glyphicon-edit"> </span>
-              <% end %>
-              <%= link_to destroy_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id}), method: :delete do %>
-                <span class="glyphicon glyphicon-trash"> </span>
-              <% end %>
-
-            <%= activity.desc %><br>
-            <%= activity.location %>
-
+    <h1 class="itin-title"><%= @itinerary.name %> (<%= @itinerary.duration %> days)</h2>
+      <h2><%= @itinerary.desc %></h2>
+      <h3>List of Activities:</h3>
+        <% @itinerary.activities.all.each do |activity| %>
+          <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-2"><%= image_tag activity.img %></div>
+            <div class="col-xs-6 col-sm-6 col-md-10">
+                <h5><b><%= activity.name %></b> <em>(<%= pluralize(activity.duration, "hour") %>)</em>
+                  <%= link_to(edit_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id})) do %>
+                    <span class="glyphicon glyphicon-edit"> </span>
+                  <% end %>
+                  <%= link_to destroy_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id}), method: :delete do %>
+                    <span class="glyphicon glyphicon-trash"> </span>
+                </h5>
+                  <% end %>
+                <%= activity.desc %><br>
+                <%= activity.location %>
+            </div>
           </div>
-      </div>
+          <hr>
       <% end %>
     <%= link_to "Edit", edit_itinerary_path, class: "btn btn-primary" %>
     <%= link_to "Add Activity", new_itinerary_activity_path(@itinerary), class: "btn btn-primary" %>
