@@ -10,6 +10,4 @@ class Activity < ActiveRecord::Base
   validates :duration,
     numericality: true
 
-
-
 end
