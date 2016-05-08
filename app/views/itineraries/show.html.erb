@@ -12,7 +12,7 @@
       </h1>
       </h2>
         <h3><%= @itinerary.desc %></h3><br>
-        <h4>List of Activities:</h4>
+        <h4>Activities:</h4>
           <% @itinerary.activities.all.each do |activity| %>
             <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-2"><%= image_tag activity.img %></div>
