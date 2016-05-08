@@ -47,7 +47,7 @@
   }
 } /*closes navbar*/
 
-/*global header*/
+/*global variables*/
   section {
       padding-top: 25px;
   }
@@ -152,9 +152,32 @@ header .header-content .header-content-inner p {
     margin-top: -100px;
   }
 
+  #itin_name,
   #itin_desc {
-    max-height:75px;
-    overflow: hidden;
+    margin-left: 0;
+  }
+
+  .dur {
+    font-size: 20px;
+  }
+
+  #scroller-wrapper {
+      height: 100px;
+      width: 100%;
+      background-color:white;
+      position: relative;
+  }
+  #act_container {
+      position: absolute;
+      height: 100%;
+      width:100%;
+      white-space:nowrap;
+      overflow-x:auto;
+      overflow-y:hidden;
+  }
+  .act_contents {
+      height: 100px;
+      display: inline-block;
   }
 } /*closes user_show*/
 
