@@ -183,11 +183,17 @@ header .header-content .header-content-inner p {
 
 
 #city_show {
-  .jumbotron {
+  header {
     background-size: cover;
     background-repeat: no-repeat;
     height: 450px;
     color: black;
+    background-position: center;
+
+  }
+
+  header img {
+        max-height: 100%
   }
   .jumbotron .container {
 
