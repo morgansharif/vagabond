@@ -6,12 +6,9 @@
         <%= link_to(edit_itinerary_path) do %>
           <span class="glyphicon glyphicon-edit"></span>
         <% end %>
-        <%= link_to(new_itinerary_activity_path(@itinerary)) do %>
-          <span class="glyphicon glyphicon-plus"></span>
-        <% end %>
       </h1>
-      </h2>
         <h3><%= @itinerary.desc %></h3><br>
+          <%= link_to "Add Activity", new_itinerary_activity_path(@itinerary), class: "btn btn-primary" %>
         <h4>Activities:</h4>
           <% @itinerary.activities.all.each do |activity| %>
             <div class="row">
