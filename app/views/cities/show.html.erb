@@ -1,12 +1,13 @@
 <div id="city_show">
-  <!--User Header-->
-  <div class="jumbotron" style="background-image: url(<%= @city.img %>)">
-
-    <div class="container">
-      <h1><%= @city.name %></h1>
-    </div>
-  </div>
-  <!--end User Header-->
+  <!--City Header-->
+  <header style="background-image: url('/cities/<%= @city.file_name %>')">
+    <!-- <div class="header-content">
+      <div class="header-content-inner">
+        <h1><%#= @city.name %></h1>
+      </div>
+    </div> -->
+  </header>
+  <!--end City Header-->
 
   <section id="city_itineraries">
     <div class="container">
@@ -31,6 +32,7 @@
               <span class="glyphicon glyphicon-edit"> </span>
             <% end %>
           </h4>
+          <h5><b>Published: </b><%= time_ago_in_words(itinerary.created_at).gsub('about', '') %> ago</h5>
           <h5><b>Description:</b> <%= itinerary.desc %></h5>
           <h5><b>Activities:</b></h5>
           <% itinerary.activities.each do |activities| %>

@@ -135,6 +135,13 @@ header .header-content .header-content-inner p {
   img {
     margin-bottom: 50px;
   }
+
+  .city_img img:hover {
+    opacity: .7;
+  }
+
+
+
 }/*closes #site_index*/
 
 #user_show {
@@ -183,14 +190,12 @@ header .header-content .header-content-inner p {
 
 
 #city_show {
-  .jumbotron {
-    // background-image: url(/images/background1.jpg);
+  header {
     background-size: cover;
     background-repeat: no-repeat;
-    color: black;
-  }
-  .jumbotron .container {
     height: 450px;
+    color: black;
+    background-position: center;
   }
 }
 
