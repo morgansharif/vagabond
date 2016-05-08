@@ -31,6 +31,7 @@
               <span class="glyphicon glyphicon-edit"> </span>
             <% end %>
           </h4>
+          <h5><b>Published: </b><%= time_ago_in_words(itinerary.created_at).gsub('about', '') %> ago</h5>
           <h5><b>Description:</b> <%= itinerary.desc %></h5>
           <h5><b>Activities:</b></h5>
           <% itinerary.activities.each do |activities| %>
