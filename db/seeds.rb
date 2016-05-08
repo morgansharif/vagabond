@@ -16,12 +16,12 @@ City.create(name: 'Paris', country: 'France', img: 'http://1010uk.a.cdnify.io/si
 City.create(name: 'Toronto', country: 'Canada', img: 'http://www.tsmedicalcentre.com/wp-content/uploads/2013/02/cropped-banner-toronto-cityscape01-900x300.jpg')
 City.create(name: 'Miami', country: 'United States', img: 'http://www.lombardirealtor.com/wp-content/uploads/2013/08/miami_banner.jpg')
 
-User.create(first_name: 'John', last_name: 'Doe', email: 'johnd@hotmail.com', current_city: 'Oakland', img: '#', password: "123")
-User.create(first_name: 'Bob', last_name: 'Smith', email: 'bob@gmail.com', current_city: 'San Francisco', img: '#', password: "123")
-User.create(first_name: 'Jennifer', last_name: 'Sarkin', email: 'jsarkin@geocities.com', current_city: 'San Francisco', img: '#', password: "123")
-User.create(first_name: 'Sarah', last_name: 'Bayne', email: 'jbayne@gmail.com', current_city: 'Milbrae', img: '#', password: "123")
-User.create(first_name: 'Jason', last_name: 'Stroud', email: 'stroud.jason@gmail.com', current_city: 'San Jose', img: '#', password: "123")
-User.create(first_name: 'Cary', last_name: 'Webb', email: 'cary.d.webb.jason@gmail.com', current_city: 'Pleasanton', img: '#', password: "123")
+User.create(first_name: 'John', last_name: 'Doe', email: 'johnd@hotmail.com', current_city: 'Oakland', img: 'https://support.plymouth.edu/kb_images/Yammer/default.jpeg', password: "123")
+User.create(first_name: 'Bob', last_name: 'Smith', email: 'bob@gmail.com', current_city: 'San Francisco', img: 'https://support.plymouth.edu/kb_images/Yammer/default.jpeg', password: "123")
+User.create(first_name: 'Jennifer', last_name: 'Sarkin', email: 'jsarkin@geocities.com', current_city: 'San Francisco', img: 'https://support.plymouth.edu/kb_images/Yammer/default.jpeg', password: "123")
+User.create(first_name: 'Sarah', last_name: 'Bayne', email: 'jbayne@gmail.com', current_city: 'Milbrae', img: 'https://support.plymouth.edu/kb_images/Yammer/default.jpeg', password: "123")
+User.create(first_name: 'Jason', last_name: 'Stroud', email: 'stroud.jason@gmail.com', current_city: 'San Jose', img: 'https://support.plymouth.edu/kb_images/Yammer/default.jpeg', password: "123")
+User.create(first_name: 'Cary', last_name: 'Webb', email: 'cary.d.webb.jason@gmail.com', current_city: 'Pleasanton', img: 'https://support.plymouth.edu/kb_images/Yammer/default.jpeg', password: "123")
 
 itinerary_list = [
   {name: 'Wine Tasting Weekend', desc: 'Pitchfork organic whatever locavore blue bottle. Aesthetic flexitarian cornhole tattooed.', duration: 2},
@@ -32,12 +32,23 @@ itinerary_list = [
 ]
 
 activities_list = [
-  {name: 'Gochujang Heirloom', desc: 'Viral messenger bag swag, mixtape pitchfork drinking vinegar disrupt tote bag ethical VHS.', location: 'Somewhere', duration: 3, img: '#'},
-  {name: 'Single-origin coffee', desc: 'Truffaut godard lo-fi, brooklyn hashtag gastropub neutra put a bird on it iPhone DIY tattooed pop-up tumblr semiotics.', location: 'VHS chillwave', duration: 1, img: '#'},
-  {name: 'Tousled mustache', desc: 'Pinterest marfa taxidermy direct trade, whatever neutra disrupt keytar freegan twee selfies.', location: 'Place', duration: 2, img: '#'},
-  {name: 'Aesthetic wolf ', desc: 'Aesthetic wolf kitsch twee photo booth, marfa VHS drinking vinegar sartorial.', location: 'Place', duration: 2, img: '#'},
-  {name: 'Vegan post-ironic vice', desc: 'Sartorial cardigan cronut, meh kinfolk retro 8-bit viral franzen 90\'s truffaut schlitz cold-pressed man bun forage.', location: 'Place', duration: 2, img: '#'}
+  {name: 'Gochujang Heirloom', desc: 'Viral messenger bag swag, mixtape pitchfork drinking vinegar disrupt tote bag ethical VHS.', location: 'Somewhere', duration: 3, img: 'http://www.blackcreekhunting.com/Images/deer200.jpg'},
+  {name: 'Single-origin coffee', desc: 'Truffaut godard lo-fi, brooklyn hashtag gastropub neutra put a bird on it iPhone DIY tattooed pop-up tumblr semiotics.', location: 'VHS chillwave', duration: 1, img: 'https://qph.is.quoracdn.net/main-thumb-t-1858-200-CZQybOyeYTTRiQIO09I14qGGIhExMqgO.jpeg'},
+  {name: 'Tousled mustache', desc: 'Pinterest marfa taxidermy direct trade, whatever neutra disrupt keytar freegan twee selfies.', location: 'Place', duration: 2, img: 'http://religionquestions.org/wp-content/uploads/2015/11/concert_crowd-wallpaper-1280x768-200x200.jpg'},
+  {name: 'Aesthetic wolf ', desc: 'Aesthetic wolf kitsch twee photo booth, marfa VHS drinking vinegar sartorial.', location: 'Place', duration: 2, img: 'http://sowefwf.com/wp-content/uploads/2014/02/wine.png'},
+  {name: 'Vegan post-ironic vice', desc: 'Sartorial cardigan cronut, meh kinfolk retro 8-bit viral franzen 90\'s truffaut schlitz cold-pressed man bun forage.', location: 'Place', duration: 2, img: 'http://www.central-flachau.com/typo3temp/pics/8158750a60.jpg'},
+  {name: 'Gochujang Heirloom', desc: 'Viral messenger bag swag, mixtape pitchfork drinking vinegar disrupt tote bag ethical VHS.', location: 'Somewhere', duration: 3, img: 'http://www.blackcreekhunting.com/Images/deer200.jpg'},
+  {name: 'Single-origin coffee', desc: 'Truffaut godard lo-fi, brooklyn hashtag gastropub neutra put a bird on it iPhone DIY tattooed pop-up tumblr semiotics.', location: 'VHS chillwave', duration: 1, img: 'https://qph.is.quoracdn.net/main-thumb-t-1858-200-CZQybOyeYTTRiQIO09I14qGGIhExMqgO.jpeg'},
+  {name: 'Tousled mustache', desc: 'Pinterest marfa taxidermy direct trade, whatever neutra disrupt keytar freegan twee selfies.', location: 'Place', duration: 2, img: 'http://religionquestions.org/wp-content/uploads/2015/11/concert_crowd-wallpaper-1280x768-200x200.jpg'},
+  {name: 'Aesthetic wolf ', desc: 'Aesthetic wolf kitsch twee photo booth, marfa VHS drinking vinegar sartorial.', location: 'Place', duration: 2, img: 'http://sowefwf.com/wp-content/uploads/2014/02/wine.png'},
+  {name: 'Vegan post-ironic vice', desc: 'Sartorial cardigan cronut, meh kinfolk retro 8-bit viral franzen 90\'s truffaut schlitz cold-pressed man bun forage.', location: 'Place', duration: 2, img: 'http://www.central-flachau.com/typo3temp/pics/8158750a60.jpg'},
+  {name: 'Gochujang Heirloom', desc: 'Viral messenger bag swag, mixtape pitchfork drinking vinegar disrupt tote bag ethical VHS.', location: 'Somewhere', duration: 3, img: 'http://www.blackcreekhunting.com/Images/deer200.jpg'},
+  {name: 'Single-origin coffee', desc: 'Truffaut godard lo-fi, brooklyn hashtag gastropub neutra put a bird on it iPhone DIY tattooed pop-up tumblr semiotics.', location: 'VHS chillwave', duration: 1, img: 'https://qph.is.quoracdn.net/main-thumb-t-1858-200-CZQybOyeYTTRiQIO09I14qGGIhExMqgO.jpeg'},
+  {name: 'Tousled mustache', desc: 'Pinterest marfa taxidermy direct trade, whatever neutra disrupt keytar freegan twee selfies.', location: 'Place', duration: 2, img: 'http://religionquestions.org/wp-content/uploads/2015/11/concert_crowd-wallpaper-1280x768-200x200.jpg'},
+  {name: 'Aesthetic wolf ', desc: 'Aesthetic wolf kitsch twee photo booth, marfa VHS drinking vinegar sartorial.', location: 'Place', duration: 2, img: 'http://sowefwf.com/wp-content/uploads/2014/02/wine.png'},
+  {name: 'Vegan post-ironic vice', desc: 'Sartorial cardigan cronut, meh kinfolk retro 8-bit viral franzen 90\'s truffaut schlitz cold-pressed man bun forage.', location: 'Place', duration: 2, img: 'http://www.central-flachau.com/typo3temp/pics/8158750a60.jpg'}
 ]
+
 
 #
 User.all.each do |user|

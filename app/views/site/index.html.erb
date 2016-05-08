@@ -1,13 +1,40 @@
 <div id="site_index">
-  <div class="jumbotron">
-    <div class="container">
-      <% if current_user %>
-        <h1>Welcome, <%= "#{current_user.first_name}" %></h1>
-        <p>Where would you like to go?</p>
-      <% else %>
-        <h1>Splash Hero Page</h1>
-        <p>Plan your trip with us!</p>
-      <% end %>
+  <!--header-->
+  <header>
+    <div class="header-content">
+      <div class="header-content-inner">
+        <% if current_user %>
+          <h1>Welcome, <%= "#{current_user.first_name}" %></h1>
+          <p>Where would you like to go?</p>
+        <% else %>
+          <h1>Welcome!</h1>
+          <hr>
+          <p>Plan your trip with us!</p>
+        <% end %>
+      </div>
     </div>
-  </div>
-</div>
+  </header>
+  <!--end of header-->
+
+  <!--cities section-->
+  <section id="cities_index">
+    <div class="container">
+      <div class="row text-center">
+        <h1>Featured Cities</h2>
+      </div>
+      <div id="city_gallery" class="row">
+
+        <% @cities.each do |city| %>
+          <div id="city_img" class="col-lg-6 col-sm-6 col-xs-12 city_img">
+              <%=link_to( image_tag("#{city.file_name}", class: "img-responsive"), city_path(city.id)) %>
+              <div id="city_name" class="carousel-caption city_name">
+                <h2><%= city.name %></h2>
+              </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </section>
+  <!--end of cities section-->
+</div> <!--closes site_index-->
