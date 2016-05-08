@@ -42,6 +42,12 @@ gem 'carrierwave', '~> 0.11.2'
 #image processing
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 
+#used to store files on aws s3
+gem 'fog-aws'
+
+#manage aws access keys
+gem 'figaro'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
