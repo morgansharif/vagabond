@@ -48,7 +48,7 @@ class ItinerariesController < ApplicationController
     user_id = @itinerary.user_id
     @itinerary.destroy
     flash[:notice] = "Itinerary successfully deleted"
-    redirect_to user_path(user)
+    redirect_to user_path(user_id)
   end
 
   private
