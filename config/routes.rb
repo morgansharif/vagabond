@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  #!~~~~~~~~~~~~~~~~~~~~~~~~ ROOT ROUTE ~~~~~~~~~~~~~~~~~~~~~~~!#
+  #!~~~~~~~~~ ROOT ROUTE ~~~~~~~~!#
   root 'site#index', as: :index
 
   #!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ USER ROUTES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!#
@@ -48,15 +48,3 @@ Rails.application.routes.draw do
 
 
 end
-
-# resources :users do
-#   resources :itineraries do
-#     resources :activities
-# end
-# end
-#
-#
-# resources :cities do
-# resources :itineraries do
-# end
-# end
