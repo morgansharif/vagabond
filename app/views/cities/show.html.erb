@@ -26,7 +26,7 @@
         </div>
         <div class="col-md-8">
           <h4>
-            <b><%= link_to itinerary.name, itinerary_path(itinerary.id) %></b>
+            <b><%= link_to truncate(itinerary.name, length: 35), itinerary_path(itinerary.id) %></b>
             <em>(<%= pluralize(itinerary.duration, "day") %>)</em>
             <%= link_to(edit_itinerary_path(itinerary.id)) do %>
               <span class="glyphicon glyphicon-edit"> </span>
