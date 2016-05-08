@@ -13,7 +13,6 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.new(itinerary_params)
     @itinerary.user_id = current_user.id
     if @itinerary.save
-      flash[:notice] = "Itinerary successfully created"
       redirect_to user_path(@itinerary.user_id)
     else
       flash.now[:error] = @itinerary.errors.full_messages.join(" , ")
