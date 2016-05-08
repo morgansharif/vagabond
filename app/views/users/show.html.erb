@@ -51,7 +51,7 @@
               <div id="act_container">
                 <% itinerary.activities.each do |activities| %>
                   <div class="act_contents" id="pic"><%= image_tag activities.img, :class => "act_image" %>
-                    <br><%=activities.name%></div>
+                    <br><%= truncate(activities.name, length: 25) %></div>
                 <% end %>
               </div>
             </div>
