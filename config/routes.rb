@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   root 'site#index', as: :index
 
   # user routes
-  get  'users/new', to: 'users#new', as: :new_user
-  post 'users', to: 'users#create'
-  get  'users/:id/edit', to: 'users#edit', as: :edit_user
-  patch'users/:id', to: 'users#update'
-  get  'users/:id', to: 'users#show', as: :user
+  get     'users/new', to: 'users#new', as: :new_user
+  post    'users', to: 'users#create'
+  get     'users/:id/edit', to: 'users#edit', as: :edit_user
+  patch   'users/:id', to: 'users#update'
+  get     'users/:id', to: 'users#show', as: :user
+  delete  'users/:id', to: 'users#destroy'
 
   # itin routes
   # get  '/itineraries', to: 'itineraries#index', as: :itineraries
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
   get  '/itineraries/:id/edit', to: 'itineraries#edit', as: :edit_itinerary
   patch'/itineraries/:id', to: 'itineraries#update'
   get  '/itineraries/:id', to: 'itineraries#show', as: :itinerary
-  delete '/itineraries/:id', to: 'itineraries#destroy'
+  delete '/itineraries/:id', to: 'itineraries#destroy', as: :destroy_itinerary
 
   get    '/users/:user_id/itineraries/:itinerary_id/activities', to: 'activities#index', as: :user_itinerary_activities
   post   '/users/:user_id/itineraries/:itinerary_id/activities', to: 'activities#create'
@@ -47,6 +48,13 @@ Rails.application.routes.draw do
   patch '/cities/:id', to: 'cities#update'
   put '/cities/:id', to: 'cities#update'
   delete '/cities/:id', to: 'cities#destroy'
+
+  # activity routes
+  get     '/itineraries/:itinerary_id/activities/new', to: 'itinerary_activities#new', as: :new_itinerary_activity
+  get     '/itineraries/:itinerary_id/activities/:activity_id/edit', to: 'itinerary_activities#edit', as: :edit_itinerary_activity
+  post    '/itineraries/:itinerary_id/activities', to: 'itinerary_activities#create'
+  patch   '/itineraries/:itinerary_id/activities/:activity_id', to: 'itinerary_activities#update'
+  delete  '/itineraries/:itinerary_id/activities/:activity_id', to: 'itinerary_activities#destroy', as: :destroy_itinerary_activity
 
  # # city_itinerary routes
  # get    '/cities/:id/itineraries', to: 'itineraries#index'  , as: :city_itineraries

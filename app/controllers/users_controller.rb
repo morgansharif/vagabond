@@ -6,22 +6,31 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
-      redirect_to user_path(@user)
+      login(@user)
+      flash[:notice] = "Account successfully created"
+      redirect_to index_path
     else
-      flash[:error] = @user.errors.full_messages.join(" , ")
-      redirect_to new_user_path
+      flash.now[:error] = @user.errors.full_messages.join(" , ")
+      render :new
     end
   end
 
   def update
-    user = User.find_by_id(params[:id])
-    user.update(profile_params)
-    redirect_to user_path
+    @user = User.find_by_id(params[:id])
+    if @user.update(profile_params)
+      flash[:notice] = "Account successfully updated"
+      redirect_to user_path
+    else
+      redirect_to user_path
+    end
   end
 
-  def delete
+  def destroy
+    user = User.find(current_user.id)
+    user.destroy
+    flash[:notie] = "Sorry to see you go. Account successfully deleted"
+    redirect_to index_path
   end
 
   def new
@@ -38,7 +47,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
 
   def profile_params

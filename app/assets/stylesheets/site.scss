@@ -2,19 +2,187 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#site_index {
-  .jumbotron {
-    // background-image: url(/images/background1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: red;
-  }
-  .jumbotron .container {
-    height: 450px;
-  }
+
+#flash_error {
+  position: absolute;
+  margin-top:125px;
+  margin-left: 50px;
 }
 
+#yield_start {
+  padding-top: 64px;
+}
+
+#mainNav {
+  /*navbar a tag properties*/
+  a {
+    color: orange;
+  }
+
+  /*navbar drop down*/
+  a:hover,
+  a:focus {
+    color: blue;
+  }
+
+  /*navbar vagabond text properties*/
+  .navbar-default .navbar-header .navbar-brand {
+      text-transform: uppercase;
+      font-family: 'Montserrat','Helvetica Neue',Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      color: green;
+      // height: 50px;
+  }
+
+  /*navbar vagabond text changes color on hover*/
+  .navbar-default .navbar-header .navbar-brand:hover,
+  .navbar-default .navbar-header .navbar-brand:focus {
+    color: yellow;
+  }
+
+  /*navbar li changes color on hover*/
+  .navbar-default .nav > li>a:hover,
+  .navbar-default .nav>li>a:focus:hover {
+      color: blue;
+  }
+} /*closes navbar*/
+
+/*global variables*/
+  section {
+      padding-top: 25px;
+  }
+  hr {
+    max-width: 100px;
+    border-color: orange;
+    border-width: 3px;
+  }
+  header {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    text-align: center;
+    color: #fff;
+    background-image: url("landing_page.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 575px;
+  }
+
+header .header-content {
+    position: relative;
+    width: 100%;
+    padding: 100px 15px;
+    text-align: center;
+}
+
+header .header-content .header-content-inner h1 {
+    margin-top: 10%;
+    /*text-transform: uppercase;*/
+    font-weight: 900;
+    font-size:80px;
+    text-shadow: 2px 2px black;
+    color: yellow;
+}
+
+header .header-content .header-content-inner hr {
+    margin: 30px auto;
+}
+
+header .header-content .header-content-inner p {
+    margin-bottom: 300px;
+    font-size: 30px;
+    font-weight: 60;
+    color: orange;
+}
+
+@media(min-width:768px) {
+    header {
+        min-height: 100%;
+    }
+
+    header .header-content {
+        position: absolute;
+        top: 30%;
+        padding: 0 50px;
+        transform: translateY(-50%);
+    }
+
+    header .header-content .header-content-inner {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1000px;
+    }
+
+    header .header-content .header-content-inner h1 {
+        margin-top: 60%;
+        font-size: 100px;
+    }
+
+    header .header-content .header-content-inner p {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 80%;
+        font-size: 45px;
+        font-weight: 30;
+    }
+  }/*closes @media*/
+/*end of global*/
+
+#site_index {
+  #city_gallery {
+    margin-top: 20px;
+  }
+  img {
+    margin-bottom: 50px;
+  }
+}/*closes #site_index*/
+
 #user_show {
+  header {
+    background-image: url(user_background.jpg);
+    height: 350px;
+  }
+
+  .profile_image {
+    height: 100px;
+  }
+
+  .container img {
+    max-height:175px;
+    margin-top: -100px;
+  }
+
+  #itin_name,
+  #itin_desc {
+    margin-left: 0;
+  }
+
+  .dur {
+    font-size: 20px;
+  }
+
+  #scroller-wrapper {
+      height: 100px;
+      width: 100%;
+      background-color:white;
+      position: relative;
+  }
+  #act_container {
+      position: absolute;
+      height: 100%;
+      width:100%;
+      white-space:nowrap;
+      overflow-x:auto;
+      overflow-y:hidden;
+  }
+  .act_contents {
+      height: 100px;
+      display: inline-block;
+  }
+} /*closes user_show*/
+
+
+#city_show {
   .jumbotron {
     // background-image: url(/images/background1.jpg);
     background-size: cover;
@@ -22,25 +190,28 @@
     color: black;
   }
   .jumbotron .container {
-    height: 200px;
+    height: 450px;
   }
-  .profile_image {
-    height: 100px;
-    // border: 1px solid red;
-  }
+}
 
-  #itin_desc {
-    max-height:75px;
-    overflow: hidden;
+#forms {
+  .container {
+    margin-top: 10%;
   }
+}/*closes forms*/
 
-  .act_image {
-    max-height:70px;
+#city_itineraries {
+  .userprofile {
+    width: 200px;
   }
+}
 
+#itinerary_page{
+  h4 {
+    text-align: center;
+  }
   img {
-    max-height:70px;
-    // max-width: 70px;
+    width: 125px;
+    margin-top: 15px;
   }
-
 }

@@ -1,13 +1,38 @@
 <div id="site_index">
-  <div class="jumbotron">
-    <div class="container">
-      <% if current_user %>
-        <h1>Welcome, <%= "#{current_user.first_name}" %></h1>
-        <p>Where would you like to go?</p>
-      <% else %>
-        <h1>Splash Hero Page</h1>
-        <p>Plan your trip with us!</p>
-      <% end %>
+  <!--header-->
+  <header>
+    <div class="header-content">
+      <div class="header-content-inner">
+        <% if current_user %>
+          <h1>Welcome, <%= "#{current_user.first_name}" %></h1>
+          <p>Where would you like to go?</p>
+        <% else %>
+          <h1>Splash Hero Page</h1>
+          <hr>
+          <p>Plan your trip with us!</p>
+        <% end %>
+      </div>
     </div>
-  </div>
-</div>
+  </header>
+  <!--end of header-->
+
+  <!--cities section-->
+  <section id="cities_index">
+    <div class="container">
+      <div class="row text-center">
+        <h1>Featured Cities</h2>
+      </div>
+      <div id="city_gallery" class="row">
+        <%
+          @cities.each do |city|
+            city_file = city.name.downcase.gsub(/\s/, '')
+        %>
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <%=link_to( image_tag("#{city_file}.jpg", class: "img-responsive"), city_path(city.id)) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+  <!--end of cities section-->
+</div> <!--closes site_index-->

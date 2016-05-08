@@ -1,10 +1,33 @@
-<div class="container">
-  <div class="col-md-12">
-    <h2 class="itin-title"><%= @itinerary.name %> (<%= @itinerary.duration %> days)</h2>
-    <p><%= @itinerary.desc %></p>
-    <p>insert activity cards here</p>
-    <p>insert activity cards here</p>
-    <p>insert activity cards here</p>
-    <%= link_to "Edit", edit_itinerary_path, class: "btn btn-primary" %>
+<div id="itinerary_page">
+  <div class="container">
+    <div class="col-md-12">
+      <h1 class="itin-title">
+      <%= @itinerary.name %> (<%= @itinerary.duration %> days)
+        <%= link_to(edit_itinerary_path) do %>
+          <span class="glyphicon glyphicon-edit"></span>
+        <% end %>
+      </h1>
+        <h3><%= @itinerary.desc %></h3><br>
+          <%= link_to "Add Activity", new_itinerary_activity_path(@itinerary), class: "btn btn-primary" %>
+        <h4>Activities:</h4>
+          <% @itinerary.activities.all.each do |activity| %>
+            <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-2"><%= image_tag activity.img %></div>
+              <div class="col-xs-6 col-sm-6 col-md-10">
+                  <h5><b><%= activity.name %></b> <em>(<%= pluralize(activity.duration, "hour") %>)</em>
+                    <%= link_to(edit_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id})) do %>
+                      <span class="glyphicon glyphicon-edit"> </span>
+                    <% end %>
+                    <%= link_to destroy_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id}), method: :delete do %>
+                      <span class="glyphicon glyphicon-trash"> </span>
+                  </h5>
+                    <% end %>
+                  <b>Description:</b> <%= activity.desc %><br>
+                  <b>Location:</b> <%= activity.location %>
+              </div>
+            </div>
+            <hr>
+        <% end %>
+    </div>
   </div>
 </div>

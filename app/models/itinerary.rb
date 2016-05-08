@@ -4,6 +4,15 @@ class Itinerary < ActiveRecord::Base
   has_many :activities
   before_destroy :delete_activities
 
+  validates :name, :desc, :duration,
+    presence: true
+
+  validates :desc,
+    length: {maximum: 255 }
+
+  validates :duration,
+    numericality: true
+
   def delete_activities
     self.activities.delete_all
   end

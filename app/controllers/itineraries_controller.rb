@@ -13,9 +13,11 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.new(itinerary_params)
     @itinerary.user_id = current_user.id
     if @itinerary.save
-    redirect_to user_path(@itinerary.user_id)
+      flash[:notice] = "Itinerary successfully created"
+      redirect_to user_path(@itinerary.user_id)
     else
-      redirect_to new_itinerary_path
+      flash.now[:error] = @itinerary.errors.full_messages.join(" , ")
+      render :new
     end
   end
 
@@ -27,8 +29,10 @@ class ItinerariesController < ApplicationController
   def update
     @itinerary = Itinerary.find_by_id(params[:id])
     if @itinerary.update(itinerary_params)
+      flash[:notice] = "Itinerary successfully updated"
       redirect_to itinerary_path
     else
+      flash[:error] = @itinerary.errors.full_messages.join(" , ")
       render :edit
     end
   end
@@ -40,9 +44,11 @@ class ItinerariesController < ApplicationController
   end
 
   def destroy
-    @itinerary = Itinerary.find_by(params[:id])
+    @itinerary = Itinerary.find_by_id(params[:id])
+    user_id = @itinerary.user_id
     @itinerary.destroy
-    redirect_to user_path
+    flash[:notice] = "Itinerary successfully deleted"
+    redirect_to user_path(user_id)
   end
 
   private
