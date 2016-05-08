@@ -40,7 +40,7 @@
             <div id="itin_name" class="row">
               <h4>
                 <%= link_to "#{itinerary.name}", itinerary_path(itinerary.id) %>,
-                <span class="dur"><em>(<%= itinerary.duration %> days)</em></span>
+                <span class="dur"><em>(<%= pluralize(itinerary.duration, "day") %>)</em></span>
               </h4>
             </div>
             <div id="itin_desc" class="row limit">
