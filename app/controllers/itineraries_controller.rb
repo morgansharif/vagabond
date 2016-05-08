@@ -16,8 +16,8 @@ class ItinerariesController < ApplicationController
       flash[:notice] = "Itinerary successfully created"
       redirect_to user_path(@itinerary.user_id)
     else
-      flash[:error] = @itinerary.errors.full_messages.join(" , ")
-      redirect_to new_itinerary_path
+      flash.now[:error] = @itinerary.errors.full_messages.join(" , ")
+      render :new
     end
   end
 
