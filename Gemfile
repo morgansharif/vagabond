@@ -30,6 +30,9 @@ gem 'autoprefixer-rails'
 
 gem 'bootswatch-rails'
 
+# Helper to truncate data
+gem 'truncate', '~> 0.1.0'
+
 # Helper to convert time to relative time
 gem 'time_ago_in_words', '~> 0.1.1'
 
