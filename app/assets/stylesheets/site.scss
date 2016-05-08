@@ -184,13 +184,13 @@ header .header-content .header-content-inner p {
 
 #city_show {
   .jumbotron {
-    // background-image: url(/images/background1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    height: 450px;
     color: black;
   }
   .jumbotron .container {
-    height: 450px;
+
   }
 }
 
