@@ -12,34 +12,40 @@
     <div class="container">
       <!--beginning of profile section-->
       <div class="row">
-        <div class="col-md-4 text-center">
-          <div class="profile_pic">
-            <%= image_tag @user.avatar, :class => "img-circle center-block" %>
+        <div class="col-md-4 text-center " >
+          <div class="centered">
+            <div class="profile_pic">
+              <%= image_tag @user.avatar, :class => "img-circle center-block" %>
+            </div>
+            <p>
+              <br>
+              First Name: <%= @user.first_name %>
+              <br>
+              Last Name: <%= @user.last_name %>
+              <br>
+              Current City: <%= @user.current_city %>
+              <br>
+              Joined: <%= @user.created_at.strftime("%-m-%-d-%Y") %>
+            </p>
+            <% isAuthor = allowed?(@user.id) %>
+            <% if isAuthor %>
+              <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
+              <%= link_to "Add Itinerary", new_itinerary_path, class: "btn btn-primary" %>
+            <% end %>
           </div>
-          <p>
-            <br>
-            First Name: <%= @user.first_name %>
-            <br>
-            Last Name: <%= @user.last_name %>
-            <br>
-            Current City: <%= @user.current_city %>
-            <br>
-            Joined: <%= @user.created_at.strftime("%-m-%-d-%Y") %>
-          </p>
-          <% isAuthor = allowed?(@user.id) %>
-          <% if isAuthor %>
-            <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
-            <%= link_to "Add Itinerary", new_itinerary_path, class: "btn btn-primary" %>
-          <% end %>
         </div>
       <!--end of profile section-->
 
       <!--beginning of itinerary posts-->
       <div class="col-md-8">
         <div class="row text-center">
-          <h2> <%= @user.first_name %>'s Itineraries </h2>
+          <% if isAuthor %>
+            <h2> Your Itineraries </h2>
+          <% else %>
+            <h2> <%= @user.first_name %>'s Itineraries </h2>
+          <% end %>
         </div>
-        <div class="row" style="overflow:scroll; height:550px;">
+        <div class="row" >
           <!--********LOOP THROUGH USER ITINS****************-->
           <% @user.itineraries.each do |itinerary| %>
             <div id="itin_name" class="row">

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.registration_confirmation(@user).deliver
       # login(@user)
-      flash[:notice] = "Plesae confirm your email address to continue"
+      flash[:notice] = "Please check your inbox for confirmation email."
       redirect_to login_path
     else
       flash.now[:error] = @user.errors.full_messages.join(" , ")
