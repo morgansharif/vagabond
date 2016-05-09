@@ -18,19 +18,20 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by_id(params[:id])
-    if @user.update(profile_params)
+    if allowed?(@user.id) && @user.update(profile_params)
       flash[:notice] = "Account successfully updated"
       redirect_to user_path
     else
-      redirect_to user_path
+      redirect_to user_path(@user)
     end
   end
 
   def destroy
     user = User.find(current_user.id)
-    user.destroy
-    flash[:notie] = "Sorry to see you go. Account successfully deleted"
-    redirect_to index_path
+    if allowed?(user.id) && user.destroy
+      flash[:notie] = "Sorry to see you go. Account successfully deleted"
+      redirect_to index_path
+    end
   end
 
   def new
@@ -40,7 +41,6 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find_by_id(params[:id])
-    render :edit
   end
 
 
