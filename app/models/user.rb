@@ -3,7 +3,10 @@ class User < ActiveRecord::Base
 
   has_many :itineraries
   has_secure_password
-  after_create :send_welcome_email
+
+  before_create :confirmation_token
+
+  # after_create :send_welcome_email
   before_destroy :delete_itineraries
 
   validates :first_name, :last_name, :email,
@@ -22,10 +25,6 @@ class User < ActiveRecord::Base
     self.itineraries.delete_all
   end
 
-  #Welcome Email
-  def send_welcome_email
-    UserMailer.welcome_user(self).deliver_now
-  end
 
 
   def self.confirm(params)
@@ -37,5 +36,16 @@ class User < ActiveRecord::Base
     img.present? ? img.url : "userprofile.png"
   end
 
+  def email_activate
+    self.email_confirmed = true
+    self.confirm_token = nil
+    save!(:validate => false)
+  end
 
+  private
+  def confirmation_token
+    if self.confirm_token.blank?
+      self.confirm_token = SecureRandom.urlsafe_base64.to_s
+    end
+  end
 end
