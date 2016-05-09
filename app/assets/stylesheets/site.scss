@@ -52,14 +52,15 @@
   }
 
   .page-scroll {
-    margin-left: 20%;
+    position: fixed;
+    left: 70px;
   }
 
   .brand {
-    width: 60px;
-    margin-top: 0.5%;
     position: fixed;
-    left: 5px;
+    width: 60px;
+    top: 5px;
+    left: 10px;
   }
 
 } /*closes navbar*/
