@@ -23,12 +23,14 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'hirb'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
 gem 'bootswatch-rails'
+
+# Calls on bootstrap modals through rails' :confirm attributes
+gem 'data-confirm-modal'
 
 # Helper to truncate data
 gem 'truncate', '~> 0.1.0'
@@ -64,6 +66,7 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug'
+  gem 'hirb'
 end
 
 group :development do
