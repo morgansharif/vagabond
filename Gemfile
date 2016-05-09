@@ -51,6 +51,10 @@ gem 'fog-aws'
 #manage aws access keys
 gem 'figaro'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
