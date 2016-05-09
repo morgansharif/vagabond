@@ -40,6 +40,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    logged_in?
     @user = User.find_by_id(params[:id])
   end
 
