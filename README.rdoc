@@ -29,12 +29,12 @@
 ![ERD model](assets/images/erd.png "ERD model")
 
 Wireframe:
-![signin]('assets/images/signin.png "signin")
-![create-account]('assets/images/create-account.png "create-account")
-![dropdown-menu]('assets/images/dropdown-menu.png "dropdown-menu")
-![city-show]('assets/images/city-show.png "city-show")
-![itinerary-show]('assets/images/itinerary-show.png "itinerary-show")
-![user-show]('assets/images/user-show.png "user-show")
+![signin](assets/images/signin.png "signin")
+![create-account](assets/images/create-account.png "create-account")
+![dropdown-menu](assets/images/dropdown-menu.png "dropdown-menu")
+![city-show](assets/images/city-show.png "city-show")
+![itinerary-show](assets/images/itinerary-show.png "itinerary-show")
+![user-show](assets/images/user-show.png "user-show")
 
 ## **Deployment Instructions:**
 
