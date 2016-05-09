@@ -13,14 +13,17 @@
     <div class="container">
       <div id="profile" class="row text-center">
         <h1><%= @city.name %> Itineraries</h1>
+        <%= link_to "Add #{@city.name} Itinerary", new_itinerary_path(@itinerary), class: "btn btn-primary" %>
       </div>
-      <%= link_to "Add Itinerary", new_itinerary_path(@itinerary), class: "btn btn-primary" %>
       <!--**********LOOP THROUGH all the itineraries-->
       <% @city.itineraries.all.order("created_at desc").each do |itinerary| %><br><br>
+      <hr />
       <div class="row itin">
         <div class="col-md-4">
           <%= image_tag(itinerary.user.avatar, class: "userprofile") %>
-          <p><%= itinerary.user.first_name %> <%= itinerary.user.last_name %></p>
+          <h4>
+            <%= link_to "#{itinerary.user.first_name} #{itinerary.user.last_name}", user_path(itinerary.user) %>
+          </h4>
         </div>
         <div class="col-md-8">
           <h4>
