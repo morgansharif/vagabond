@@ -19,8 +19,8 @@ City.create(name: 'Miami', country: 'United States', img: 'http://www.lombardire
 User.create(first_name: 'Billy', last_name: 'Gates', email: 'billg@hotmail.com', current_city: 'Oakland', img: 'http://stanlemmens.nl/wp/wp-content/uploads/2014/07/bill-gates-wealthiest-person.jpg', password: "123", email_confirmed: true)
 User.create(first_name: 'Neil', last_name: 'Degrasse', email: 'neil@gmail.com', current_city: 'San Francisco', img: 'http://static5.businessinsider.com/image/51912b30ecad04253c000000/neil-degrasse-tyson-tells-us-why-star-trek-is-so-much-better-than-star-wars.jpg', password: "123", email_confirmed: true)
 User.create(first_name: 'Oprah', last_name: 'Wins', email: 'oprah@geocities.com', current_city: 'San Francisco', img: 'http://49yzp92imhtx8radn224z7y1.wpengine.netdna-cdn.com/wp-content/uploads/2015/08/oprah.jpeg', password: "123", email_confirmed: true)
-User.create(first_name: 'Sarah', last_name: 'Bayne', email: 'jbayne@gmail.com', current_city: 'Milbrae', img: 'https://support.plymouth.edu/kb_images/Yammer/default.jpeg', password: "123",email_confirmed: true)
-User.create(first_name: 'Jason', last_name: 'Stroud', email: 'stroud.jason@gmail.com', current_city: 'San Jose', img: 'https://support.plymouth.edu/kb_images/Yammer/default.jpeg', password: "123",email_confirmed: true)
+User.create(first_name: 'O', last_name: 'Bama', email: 'bama@gmail.com', current_city: 'Milbrae', img: 'http://a5.files.biography.com/image/upload/c_fit,cs_srgb,dpr_1.0,h_1200,q_80,w_1200/MTE4MDAzNDEwNzg5ODI4MTEw.jpg', password: "123",email_confirmed: true)
+User.create(first_name: 'Mr.', last_name: 'Bean', email: 'bean@gmail.com', current_city: 'San Jose', img: 'https://s-media-cache-ak0.pinimg.com/736x/70/b6/6d/70b66d7968e7f6578d315d564781fed8.jpg', password: "123",email_confirmed: true)
 User.create(first_name: 'Cary', last_name: 'Webb', email: 'cary.d.webb.jason@gmail.com', current_city: 'Pleasanton', img: 'https://support.plymouth.edu/kb_images/Yammer/default.jpeg', password: "123",email_confirmed: true)
 
 itinerary_list = [
