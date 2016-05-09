@@ -22,6 +22,7 @@ class ItineraryActivitiesController < ApplicationController
   end
 
   def edit
+    logged_in?
     @activity = Activity.find_by_id(params[:activity_id])
   end
 
