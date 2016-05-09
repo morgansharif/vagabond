@@ -26,7 +26,9 @@
                       <% end %>
                     <% end %>
                     <%= link_to destroy_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id}), method: :delete do %>
-                      <span class="glyphicon glyphicon-trash"> </span>
+                      <% if isAuthor %>
+                        <span class="glyphicon glyphicon-trash"> </span>
+                      <% end %>
                   </h5>
                     <% end %>
                   <b>Description:</b> <%= activity.desc %><br>
