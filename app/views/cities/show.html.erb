@@ -19,11 +19,11 @@
       <% @city.itineraries.all.order("created_at desc").each do |itinerary| %><br><br>
       <hr />
       <div class="row itin">
-        <div class="col-md-4">
-          <%= image_tag(itinerary.user.avatar, class: "userprofile") %>
-          <h4>
+        <div class="col-md-4 text-center">
+          <%= image_tag(itinerary.user.avatar, class: "img-circle userprofile") %>
+          <h5>
             <%= link_to "#{itinerary.user.first_name} #{itinerary.user.last_name}", user_path(itinerary.user) %>
-          </h4>
+          </h5>
         </div>
         <div class="col-md-8">
           <h4>
@@ -38,11 +38,11 @@
           <h5><b>Published: </b><%= time_ago_in_words(itinerary.created_at).gsub('about', '') %> ago</h5>
           <h5><b>Description:</b> <%= itinerary.desc %></h5>
           <h5><b>Activities:</b></h5>
-          <% itinerary.activities.each do |activities| %>
-          <ul>
-            <li><%= activities.name %> <em>(<%= pluralize(activities.duration, "hour") %>)</em></li>
-          </ul>
-          <% end %>
+          <h5>
+            <% itinerary.activities.each do |activities| %>
+              <%= activities.name %> <em>(<%= pluralize(activities.duration, "hour") %>), </em>
+            <% end %>
+          </h5>
         </div>
       </div>
       <% end %>
