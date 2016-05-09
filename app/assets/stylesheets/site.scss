@@ -233,3 +233,41 @@ header .header-content .header-content-inner p {
     color: #0A238C;
   }
 }
+
+/*---END--*/
+#index_footer {
+  #footer{
+    color:#737373;
+    padding-top: 5px;
+    // margin-top: 110px;
+  }
+
+  .bottom{
+    background: #404040;
+    height:200px;
+    }
+
+  .footer{
+    text-align: center;
+    padding-top:100px;
+    margin-top: 50px;
+  }
+
+  .footer_line{
+    margin: 0 30px 0 30px;
+    color: white;
+    border: 0 solid none;
+    display: inline;
+    font-size: 20px;
+  }
+
+  .footer_line:hover{
+    border-bottom: 3px solid #5c8a8a;
+    color: white;
+  }
+
+  ul.footer a {
+    text-decoration: none;
+    color: #FF6103;
+  }
+}
