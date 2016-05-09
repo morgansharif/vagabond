@@ -27,11 +27,14 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find(current_user.id)
+    user = User.find_by_id(params[:id])
     if allowed?(user.id) && user.destroy
       flash[:notie] = "Sorry to see you go. Account successfully deleted"
       redirect_to index_path
+    else
+      redirect_to user_path
     end
+
   end
 
   def new
