@@ -57,9 +57,13 @@ ActiveRecord::Schema.define(version: 20160509025131) do
     t.string   "email"
     t.string   "img"
     t.string   "password_digest"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.boolean  "email_confirmed", default: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.boolean  "email_confirmed",     default: false
     t.string   "confirm_token"
   end
 
