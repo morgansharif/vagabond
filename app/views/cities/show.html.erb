@@ -19,10 +19,8 @@
       <% @city.itineraries.all.order("created_at desc").each do |itinerary| %>
       <div class="row itin">
         <div class="col-md-4">
-          <h2><%= image_tag "/assets/userprofile.png", class: "userprofile" %></h2>
-            <!-- !!__Keep__!! below tag for dynamic profile images from seed -->
-            <!-- <%= image_tag User.find_by_id(itinerary.user_id).img %> -->
-          <p><%= User.find_by_id(itinerary.user_id).first_name %> <%= User.find_by_id(itinerary.user_id).last_name %></p>
+          <%= image_tag(itinerary.user.avatar, class: "userprofile") %>
+          <p><%= itinerary.user.first_name %> <%= itinerary.user.last_name %></p>
         </div>
         <div class="col-md-8">
           <h4>
