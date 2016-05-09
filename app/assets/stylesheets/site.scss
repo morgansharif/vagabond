@@ -92,7 +92,7 @@ header .header-content .header-content-inner p {
     margin-bottom: 300px;
     font-size: 30px;
     font-weight: 60;
-    color: orange;
+    color: white;
 }
 
 @media(min-width:768px) {
@@ -217,5 +217,13 @@ header .header-content .header-content-inner p {
   img {
     width: 125px;
     margin-top: 15px;
+  }
+
+  .glyphicon-trash {
+    color: red;
+  }
+
+  .glyphicon-edit {
+    color: #0A238C;
   }
 }
