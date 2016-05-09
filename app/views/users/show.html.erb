@@ -39,7 +39,7 @@
           <% @user.itineraries.each do |itinerary| %>
             <div id="itin_name" class="row">
               <h4>
-                <%= link_to truncate("#{itinerary.name}", length: 35), itinerary_path(itinerary.id) %>
+                <%= link_to "#{itinerary.name.truncate(35)}", itinerary_path(itinerary.id) %>
                 <span class="dur"><em>(<%= pluralize(itinerary.duration, "day") %>)</em></span>
               </h4>
             </div>
@@ -51,7 +51,7 @@
               <div id="act_container">
                 <% itinerary.activities.each do |activities| %>
                   <div class="act_contents" id="pic"><%= image_tag activities.img, :class => "act_image" %>
-                    <br><%= truncate(activities.name, length: 25) %></div>
+                    <br><%= activities.name.truncate(22) %></div>
                 <% end %>
               </div>
             </div>
