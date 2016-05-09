@@ -7,13 +7,16 @@ class ItineraryActivitiesController < ApplicationController
 
   def create
     itinerary = Itinerary.find_by_id(params[:itinerary_id])
-    @activity = Activity.create(activity_params)
-    itinerary.activities << (@activity)
-    if @activity.save
-      redirect_to itinerary_path(params[:itinerary_id])
+    if allowed?(itinerary.user_id)
+      @activity = Activity.create(activity_params)
+      itinerary.activities << (@activity)
+      if @activity.save
+        redirect_to itinerary_path(params[:itinerary_id])
+      else
+        flash.now[:error] = @activity.errors.full_messages.join(" , ")
+      end
     else
-      flash.now[:error] = @activity.errors.full_messages.join(" , ")
-      render :new
+      redirect_to itinerary_path(itinerary)
     end
   end
 
