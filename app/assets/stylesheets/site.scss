@@ -16,6 +16,7 @@
 #mainNav {
   /*navbar a tag properties*/
   a {
+    font-size: 15px;
     color: #FF6103;
     font-weight: 450;
   }
@@ -47,6 +48,12 @@
   .navbar-default .nav>li>a:focus:hover {
       color: blue;
   }
+
+  .brand {
+    width: 60px;
+    margin-top: 2%;
+  }
+
 } /*closes navbar*/
 
 /*global variables*/
@@ -125,6 +132,7 @@ header .header-content .header-content-inner p {
         max-width: 80%;
         font-size: 45px;
         font-weight: 30;
+        position: relative;;
     }
   }/*closes @media*/
 /*end of global*/
@@ -140,8 +148,6 @@ header .header-content .header-content-inner p {
   .city_img img:hover {
     opacity: .7;
   }
-
-
 
 }/*closes #site_index*/
 
