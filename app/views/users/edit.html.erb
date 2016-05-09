@@ -8,7 +8,7 @@
             <div class="control-label col-sm-2">
               <%= f.label :first_name %>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-4">
               <%= f.text_field :first_name, placeholder: "First Name" %>
             </div>
           </div>
@@ -16,37 +16,36 @@
             <div class="control-label col-sm-2">
               <%= f.label :last_name %>
             </div>
-            <div class="col-sm-8">
-              <%= f.text_field :last_name, placeholder: "Last Name" %>
+            <div class="col-sm-4">
+              <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
             </div>
           </div>
           <div class="form-group">
             <div class="control-label col-sm-2">
               <%= f.label :current_city %>
             </div>
-            <div class="col-sm-8">
-              <%= f.text_field :current_city, placeholder: "Current City" %>
+            <div class="col-sm-4">
+              <%= f.text_field :current_city, class: "form-control", placeholder: "Current City" %>
             </div>
           </div>
           <div class="form-group">
             <div class="control-label col-sm-2">
               <%= f.label :img %>
             </div>
-            <div class="col-sm-8">
-              <%= f.file_field :img %>
+            <div class="col-sm-4">
+              <%= f.file_field :img, class: "form-control" %>
             </div>
           </div>
           <div class="form-group">
             <div class="control-label col-sm-2">
               <%= f.label :submit %>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-4">
               <%= f.submit "Submit", class: "btn btn-primary" %>
-              <%= link_to "Cancel", :back, class: "btn btn-default" %>
+              <%= link_to "Cancel", user_path, class: "btn btn-default" %>
             </div>
           </div>
         <% end %>
-        <hr />
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2">
             <%= link_to "Delete Account", user_path, class: "btn btn-danger", method: :delete %>
