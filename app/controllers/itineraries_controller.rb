@@ -41,11 +41,19 @@ class ItinerariesController < ApplicationController
   end
 
   def destroy
-    @itinerary = Itinerary.find_by_id(params[:id])
-    user_id = @itinerary.user_id
-    @itinerary.destroy
-    flash[:notice] = "Itinerary successfully deleted"
-    redirect_to user_path(user_id)
+    itinerary = Itinerary.find_by_id(params[:id])
+    user_id = itinerary.user_id
+    if allowed?(user_id)
+      if itinerary.destroy
+        flash[:notice] = "Itinerary successfully deleted"
+        redirect_to user_path(user_id)
+      else
+        flash[:error] = @itinerary.errors.full_messages.join(" , ")
+        render :edit
+      end
+    else
+      redirect_to user_path(user_id)
+    end
   end
 
   private
