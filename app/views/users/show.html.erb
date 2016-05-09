@@ -26,8 +26,11 @@
             <br>
             Joined: <%= @user.created_at.strftime("%-m-%-d-%Y") %>
           </p>
-          <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
-          <%= link_to "Add Itinerary", new_itinerary_path, class: "btn btn-primary" %>
+          <% isAuthor = allowed?(@user.id) %>
+          <% if isAuthor %>
+            <%= link_to "Edit", edit_user_path(@user), class: "btn btn-primary" %>
+            <%= link_to "Add Itinerary", new_itinerary_path, class: "btn btn-primary" %>
+          <% end %>
         </div>
       <!--end of profile section-->
 
