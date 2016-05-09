@@ -19,8 +19,6 @@ class ItineraryActivitiesController < ApplicationController
 
   def edit
     @activity = Activity.find_by_id(params[:activity_id])
-    @itinerary = Itinerary.find_by_id(params[:itinerary_id])
-    @activity.itinerary_id = @itinerary.id
   end
 
   def update
