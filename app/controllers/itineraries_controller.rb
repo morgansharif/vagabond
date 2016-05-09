@@ -1,8 +1,4 @@
 class ItinerariesController < ApplicationController
-  # def index
-  #   @itineraries = Itinerary.all
-  #   render :index
-  # end
 
   def new
     @itinerary = Itinerary.new
