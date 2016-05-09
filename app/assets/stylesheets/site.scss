@@ -16,7 +16,8 @@
 #mainNav {
   /*navbar a tag properties*/
   a {
-    color: orange;
+    color: #FF6103;
+    font-weight: 450;
   }
 
   /*navbar drop down*/
@@ -30,7 +31,7 @@
       text-transform: uppercase;
       font-family: 'Montserrat','Helvetica Neue',Helvetica, Arial, sans-serif;
       font-weight: 700;
-      color: green;
+      color: #FF6103;
       // height: 50px;
   }
 
@@ -80,8 +81,7 @@ header .header-content .header-content-inner h1 {
     /*text-transform: uppercase;*/
     font-weight: 900;
     font-size:80px;
-    text-shadow: 2px 2px black;
-    color: yellow;
+    color: #FF6103;
 }
 
 header .header-content .header-content-inner hr {
