@@ -51,9 +51,16 @@
       color: blue;
   }
 
+  .page-scroll {
+    position: fixed;
+    left: 70px;
+  }
+
   .brand {
+    position: fixed;
     width: 60px;
-    margin-top: 2%;
+    top: 5px;
+    left: 10px;
   }
 
 } /*closes navbar*/
