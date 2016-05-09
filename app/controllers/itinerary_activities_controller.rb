@@ -27,10 +27,11 @@ class ItineraryActivitiesController < ApplicationController
 
   def update
     @activity = Activity.find_by_id(params[:activity_id])
-    if @activity.update(activity_params)
+    itinerary = Itinerary.find_by_id(params[:itinerary_id])
+    if allowed?(itinerary.user_id) && @activity.update(activity_params)
       redirect_to itinerary_path(params[:itinerary_id])
     else
-      redirect_to new_itinerary_activity(params[:itinerary_id])
+      redirect_to itinerary_path(params[:itinerary_id])
     end
   end
 
