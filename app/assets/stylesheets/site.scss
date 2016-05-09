@@ -2,10 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "bootstrap";
+
 
 #flash_error {
   position: absolute;
-  margin-top:125px;
+  margin-top: 125px;
   margin-left: 50px;
 }
 
@@ -176,6 +178,13 @@ header .header-content .header-content-inner p {
     margin-top: -100px;
   }
 
+  @media (min-width: $screen-md-min) {
+    .centered {
+      position: fixed;
+      top: 60%;
+    }
+  }
+
   #itin_name,
   #itin_desc {
     margin-left: 0;
@@ -184,6 +193,7 @@ header .header-content .header-content-inner p {
   .dur {
     font-size: 20px;
   }
+
 
   #scroller-wrapper {
       height: 175px;
@@ -228,12 +238,19 @@ header .header-content .header-content-inner p {
 
 #city_itineraries {
   .userprofile {
-    width: 200px;
+    width: 150px;
   }
+
+  // .itin {
+  //   // border: 1px solid red;
+  //   background-color: #e3dcdc;
+  //   border-radius: 10px;
+  // }
 }
 
 #itinerary_page{
-  h4 {
+
+  h3 {
     text-align: center;
   }
   img {
@@ -255,8 +272,6 @@ header .header-content .header-content-inner p {
   #footer{
     color:#737373;
     padding-top: 5px;
-    margin-bottom: 10px;
-    // margin-top: 110px;
   }
 
   .bottom{
@@ -283,6 +298,20 @@ header .header-content .header-content-inner p {
   a:hover{
     color: white;
   }
+}
 
 
+/*registration_confirmation email styling*/
+#registration_confirmation {
+  h1 {
+    color: #4A8EAD;
+  }
+​
+  h3 {
+    color: #422C5A;
+  }
+​
+  h4 {
+    color: #FF828C;
+  }
 }

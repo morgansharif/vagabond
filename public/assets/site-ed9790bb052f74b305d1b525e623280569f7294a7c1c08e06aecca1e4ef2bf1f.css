@@ -1,0 +1,317 @@
+@charset "UTF-8";
+/* line 7, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#flash_error {
+  position: absolute;
+  margin-top: 125px;
+  margin-left: 50px;
+}
+
+/* line 13, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#yield_start {
+  padding-top: 64px;
+}
+
+/* line 17, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#mainNav {
+  /*navbar a tag properties*/
+  /*navbar drop down*/
+  /*navbar vagabond text properties*/
+  /*navbar vagabond text changes color on hover*/
+  /*navbar li changes color on hover*/
+}
+/* line 19, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#mainNav a {
+  color: #FF6103;
+  font-weight: 450;
+  font-size: 17px;
+}
+/* line 26, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#mainNav a:hover,
+#mainNav a:focus {
+  color: blue;
+  font-weight: bold;
+  font-size: 17px;
+}
+/* line 34, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#mainNav .navbar-default .navbar-header .navbar-brand {
+  text-transform: uppercase;
+  font-family: 'Montserrat','Helvetica Neue',Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: #FF6103;
+}
+/* line 44, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#mainNav .navbar-default .navbar-header .navbar-brand:hover,
+#mainNav .navbar-default .navbar-header .navbar-brand:focus {
+  color: blue;
+}
+/* line 50, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#mainNav .navbar-default .nav > li > a:hover,
+#mainNav .navbar-default .nav > li > a:focus:hover {
+  color: blue;
+}
+/* line 55, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#mainNav .page-scroll {
+  position: fixed;
+  left: 70px;
+}
+/* line 60, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#mainNav .brand {
+  position: fixed;
+  width: 60px;
+  top: 5px;
+  left: 10px;
+}
+
+/*closes navbar*/
+/*global variables*/
+/* line 70, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+section {
+  padding-top: 25px;
+}
+
+/* line 73, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+hr {
+  max-width: 100px;
+  border-color: orange;
+  border-width: 3px;
+}
+
+/* line 78, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+header {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  text-align: center;
+  color: #fff;
+  background-image: url("landing_page.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 575px;
+}
+
+/* line 90, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+header .header-content {
+  position: relative;
+  width: 100%;
+  padding: 100px 15px;
+  text-align: center;
+}
+
+/* line 97, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+header .header-content .header-content-inner h1 {
+  margin-top: 10%;
+  /*text-transform: uppercase;*/
+  font-weight: 900;
+  font-size: 80px;
+  color: #FF6103;
+}
+
+/* line 105, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+header .header-content .header-content-inner hr {
+  margin: 30px auto;
+}
+
+/* line 109, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+header .header-content .header-content-inner p {
+  margin-bottom: 300px;
+  font-size: 30px;
+  font-weight: 60;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  /* line 117, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+  header {
+    min-height: 100%;
+  }
+
+  /* line 121, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+  header .header-content {
+    position: absolute;
+    top: 30%;
+    padding: 0 50px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+
+  /* line 128, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+  header .header-content .header-content-inner {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1000px;
+  }
+
+  /* line 134, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+  header .header-content .header-content-inner h1 {
+    margin-top: 60%;
+    font-size: 100px;
+  }
+
+  /* line 139, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+  header .header-content .header-content-inner p {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 80%;
+    font-size: 45px;
+    font-weight: 30;
+  }
+}
+/*closes @media*/
+/*end of global*/
+/* line 150, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#site_index #city_gallery {
+  margin-top: 20px;
+}
+/* line 153, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#site_index img {
+  margin-bottom: 50px;
+}
+/* line 157, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#site_index .city_img img:hover {
+  opacity: .7;
+}
+
+/*closes #site_index*/
+/* line 166, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#user_show header {
+  background-image: url(user_background.jpg);
+  height: 350px;
+}
+/* line 171, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#user_show .profile_image {
+  height: 100px;
+}
+/* line 175, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#user_show .profile_pic img {
+  height: 175px;
+  margin-top: -100px;
+}
+@media (min-width: screen-md-min) {
+  /* line 181, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+  #user_show .centered {
+    position: fixed;
+    top: 60%;
+  }
+}
+/* line 187, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#user_show #itin_name,
+#user_show #itin_desc {
+  margin-left: 0;
+}
+/* line 192, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#user_show .dur {
+  font-size: 20px;
+}
+/* line 197, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#user_show #scroller-wrapper {
+  height: 175px;
+  width: 100%;
+  background-color: white;
+  position: relative;
+}
+/* line 203, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#user_show #act_container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+/* line 211, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#user_show .act_contents {
+  height: 400px;
+  display: inline-block;
+}
+
+/*closes user_show*/
+/* line 219, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#city_show header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 450px;
+  color: black;
+  background-position: center;
+}
+/* line 227, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#city_show .glyphicon-edit {
+  color: #0A238C;
+}
+
+/* line 233, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#forms .container {
+  margin-top: 10%;
+}
+
+/*closes forms*/
+/* line 239, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#city_itineraries .userprofile {
+  width: 150px;
+}
+
+/* line 251, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#itinerary_page h4 {
+  text-align: center;
+}
+/* line 254, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#itinerary_page img {
+  width: 125px;
+  margin-top: 15px;
+}
+/* line 259, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#itinerary_page .glyphicon-trash {
+  color: red;
+}
+/* line 263, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#itinerary_page .glyphicon-edit {
+  color: #0A238C;
+}
+
+/*---END--*/
+/* line 270, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#index_footer #footer {
+  color: #737373;
+  padding-top: 5px;
+}
+/* line 275, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#index_footer .bottom {
+  background: #404040;
+  height: 200px;
+}
+/* line 280, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#index_footer .footer img {
+  height: 50px;
+}
+/* line 284, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#index_footer .footer {
+  text-align: center;
+  padding-top: 100px;
+  margin-top: 50px;
+}
+/* line 290, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#index_footer a {
+  color: #FF6103;
+  text-decoration: none;
+  font-size: 15px;
+}
+/* line 296, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#index_footer a:hover {
+  color: white;
+}
+
+/*registration_confirmation email styling*/
+/* line 304, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#registration_confirmation h1 {
+  color: #4A8EAD;
+}
+/* line 307, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#registration_confirmation ​
+h3 {
+  color: #422C5A;
+}
+/* line 311, /Users/daniel/christine_workspace/wdi/vagabond/app/assets/stylesheets/site.scss */
+#registration_confirmation ​
+h4 {
+  color: #FF828C;
+}
