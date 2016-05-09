@@ -16,13 +16,15 @@
 #mainNav {
   /*navbar a tag properties*/
   a {
-    color: orange;
+    color: #FF6103;
+    font-weight: 450;
   }
 
   /*navbar drop down*/
   a:hover,
   a:focus {
     color: blue;
+    font-weight: bold;
   }
 
   /*navbar vagabond text properties*/
@@ -30,14 +32,14 @@
       text-transform: uppercase;
       font-family: 'Montserrat','Helvetica Neue',Helvetica, Arial, sans-serif;
       font-weight: 700;
-      color: green;
+      color: #FF6103;
       // height: 50px;
   }
 
   /*navbar vagabond text changes color on hover*/
   .navbar-default .navbar-header .navbar-brand:hover,
   .navbar-default .navbar-header .navbar-brand:focus {
-    color: yellow;
+    color: blue;
   }
 
   /*navbar li changes color on hover*/
@@ -80,8 +82,7 @@ header .header-content .header-content-inner h1 {
     /*text-transform: uppercase;*/
     font-weight: 900;
     font-size:80px;
-    text-shadow: 2px 2px black;
-    color: yellow;
+    color: #FF6103;
 }
 
 header .header-content .header-content-inner hr {
@@ -92,7 +93,7 @@ header .header-content .header-content-inner p {
     margin-bottom: 300px;
     font-size: 30px;
     font-weight: 60;
-    color: orange;
+    color: white;
 }
 
 @media(min-width:768px) {
@@ -196,6 +197,10 @@ header .header-content .header-content-inner p {
     color: black;
     background-position: center;
   }
+
+  .glyphicon-edit {
+    color: #0A238C;
+  }
 }
 
 #forms {
@@ -217,5 +222,13 @@ header .header-content .header-content-inner p {
   img {
     width: 125px;
     margin-top: 15px;
+  }
+
+  .glyphicon-trash {
+    color: red;
+  }
+
+  .glyphicon-edit {
+    color: #0A238C;
   }
 }
