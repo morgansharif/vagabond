@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+
 #flash_error {
   position: absolute;
   margin-top:125px;
@@ -236,8 +237,14 @@ header .header-content .header-content-inner p {
 
 #city_itineraries {
   .userprofile {
-    width: 200px;
+    width: 150px;
   }
+
+  // .itin {
+  //   // border: 1px solid red;
+  //   background-color: #e3dcdc;
+  //   border-radius: 10px;
+  // }
 }
 
 #itinerary_page{
