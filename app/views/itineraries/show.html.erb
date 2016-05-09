@@ -10,29 +10,28 @@
           <% end %>
         <% end %>
       </h1>
-        <h3><%= @itinerary.desc %></h3><br>
+        <h2><%= @itinerary.desc %></h2><br>
         <% if isAuthor %>
           <%= link_to "Add Activity", new_itinerary_activity_path(@itinerary), class: "btn btn-primary" %>
         <% end %>
-        <h4>Activities:</h4>
+        <h3>Activities:</h3>
           <% @itinerary.activities.all.each do |activity| %>
             <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-2"><%= image_tag activity.img %></div>
               <div class="col-xs-6 col-sm-6 col-md-10">
-                  <h5><b><%= activity.name %></b> <em>(<%= pluralize(activity.duration, "hour") %>)</em>
-                    <%= link_to(edit_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id})) do %>
-                      <% if isAuthor %>
-                        <span class="glyphicon glyphicon-edit"> </span>
-                      <% end %>
+                <h4><b><%= activity.name %></b> <em>(<%= pluralize(activity.duration, "hour") %>)</em></h4>
+                  <%= link_to(edit_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id})) do %>
+                    <% if isAuthor %>
+                      <span class="glyphicon glyphicon-edit"> </span>
                     <% end %>
-                    <%= link_to destroy_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id}), method: :delete do %>
-                      <% if isAuthor %>
-                        <span class="glyphicon glyphicon-trash"> </span>
-                      <% end %>
-                  </h5>
+                  <% end %>
+                  <%= link_to destroy_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id}), method: :delete do %>
+                    <% if isAuthor %>
+                      <span class="glyphicon glyphicon-trash"> </span>
                     <% end %>
-                  <b>Description:</b> <%= activity.desc %><br>
-                  <b>Location:</b> <%= activity.location %>
+                  <% end %>
+                  <h5><b>Description:</b> <%= activity.desc %><p></h5>
+                  <h5><b>Location:</b> <%= activity.location %></h5>
               </div>
             </div>
             <hr>
