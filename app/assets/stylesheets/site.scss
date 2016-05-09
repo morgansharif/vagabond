@@ -24,6 +24,7 @@
   a:hover,
   a:focus {
     color: blue;
+    font-weight: bold;
   }
 
   /*navbar vagabond text properties*/
@@ -38,7 +39,7 @@
   /*navbar vagabond text changes color on hover*/
   .navbar-default .navbar-header .navbar-brand:hover,
   .navbar-default .navbar-header .navbar-brand:focus {
-    color: yellow;
+    color: blue;
   }
 
   /*navbar li changes color on hover*/
