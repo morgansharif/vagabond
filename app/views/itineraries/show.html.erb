@@ -3,12 +3,17 @@
     <div class="col-md-12">
       <h1 class="itin-title">
       <%= @itinerary.name.truncate(35) %> <em>(<%= pluralize(@itinerary.duration, "day") %>)</em>
-        <%= link_to(edit_itinerary_path) do %>
-          <span class="glyphicon glyphicon-edit"></span>
+      <% isAuthor = allowed?(@itinerary.user_id) %>
+        <% if isAuthor %>
+          <%= link_to(edit_itinerary_path) do %>
+            <span class="glyphicon glyphicon-edit"></span>
+          <% end %>
         <% end %>
       </h1>
         <h3><%= @itinerary.desc %></h3><br>
+        <% if isAuthor %>
           <%= link_to "Add Activity", new_itinerary_activity_path(@itinerary), class: "btn btn-primary" %>
+        <% end %>
         <h4>Activities:</h4>
           <% @itinerary.activities.all.each do |activity| %>
             <div class="row">
@@ -16,10 +21,14 @@
               <div class="col-xs-6 col-sm-6 col-md-10">
                   <h5><b><%= activity.name %></b> <em>(<%= pluralize(activity.duration, "hour") %>)</em>
                     <%= link_to(edit_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id})) do %>
-                      <span class="glyphicon glyphicon-edit"> </span>
+                      <% if isAuthor %>
+                        <span class="glyphicon glyphicon-edit"> </span>
+                      <% end %>
                     <% end %>
                     <%= link_to destroy_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id}), method: :delete do %>
-                      <span class="glyphicon glyphicon-trash"> </span>
+                      <% if isAuthor %>
+                        <span class="glyphicon glyphicon-trash"> </span>
+                      <% end %>
                   </h5>
                     <% end %>
                   <b>Description:</b> <%= activity.desc %><br>
