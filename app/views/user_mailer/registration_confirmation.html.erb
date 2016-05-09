@@ -1,9 +1,10 @@
-<center><h2>Welcome to Vagabond</h2></center>
+<center>
+<h1 style="color: #4A8EAD">Welcome to Vagabond <%= @user.first_name %></h1>
 
-<h4>Hi <%= @user.first_name %>, we are so glad to have you join our community of travel enthusiest! Planning your next weekend get away has never been this easy!</h4>
-<center><%= image_tag attachments['travel.gif'].url %></center>
+<h3 style="color: #422C5A">We are thrilled to have you join our community of travel enthusiest!</h3>
+<h3 style="color: #422C5A">Planning your next weekend get away has never been easier! You're almost on your way!</h3>
+<%= image_tag attachments['travel.gif'].url %><br><br>
 
-
-<b>To confirm your registration click the link below:</b>
-
+<h4 style="color: #FF828C">To confirm your registration click the link below:</h4><br>
 <%= confirm_email_user_url(@user.confirm_token) %>
+</center>
