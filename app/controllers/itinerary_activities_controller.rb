@@ -38,7 +38,7 @@ class ItineraryActivitiesController < ApplicationController
 
   def destroy
     itinerary = Itinerary.find_by_id(params[:itinerary_id])
-    if  itinerary.activities.find_by_id(params[:activity_id]).destroy
+    if  Activity.find_by_id(params[:activity_id]).destroy
       redirect_to itinerary_path(params[:itinerary_id])
     end
   end
