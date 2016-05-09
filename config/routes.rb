@@ -46,10 +46,16 @@ Rails.application.routes.draw do
   patch     '/itineraries/:itinerary_id/activities/:activity_id',      to: 'itinerary_activities#update'
   delete    '/itineraries/:itinerary_id/activities/:activity_id',      to: 'itinerary_activities#destroy', as: :destroy_itinerary_activity
 
+  #!~~~~~~~~~ EMAIL ROUTES ~~~~~~~~!#
   resources :users do
     member do
       get :confirm_email
     end
   end
+
+  #!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ USER ROUTES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!#
+  # method  path                        controller#action
+  get       "*any",     via: :all,      to: "application#not_found"
+
 
 end
