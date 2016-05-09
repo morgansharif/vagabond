@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20160509195944) do
     t.string   "slug"
   end
 
+  add_index "cities", ["slug"], name: "index_cities_on_slug", using: :btree
+
   create_table "itineraries", force: :cascade do |t|
     t.string   "name"
     t.string   "desc"
@@ -46,7 +48,6 @@ ActiveRecord::Schema.define(version: 20160509195944) do
     t.integer  "city_id"
     t.integer  "user_id"
     t.integer  "duration"
-    t.string   "slug"
   end
 
   add_index "itineraries", ["city_id"], name: "index_itineraries_on_city_id", using: :btree
@@ -63,7 +64,6 @@ ActiveRecord::Schema.define(version: 20160509195944) do
     t.datetime "updated_at",                      null: false
     t.boolean  "email_confirmed", default: false
     t.string   "confirm_token"
-    t.string   "slug"
   end
 
   add_foreign_key "activities", "itineraries"
