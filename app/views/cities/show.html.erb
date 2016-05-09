@@ -16,7 +16,7 @@
         <%= link_to "Add #{@city.name} Itinerary", new_itinerary_path(@itinerary), class: "btn btn-primary" %>
       </div>
       <!--**********LOOP THROUGH all the itineraries-->
-      <% @city.itineraries.all.order("created_at desc").each do |itinerary| %>
+      <% @city.itineraries.all.order("created_at desc").each do |itinerary| %><br><br>
       <hr />
       <div class="row itin">
         <div class="col-md-4">
