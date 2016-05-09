@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
 </head>
 <body>
   <!-- BEGIN NAVBAR -->
@@ -19,6 +20,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
+          <%= link_to(image_tag('/assets/backpack.gif', :class => "brand"), index_path) %>
           <%= link_to "Vagabond", index_path, class: "navbar-brand page-scroll" %>
       </div>
 
@@ -67,5 +69,20 @@
   <div id="yield_start">
     <%= yield %>
   </div>
+
+  <!--footer-->
+  <div id="index_footer">
+    <div class="bottom text-center">
+      <div class="footer">
+        <img src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png">
+        <p id="footer" class="text-center">
+          <a href="https://github.com/Ameer-Brown">Ameer Brown</a>  |
+          <a href="https://github.com/lamchristine">Christine Lam</a>  |
+          <a href="https://github.com/morgansharif">Morgan Sharif</a>  |
+          <a href="https://github.com/seanvsville">Sean Van Ho</a>
+        </p>
+    </div>
+  </div>
+
 </body>
 </html>

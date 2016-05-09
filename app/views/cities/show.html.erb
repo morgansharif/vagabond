@@ -13,23 +13,26 @@
     <div class="container">
       <div id="profile" class="row text-center">
         <h1><%= @city.name %> Itineraries</h1>
+        <%= link_to "Add #{@city.name} Itinerary", new_itinerary_path(@itinerary), class: "btn btn-primary" %>
       </div>
-      <%= link_to "Add Itinerary", new_itinerary_path(@itinerary), class: "btn btn-primary" %>
       <!--**********LOOP THROUGH all the itineraries-->
-      <% @city.itineraries.all.order("created_at desc").each do |itinerary| %>
+      <% @city.itineraries.all.order("created_at desc").each do |itinerary| %><br><br>
+      <hr />
       <div class="row itin">
         <div class="col-md-4">
-          <h2><%= image_tag "/assets/userprofile.png", class: "userprofile" %></h2>
-            <!-- !!__Keep__!! below tag for dynamic profile images from seed -->
-            <!-- <%= image_tag User.find_by_id(itinerary.user_id).img %> -->
-          <p><%= User.find_by_id(itinerary.user_id).first_name %> <%= User.find_by_id(itinerary.user_id).last_name %></p>
+          <%= image_tag(itinerary.user.avatar, class: "userprofile") %>
+          <h4>
+            <%= link_to "#{itinerary.user.first_name} #{itinerary.user.last_name}", user_path(itinerary.user) %>
+          </h4>
         </div>
         <div class="col-md-8">
           <h4>
-            <b><%= link_to itinerary.name, itinerary_path(itinerary.id) %></b>
+            <b><%= link_to itinerary.name.truncate(35), itinerary_path(itinerary.id) %></b>
             <em>(<%= pluralize(itinerary.duration, "day") %>)</em>
             <%= link_to(edit_itinerary_path(itinerary.id)) do %>
-              <span class="glyphicon glyphicon-edit"> </span>
+              <% if allowed?(itinerary.user_id) %>
+                <span class="glyphicon glyphicon-edit"> </span>
+              <% end %>
             <% end %>
           </h4>
           <h5><b>Published: </b><%= time_ago_in_words(itinerary.created_at).gsub('about', '') %> ago</h5>

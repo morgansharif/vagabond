@@ -1,42 +1,46 @@
 class ItineraryActivitiesController < ApplicationController
 
   def new
-    @activity = Activity.new
+    logged_in?
     @itinerary = Itinerary.find_by_id(params[:itinerary_id])
+    @activity = Activity.new
   end
 
   def create
     itinerary = Itinerary.find_by_id(params[:itinerary_id])
-    @activity = Activity.create(activity_params)
-    itinerary.activities << (@activity)
-    if @activity.save
-      redirect_to itinerary_path(params[:itinerary_id])
+    if allowed?(itinerary.user_id)
+      @activity = Activity.create(activity_params)
+      itinerary.activities << (@activity)
+      if @activity.save
+        redirect_to itinerary_path(params[:itinerary_id])
+      else
+        flash.now[:error] = @activity.errors.full_messages.join(" , ")
+        render :new
+      end
     else
-      flash.now[:error] = @activity.errors.full_messages.join(" , ")
-      render :new
+      redirect_to itinerary_path(itinerary)
     end
   end
 
   def edit
+    logged_in?
     @activity = Activity.find_by_id(params[:activity_id])
-    @itinerary = Itinerary.find_by_id(params[:itinerary_id])
-    @activity.itinerary_id = @itinerary.id
   end
 
   def update
     @activity = Activity.find_by_id(params[:activity_id])
-    if @activity.update(activity_params)
+    itinerary = Itinerary.find_by_id(params[:itinerary_id])
+    if allowed?(itinerary.user_id) && @activity.update(activity_params)
       redirect_to itinerary_path(params[:itinerary_id])
     else
-      redirect_to new_itinerary_activity(params[:itinerary_id])
+      redirect_to itinerary_path(params[:itinerary_id])
     end
   end
 
   def destroy
     itinerary = Itinerary.find_by_id(params[:itinerary_id])
-    if  itinerary.activities.find_by_id(params[:activity_id]).destroy
-      redirect_to itinerary_path(params[:itinerary_id])
-    end
+    allowed?(itinerary.user_id) && Activity.find_by_id(params[:activity_id]).destroy
+    redirect_to itinerary_path(params[:itinerary_id])
   end
 
   private
