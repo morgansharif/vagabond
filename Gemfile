@@ -29,6 +29,9 @@ gem 'autoprefixer-rails'
 
 gem 'bootswatch-rails'
 
+# Calls on bootstrap modals through rails' :confirm attributes
+gem 'data-confirm-modal'
+
 # Helper to truncate data
 gem 'truncate', '~> 0.1.0'
 
