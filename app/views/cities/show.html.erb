@@ -16,7 +16,7 @@
       </div>
       <%= link_to "Add Itinerary", new_itinerary_path(@itinerary), class: "btn btn-primary" %>
       <!--**********LOOP THROUGH all the itineraries-->
-      <% @city.itineraries.all.order("created_at desc").each do |itinerary| %>
+      <% @city.itineraries.all.order("created_at desc").each do |itinerary| %><br><br>
       <div class="row itin">
         <div class="col-md-4">
           <%= image_tag(itinerary.user.avatar, class: "userprofile") %>
