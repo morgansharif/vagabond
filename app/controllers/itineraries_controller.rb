@@ -1,8 +1,8 @@
 class ItinerariesController < ApplicationController
 
   def new
+    logged_in?
     @itinerary = Itinerary.new
-    render :new
   end
 
   def create
