@@ -6,11 +6,16 @@ class SessionsController < ApplicationController
   end
 
   def create
-     @user = User.confirm(user_params)
-     if @user
-       login(@user)
-      #  flash[:message] = "Welcome " + @user.first_name
-       redirect_to index_path
+    user = User.where(email: params[:user][:email].downcase).first
+    if user && user.authenticate(params[:user][:password])
+       if user.email_confirmed
+         login(user)
+         redirect_to index_path
+       else
+         flash[:error] = "Plesae activate your account by following the instructions in the Account
+         confirmation email you received to proceed"
+         render :new
+       end
      else
        flash[:error] = "Wrong Email or Password"
        redirect_to login_path

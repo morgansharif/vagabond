@@ -46,5 +46,10 @@ Rails.application.routes.draw do
   patch     '/itineraries/:itinerary_id/activities/:activity_id',      to: 'itinerary_activities#update'
   delete    '/itineraries/:itinerary_id/activities/:activity_id',      to: 'itinerary_activities#destroy', as: :destroy_itinerary_activity
 
+  resources :users do
+    member do
+      get :confirm_email
+    end
+  end
 
 end
