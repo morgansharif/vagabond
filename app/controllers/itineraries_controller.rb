@@ -23,11 +23,15 @@ class ItinerariesController < ApplicationController
 
   def update
     @itinerary = Itinerary.find_by_id(params[:id])
-    if @itinerary.update(itinerary_params)
-      redirect_to itinerary_path
+    if allowed?(@itinerary.user_id)
+      if @itinerary.update(itinerary_params)
+        redirect_to itinerary_path
+      else
+        flash[:error] = @itinerary.errors.full_messages.join(" , ")
+        render :edit
+      end
     else
-      flash[:error] = @itinerary.errors.full_messages.join(" , ")
-      render :edit
+      redirect_to itinerary_path
     end
   end
 
