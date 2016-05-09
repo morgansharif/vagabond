@@ -17,8 +17,8 @@ class ItinerariesController < ApplicationController
   end
 
   def edit
+    logged_in?
     @itinerary = Itinerary.find_by_id(params[:id])
-    render :edit
   end
 
   def update
