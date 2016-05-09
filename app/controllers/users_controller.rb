@@ -18,19 +18,24 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by_id(params[:id])
-    if @user.update(profile_params)
+    if allowed?(@user.id) && @user.update(profile_params)
       flash[:notice] = "Account successfully updated"
       redirect_to user_path
     else
-      redirect_to user_path
+      redirect_to user_path(@user)
+      flash.now[:error] = @user.errors.full_messages.join(" , ")
     end
   end
 
   def destroy
-    user = User.find(current_user.id)
-    user.destroy
-    flash[:notie] = "Sorry to see you go. Account successfully deleted"
-    redirect_to index_path
+    user = User.find_by_id(params[:id])
+    if allowed?(user.id) && user.destroy
+      flash[:notie] = "Sorry to see you go. Account successfully deleted"
+      redirect_to index_path
+    else
+      redirect_to user_path
+    end
+
   end
 
   def new
@@ -39,8 +44,8 @@ class UsersController < ApplicationController
   end
 
   def edit
+    logged_in?
     @user = User.find_by_id(params[:id])
-    render :edit
   end
 
 

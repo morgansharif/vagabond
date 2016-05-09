@@ -30,6 +30,9 @@ gem 'autoprefixer-rails'
 
 gem 'bootswatch-rails'
 
+# Helper to truncate data
+gem 'truncate', '~> 0.1.0'
+
 # Helper to convert time to relative time
 gem 'time_ago_in_words', '~> 0.1.1'
 
@@ -38,6 +41,19 @@ gem 'bcrypt', '~> 3.1.7'
 
 #used to upload photos
 gem 'carrierwave', '~> 0.11.2'
+
+#image processing
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+
+#used to store files on aws s3
+gem 'fog-aws'
+
+#manage aws access keys
+gem 'figaro'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 # Use Unicorn as the app server
 # gem 'unicorn'

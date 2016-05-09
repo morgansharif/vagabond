@@ -1,19 +1,14 @@
 class ItinerariesController < ApplicationController
-  # def index
-  #   @itineraries = Itinerary.all
-  #   render :index
-  # end
 
   def new
+    logged_in?
     @itinerary = Itinerary.new
-    render :new
   end
 
   def create
     @itinerary = Itinerary.new(itinerary_params)
     @itinerary.user_id = current_user.id
     if @itinerary.save
-      flash[:notice] = "Itinerary successfully created"
       redirect_to user_path(@itinerary.user_id)
     else
       flash.now[:error] = @itinerary.errors.full_messages.join(" , ")
@@ -22,33 +17,43 @@ class ItinerariesController < ApplicationController
   end
 
   def edit
+    logged_in?
     @itinerary = Itinerary.find_by_id(params[:id])
-    render :edit
   end
 
   def update
     @itinerary = Itinerary.find_by_id(params[:id])
-    if @itinerary.update(itinerary_params)
-      flash[:notice] = "Itinerary successfully updated"
-      redirect_to itinerary_path
+    if allowed?(@itinerary.user_id)
+      if @itinerary.update(itinerary_params)
+        redirect_to itinerary_path
+      else
+        flash[:error] = @itinerary.errors.full_messages.join(" , ")
+        render :edit
+      end
     else
-      flash[:error] = @itinerary.errors.full_messages.join(" , ")
-      render :edit
+      redirect_to itinerary_path
     end
   end
 
   def show
     @itinerary = Itinerary.find_by_id(params[:id])
-    @itinerary.user_id = current_user.id
     render :show
   end
 
   def destroy
-    @itinerary = Itinerary.find_by_id(params[:id])
-    user_id = @itinerary.user_id
-    @itinerary.destroy
-    flash[:notice] = "Itinerary successfully deleted"
-    redirect_to user_path(user_id)
+    itinerary = Itinerary.find_by_id(params[:id])
+    user_id = itinerary.user_id
+    if allowed?(user_id)
+      if itinerary.destroy
+        flash[:notice] = "Itinerary successfully deleted"
+        redirect_to user_path(user_id)
+      else
+        flash[:error] = @itinerary.errors.full_messages.join(" , ")
+        render :edit
+      end
+    else
+      redirect_to user_path(user_id)
+    end
   end
 
   private
