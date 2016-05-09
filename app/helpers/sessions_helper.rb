@@ -11,7 +11,7 @@ module SessionsHelper
 
   def logged_in?
     if current_user == nil
-      redirect_to new_session_path
+      redirect_to login_path
     end
   end
 
