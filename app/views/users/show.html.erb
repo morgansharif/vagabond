@@ -13,7 +13,9 @@
       <!--beginning of profile section-->
       <div class="row">
         <div class="col-md-4 text-center">
-          <%= image_tag @user.avatar, :class => "img-circle center-block" %>
+          <div class="profile_pic">
+            <%= image_tag @user.avatar, :class => "img-circle center-block" %>
+          </div>
           <p>
             <br>
             First Name: <%= @user.first_name %>
@@ -38,20 +40,20 @@
           <!--********LOOP THROUGH USER ITINS****************-->
           <% @user.itineraries.each do |itinerary| %>
             <div id="itin_name" class="row">
-              <h4><%= link_to "#{itinerary.name}", itinerary_path(itinerary.id) %>,
-                  <span class="dur"><em>(<%= itinerary.duration %> days)</em></span></h4>
+              <h4>
+                <%= link_to "#{itinerary.name.truncate(35)}", itinerary_path(itinerary.id) %>
+                <span class="dur"><em>(<%= pluralize(itinerary.duration, "day") %>)</em></span>
+              </h4>
             </div>
             <div id="itin_desc" class="row limit">
-              <h5>
-                <%= itinerary.desc %>
-              </h5>
+              <h5><%= itinerary.desc %></h5>
             </div>
             <!--*******LOOP THROUGH ACTIVITIES IN INTIN*******-->
             <div id="scroller-wrapper">
               <div id="act_container">
                 <% itinerary.activities.each do |activities| %>
                   <div class="act_contents" id="pic"><%= image_tag activities.img, :class => "act_image" %>
-                    <br><%=activities.name%></div>
+                    <br><%= activities.name.truncate(22) %></div>
                 <% end %>
               </div>
             </div>
