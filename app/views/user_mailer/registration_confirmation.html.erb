@@ -1,4 +1,9 @@
-Welcome to Vagabond
+<center><h2>Welcome to Vagabond</h2></center>
 
-Hi <%= @user.first_name %>, we are so glad to have you join our community of travel enthusiest! To confirm your registration click the link below.
+<h4>Hi <%= @user.first_name %>, we are so glad to have you join our community of travel enthusiest! Planning your next weekend get away has never been this easy!</h4>
+<center><%= image_tag attachments['travel.gif'].url %></center>
+
+
+<b>To confirm your registration click the link below:</b>
+
 <%= confirm_email_user_url(@user.confirm_token) %>
