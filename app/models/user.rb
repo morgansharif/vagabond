@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
 
   has_many :itineraries
   has_secure_password
-
+  
+  #callback for email confirmation
   before_create :confirmation_token
 
   # after_create :send_welcome_email
