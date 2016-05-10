@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// allows for bootstrap $screen-... variables to load
 @import "bootstrap";
 
 
@@ -177,7 +178,7 @@ header .header-content .header-content-inner p {
     height:175px;
     margin-top: -100px;
   }
-
+  /* fixed location for user profile & pic if on med+ screen */
   @media (min-width: $screen-md-min) {
     .centered {
       position: fixed;
