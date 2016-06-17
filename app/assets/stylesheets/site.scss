@@ -5,6 +5,9 @@
 // allows for bootstrap $screen-... variables to load
 @import "bootstrap";
 
+body {
+  background-color: #f6f6f6;
+}
 
 #flash_error {
   position: absolute;
@@ -228,12 +231,6 @@ header .header-content .header-content-inner p {
     color: #0A238C;
   }
 
-  .itin  {
-    background-color:#f6f6f6;
-    margin-bottom: -3%;
-    padding-top: 2%;
-    border-radius: 20px;
-  }
 }
 
 #forms {
@@ -247,10 +244,32 @@ header .header-content .header-content-inner p {
     width: 150px;
   }
 
-  // .itin {
-  //   // border: 1px solid red;
-  //   background-color: #e3dcdc;
-  //   border-radius: 10px;
+  #itin {
+    background-color: #ffffff;
+    margin-top: 5%;
+    padding-top: 3%;
+    // border-style: groove;
+    // border-width: 3px;
+  }
+
+  #itin hr{
+    border: 1px dashed #afafb6;
+    max-width: 100%;
+  }
+
+  #itin img {
+    width: 50px;
+  }
+
+  #pub {
+    font-size: 15px;
+    margin-top: 0.5%;
+  }
+  //
+  // @media(min-width:768px){
+  //   #pub {
+  //     padding-top: 0.5%;
+  //   }
   // }
 }
 
@@ -266,7 +285,7 @@ header .header-content .header-content-inner p {
   }
 
   #act {
-    background-color: #f6f6f6;
+    background-color: #b2b2b2;
     padding-top: 10px;
     padding-bottom: 10px;
   }

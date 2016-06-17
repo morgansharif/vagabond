@@ -24,9 +24,9 @@ User.create(first_name: 'Mr.', last_name: 'Bean', email: 'bean@gmail.com', curre
 User.create(first_name: 'Cary', last_name: 'Webb', email: 'cary.d.webb.jason@gmail.com', current_city: 'Pleasanton', img: 'https://support.plymouth.edu/kb_images/Yammer/default.jpeg', password: "123",email_confirmed: true)
 
 itinerary_list = [
-  {name: 'Wine Tasting Weekend in Napa, California', desc: 'Spend 2 days tasting wine from different regions.', duration: 2},
-  {name: 'Bar Crawl', desc: 'Exploring neigborhood bars, trying out local microbrews.', duration: 1},
-  {name: 'Camping Trip', desc: 'Hike Mt. Diablo this weekend! Get your hiking poles ready!', duration: 1},
+  {name: 'Wine Tasting Weekend in Napa', desc: 'Spend 2 days tasting wine from different regions.', duration: 2},
+  {name: 'Romantic Weekend in Carmel-by-the-Sea', desc: 'Exploring neigborhood bars, trying out local microbrews.', duration: 1},
+  {name: 'Summitting Mt.Whitney', desc: 'Hike Mt. Diablo this weekend! Get your hiking poles ready!', duration: 1},
   {name: 'Monterey Weekend', desc: 'Bike around the country side.', duration: 3},
   {name: 'Foodies Weekend', desc: 'Food food food and more food! Spend the day trying local restaurants.', duration: 1}
 ]
