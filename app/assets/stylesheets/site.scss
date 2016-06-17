@@ -160,8 +160,6 @@ header .header-content .header-content-inner p {
     opacity: .7;
   }
 
-
-
 }/*closes #site_index*/
 
 #user_show {
@@ -229,6 +227,13 @@ header .header-content .header-content-inner p {
   .glyphicon-edit {
     color: #0A238C;
   }
+
+  .itin  {
+    background-color:#f6f6f6;
+    margin-bottom: -3%;
+    padding-top: 2%;
+    border-radius: 20px;
+  }
 }
 
 #forms {
@@ -251,12 +256,19 @@ header .header-content .header-content-inner p {
 
 #itinerary_page{
 
-  h3 {
-    text-align: center;
+  .title {
+    margin-top: 2%;
+    margin-bottom: 2%;
   }
-  img {
-    width: 125px;
-    margin-top: 15px;
+  .title hr{
+    border: 2px solid orange;
+    max-width: 100%;
+  }
+
+  #act {
+    background-color: #f6f6f6;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .glyphicon-trash {
@@ -266,6 +278,7 @@ header .header-content .header-content-inner p {
   .glyphicon-edit {
     color: #0A238C;
   }
+
 }
 
 /*---END--*/
