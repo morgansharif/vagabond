@@ -129,6 +129,14 @@ vineyards = Activity.create(
   img: 'Berginer.jpg',
   itinerary_id: napa.id
 )
+market = Activity.create(
+  name: 'Oxbow Public Market',
+  desc: 'Take a stroll through the Market to find local fresh produces or enjoy a scenic outdoor picnic over looking the Napa river.',
+  location: 'Oxbow Public Market',
+  duration: 2,
+  img: 'market.jpg',
+  itinerary_id: napa.id
+)
 
 
 
@@ -166,6 +174,14 @@ spa = Activity.create(
   img: 'kush.jpg',
   itinerary_id: carmel.id
 )
+beach = Activity.create(
+  name: 'Carmel Beach',
+  desc: 'Soak up some sun on one of Americas Top Beach Towns.',
+  location: 'Carmel Beach',
+  duration: 2,
+  img: 'beach.jpg',
+  itinerary_id: carmel.id
+)
 
 niagara = Itinerary.create(
   name: 'Family getaway to Niagara Falls',
@@ -200,6 +216,14 @@ clifton = Activity.create(
   img: 'clifton.jpg',
   itinerary_id: niagara.id
 )
+shopping = Activity.create(
+  name: 'Shopping',
+  desc: 'Hard to beat prices at Canada One Factory Outlets in Niagara.',
+  location: 'Canada One Factory Outlets',
+  duration: 3,
+  img: 'outlet.jpg',
+  itinerary_id: niagara.id
+)
 pec = Itinerary.create(
   name: 'The Taste Trail of Prince Edward Country',
   desc: 'Indulge the inner foodie with a sampling of restaurants, wineries, farms and unique food producers.',
@@ -226,12 +250,75 @@ dinnerpec = Activity.create(
 icecream = Activity.create(
   name: 'Slickers County Ice Cream',
   desc: 'Who doesnt like ice cream?  Slickers is an ice cream lovers dream. Peter and Anne create all natural artisan ice cream, made fresh daily in small batches by hand.',
+  location: 'Slickers County Ice Cream',
   duration: 1,
   img: 'slickers.jpg',
   itinerary_id: pec.id
 )
+bike = Activity.create(
+  name: 'Cycling Tour',
+  desc: 'Perfect cycling destination with gently rolling hills, wineries, parks and uncrowded roads.',
+  location: 'Prince Edward Country',
+  duration: 3,
+  img: 'bike.jpg',
+  itinerary_id: pec.id
+)
 
+burgundy = Itinerary.create(
+  name: 'Quiet Escape to Northern Burgundy',
+  desc: 'Escape the hustle and bustle of the city in North Burgundy with the green rolling hills and open farmland, fewer tourists, and of course plenty of good wine.',
+  duration: 3,
+  city_id: paris.id,
+  user_id: john.id
+)
+abbey = Activity.create(
+  name: 'Abbey Church of Cluny',
+  desc: 'Visit the imposing remains of the abbey church as part of a pleasant holiday in the Clunisois, exploring its heritage and equestrian traditions.',
+  location: 'Abbey Church of Cluny',
+  duration: 2,
+  img: 'abbey.jpg',
+  itinerary_id: burgundy.id
+)
+solutre = Activity.create(
+  name: 'Solutre Rock',
+  desc: 'More than just a rock, its a “Grand Site de France” for you to explore!',
+  location: 'Solutre Rock',
+  duration: 1,
+  img: 'rock.jpg',
+  itinerary_id: burgundy.id
+)
+beachhop = Itinerary.create(
+  name: 'Beach bum weekend',
+  desc: 'Nothing like spending the weekend beach hopping and soaking up the sun.',
+  duration: 3,
+  city_id: miami.id,
+  user_id: sarah.id
+)
+key = Activity.create(
+  name: 'Key Biscayne',
+  desc: 'Pefert beach for those looking for some peace and tranquility.',
+  location: 'Key Biscayne',
+  duration: 2,
+  img: 'key.jpg',
+  itinerary_id: beachhop.id
+)
 
+south = Activity.create(
+  name: 'South Beach',
+  desc: 'Americas party beach - just like you have seen on TV, read about in magazines and seen in postcards.',
+  location: 'South Beach',
+  duration: 2,
+  img: 'south.jpg',
+  itinerary_id: beachhop.id
+)
+matheson = Activity.create(
+  name: 'Matheson Hammock Park Beach',
+  desc: 'Tranquil waters are perfect for the littlest of swimmers, with picnic tables and shady palm trees.',
+  location: 'Matheson Hammock Park Beach',
+  duration: 2,
+  img: 'hammock.jpg',
+  itinerary_id: beachhop.id
+)
 # itinerary_list = [
 #   {name: 'Wine Tasting Weekend in Napa', desc: 'Spend 2 days tasting wine from different regions.', duration: 2},
 #   {name: 'Romantic Weekend in Carmel-by-the-Sea', desc: 'Exploring neigborhood bars, trying out local microbrews.', duration: 1},
