@@ -24,9 +24,10 @@
               <div class="overlay">
                 <h4><strong><%= activity.name %></strong></h4>
 
-                  <h5><strong>Duration:</strong><em>(<%= pluralize(activity.duration, "hour") %>)</em></h5>
-                  <h5><strong>Description:</strong> <%= activity.desc %></h5>
-                  <h5><strong>Location:</strong> <%= activity.location %></h5>
+                  <h6><strong>Duration:</strong><em>(<%= pluralize(activity.duration, "hour") %>)</em><br>
+                  <strong>Location:</strong> <%= activity.location %></h6>
+                  <h6><%= activity.desc %></h6>
+
                   <%= link_to(edit_itinerary_activity_path({itinerary_id: @itinerary.id, activity_id: activity.id})) do %>
                     <% if isAuthor %>
                       <span class="glyphicon glyphicon-edit"> </span>
@@ -122,17 +123,18 @@ transform: translate3d(-100%,0,0);
 transform: translate3d(0,0,0);
 }
 
-.hovereffect a, .hovereffect h5 {
+.hovereffect a, .hovereffect h6 {
 color: #FFF;
 opacity: 0;
 filter: alpha(opacity=0);
+line-height: 1.1;
 -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 transition: opacity 0.35s, transform 0.35s;
 -webkit-transform: translate3d(100%,0,0);
 transform: translate3d(100%,0,0);
 }
 
-.hovereffect:hover a, .hovereffect:hover h5 {
+.hovereffect:hover a, .hovereffect:hover h6 {
 opacity: 1;
 filter: alpha(opacity=100);
 -webkit-transform: translate3d(0,0,0);
