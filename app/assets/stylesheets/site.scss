@@ -5,6 +5,9 @@
 // allows for bootstrap $screen-... variables to load
 @import "bootstrap";
 
+body {
+  background-color: #f6f6f6;
+}
 
 #flash_error {
   position: absolute;
@@ -160,8 +163,6 @@ header .header-content .header-content-inner p {
     opacity: .7;
   }
 
-
-
 }/*closes #site_index*/
 
 #user_show {
@@ -214,6 +215,9 @@ header .header-content .header-content-inner p {
       height: 400px;
       display: inline-block;
   }
+  .act_contents img {
+    width: 200px;
+  }
 } /*closes user_show*/
 
 
@@ -229,6 +233,7 @@ header .header-content .header-content-inner p {
   .glyphicon-edit {
     color: #0A238C;
   }
+
 }
 
 #forms {
@@ -242,21 +247,50 @@ header .header-content .header-content-inner p {
     width: 150px;
   }
 
-  // .itin {
-  //   // border: 1px solid red;
-  //   background-color: #e3dcdc;
-  //   border-radius: 10px;
+  #itin {
+    background-color: #ffffff;
+    margin-top: 5%;
+    padding-top: 3%;
+    // border-style: groove;
+    // border-width: 3px;
+  }
+
+  #itin hr{
+    border: 1px dashed #afafb6;
+    max-width: 100%;
+  }
+
+  #itin img {
+    width: 50px;
+  }
+
+  #pub {
+    font-size: 15px;
+    margin-top: 0.5%;
+  }
+  //
+  // @media(min-width:768px){
+  //   #pub {
+  //     padding-top: 0.5%;
+  //   }
   // }
 }
 
 #itinerary_page{
 
-  h3 {
-    text-align: center;
+  .title {
+    margin-top: 2%;
+    margin-bottom: 2%;
   }
-  img {
-    width: 125px;
-    margin-top: 15px;
+  .title hr{
+    border: 2px solid orange;
+    max-width: 100%;
+  }
+
+  #act {
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .glyphicon-trash {
@@ -266,6 +300,7 @@ header .header-content .header-content-inner p {
   .glyphicon-edit {
     color: #0A238C;
   }
+
 }
 
 /*---END--*/
