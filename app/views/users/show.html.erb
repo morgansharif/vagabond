@@ -37,40 +37,42 @@
       <!--end of profile section-->
 
       <!--beginning of itinerary posts-->
-      <div class="col-md-8">
-        <div class="row text-center">
-          <% if isAuthor %>
-            <h2> Your Itineraries </h2>
-          <% else %>
-            <h2> <%= @user.first_name %>'s Itineraries </h2>
-          <% end %>
-        </div>
-        <div class="row" >
-          <!--********LOOP THROUGH USER ITINS****************-->
-          <% @user.itineraries.each do |itinerary| %>
-            <div id="itin_name" class="row">
-              <h4>
-                <%= link_to "#{itinerary.name.truncate(35)}", itinerary_path(itinerary.id) %>
-                <span class="dur"><em>(<%= pluralize(itinerary.duration, "day") %>)</em></span>
-              </h4>
-            </div>
-            <div id="itin_desc" class="row limit">
-              <h5><%= itinerary.desc %></h5>
-            </div>
-            <!--*******LOOP THROUGH ACTIVITIES IN INTIN*******-->
-            <div id="scroller-wrapper">
-              <div id="act_container">
-                <% itinerary.activities.each do |activities| %>
-                  <div class="act_contents" id="pic"><%= image_tag activities.img, :class => "act_image" %>
-                    <br><%= activities.name.truncate(22) %></div>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-          <!--*******CLOSE ACTIVITIES LOOP*******-->
-          <!--********CLOSE ITINERARY LOOP****************-->
+      <div class="container">
+        <div class="col-md-8">
+          <div class="row text-center">
+            <% if isAuthor %>
+              <h2> Your Itineraries </h2>
+            <% else %>
+              <h2> <%= @user.first_name %>'s Itineraries </h2>
+            <% end %>
           </div>
-        </div> <!--closes col-md-8-->
+          <div class="row" >
+            <!--********LOOP THROUGH USER ITINS****************-->
+            <% @user.itineraries.each do |itinerary| %>
+              <div id="itin_name" class="row">
+                <h4>
+                  <%= link_to "#{itinerary.name.truncate(35)}", itinerary_path(itinerary.id) %>
+                  <span class="dur"><em>(<%= pluralize(itinerary.duration, "day") %>)</em></span>
+                </h4>
+              </div>
+              <div id="itin_desc" class="row limit">
+                <h5><%= itinerary.desc %></h5>
+              </div>
+              <!--*******LOOP THROUGH ACTIVITIES IN INTIN*******-->
+              <div id="scroller-wrapper">
+                <div id="act_container">
+                  <% itinerary.activities.each do |activities| %>
+                    <div class="act_contents" id="pic"><%= image_tag activities.img, :class => "act_image" %>
+                      <br><%= activities.name.truncate(22) %></div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+            <!--*******CLOSE ACTIVITIES LOOP*******-->
+            <!--********CLOSE ITINERARY LOOP****************-->
+            </div>
+          </div> <!--closes col-md-8-->
+        </div>
       </div><!--closes row-->
     </div> <!--closes container-->
   </section><!--closes section-->
