@@ -1,4 +1,4 @@
-# **Vagabond**
+# Vagabond
 
 ## **Project description:** Vagabond is a travel app that enables you to discover new places and get inspired through other people’s published itineraries. Vagabond also powers you to create itinerary of your own to plan your next weekend getaway.
 **Heroku Link:** <http://murmuring-brook-27298.herokuapp.com/>
