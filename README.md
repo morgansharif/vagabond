@@ -1,7 +1,7 @@
-# **Vagabond**
+# **ROAM (formerly Vagabond)**
 
-## **Project description:** Vagabond is a travel app that enables you to discover new places and get inspired through other people’s published itineraries. Vagabond also powers you to create itinerary of your own to plan your next weekend getaway.
-**Heroku Link:** <http://murmuring-brook-27298.herokuapp.com/>
+## **Project description:** ROAM is a travel app that enables you to discover new places and get inspired through other people’s published itineraries. ROAM also powers you to create itinerary of your own to plan your next weekend getaway.
+**Heroku Link:** <https://roam-travel.herokuapp.com/>
 
 ## **Technologies Used**
 
@@ -26,15 +26,15 @@
 - friendly_id (prettyURL)
 
 ## **ERD:**
-![ERD model](assets/images/erd.png "ERD model")
+![ERD model](app/assets/images/erd.png "ERD model")
 
-Wireframe:
-![signin](assets/images/signin.png "signin")
-![create-account](assets/images/create-account.png "create-account")
-![dropdown-menu](assets/images/dropdown-menu.png "dropdown-menu")
-![city-show](assets/images/city-show.png "city-show")
-![itinerary-show](assets/images/itinerary-show.png "itinerary-show")
-![user-show](assets/images/user-show.png "user-show")
+#####Wireframe:
+![signin](app/assets/images/signin.png "signin")
+![create-account](app/assets/images/create-account.png "create-account")
+![dropdown-menu](app/assets/images/dropdown-menu.png "dropdown-menu")
+![city-show](app/assets/images/city-show.png "city-show")
+![itinerary-show](app/assets/images/itinerary-show.png "itinerary-show")
+![user-show](app/assets/images/user-show.png "user-show")
 
 ## **Deployment Instructions:**
 
@@ -54,3 +54,6 @@ Wireframe:
 
 Please feel free to use a different markup language if you do not play to run
 <tt>rake doc:app</tt>
+
+## Contributors
+[Ameer Brown](https://github.com/Ameer-Brown) | [Christine Lam](https://github.com/lamchristine) | [Morgan Sharif](https://github.com/morgansharif) | [Sean Van Ho](https://github.com/seanvsville)
